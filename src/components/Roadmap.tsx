@@ -3,37 +3,25 @@ import { CheckCircle2, Circle } from "lucide-react";
 
 const milestones = [
   {
-    date: "Octobre 2024",
-    title: "Inception & Recherche",
-    description: "Définition du concept, constitution de l'équipe, étude de marché.",
+    date: "Sept-Oct-Nov 2025",
+    title: "Inception, Recherche & Architecture",
+    description: "Définition du concept, constitution de l'équipe, étude de marché, conception système, fine-tuning Mistral, premiers tests sur Hack The Box.",
     completed: true
   },
   {
-    date: "Novembre 2024",
-    title: "Architecture & Prototype",
-    description: "Conception système, fine-tuning Mistral, premiers tests sur Hack The Box.",
+    date: "Déc-Jan-Fév 2025-2026",
+    title: "PoC Fonctionnel & HEC Launchpad",
+    description: "Démonstration bout-en-bout : IP → reconnaissance → exploitation → rapport. L'IA atteint le niveau d'un pentester junior, validé par 82% de réussite au benchmark XBOW. Présentation aux investisseurs, début de la levée de fonds.",
     completed: true
   },
   {
-    date: "Décembre 2024",
-    title: "PoC Fonctionnel",
-    description: "Démonstration bout-en-bout : IP → reconnaissance → exploitation → rapport. L'IA atteint le niveau d'un pentester junior, validé par 82% de réussite au benchmark XBOW.",
-    completed: true
-  },
-  {
-    date: "Janvier 2025",
-    title: "HEC Launchpad & Levée",
-    description: "Présentation aux investisseurs, début de la levée de fonds.",
-    completed: false
-  },
-  {
-    date: "Q1-Q2 2025",
+    date: "Q1-Q2 2026",
     title: "V1 Production",
     description: "Durcissement, conformité NIS2 complète, premiers clients pilotes.",
     completed: false
   },
   {
-    date: "Q3-Q4 2025",
+    date: "Q3-Q4 2026",
     title: "Scale & Leadership Européen",
     description: "Multi-tenancy, couverture techno élargie, positionnement Top 3 du classement IA offensive EU.",
     completed: false
