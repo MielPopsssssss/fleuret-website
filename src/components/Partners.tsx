@@ -9,7 +9,7 @@ const partners = [
   { name: "Thales", logo: thalesLogo, isText: false },
   { name: "CEA", logo: ceaLogo, isText: false },
   { name: "École Polytechnique", logo: polytechniqueLogo, isText: false },
-  { name: "HEC Paris", logo: hecLogo, isText: false }
+  { name: "HEC Paris", logo: hecLogo, isText: false },
 ];
 
 const Partners = () => {
@@ -29,32 +29,32 @@ const Partners = () => {
           <div className="flex animate-scroll-x hover:pause">
             {/* Premier set de logos */}
             {partners.map((partner) => (
-              <div 
+              <div
                 key={`${partner.name}-1`}
                 className="flex-shrink-0 w-48 h-32 mx-8 group flex items-center justify-center hover:scale-110 transition-all"
               >
-                <img 
-                  src={partner.logo} 
+                <img
+                  src={partner.logo}
                   alt={partner.name}
                   className="h-24 w-auto object-contain opacity-90 group-hover:opacity-100 transition-opacity"
                   style={{
-                    filter: 'drop-shadow(0 0 3px rgba(239, 68, 68, 0.15))',
+                    filter: "drop-shadow(0 0 10px rgba(239, 68, 68, 0.15))",
                   }}
                 />
               </div>
             ))}
             {/* Second set pour le défilement continu */}
             {partners.map((partner) => (
-              <div 
+              <div
                 key={`${partner.name}-2`}
                 className="flex-shrink-0 w-48 h-32 mx-8 group flex items-center justify-center hover:scale-110 transition-all"
               >
-                <img 
-                  src={partner.logo} 
+                <img
+                  src={partner.logo}
                   alt={partner.name}
                   className="h-24 w-auto object-contain opacity-90 group-hover:opacity-100 transition-opacity"
                   style={{
-                    filter: 'drop-shadow(0 0 3px rgba(239, 68, 68, 0.15))',
+                    filter: "drop-shadow(0 0 3px rgba(239, 68, 68, 0.15))",
                   }}
                 />
               </div>
