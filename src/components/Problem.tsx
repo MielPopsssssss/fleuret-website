@@ -22,8 +22,8 @@ const Problem = () => {
                 <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto">
                   <Clock className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="text-2xl font-bold">2-4 Semaines</h3>
-                <p className="text-muted-foreground">Délai moyen pour un pentest manuel</p>
+                <h3 className="text-2xl font-bold">Conformité NIS2</h3>
+                <p className="text-muted-foreground">Respectez les exigences européennes de cybersécurité</p>
               </div>
 
               <div className="text-center space-y-3">
