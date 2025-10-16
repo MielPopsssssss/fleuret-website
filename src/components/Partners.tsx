@@ -39,9 +39,6 @@ const Partners = () => {
             .animate-scroll-infinite {
               animation: scroll-infinite 30s linear infinite;
             }
-            .animate-scroll-infinite:hover {
-              animation-play-state: paused;
-            }
           `}</style>
           <div className="flex animate-scroll-infinite">
             {/* Triple duplication pour un défilement fluide */}
