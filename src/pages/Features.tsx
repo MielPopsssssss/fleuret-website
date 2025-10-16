@@ -51,7 +51,7 @@ const FeaturesPage = () => {
               <p className="text-xl text-muted-foreground">Infrastructure souveraine européenne</p>
             </div>
             <div className="text-center space-y-4">
-              <div className="text-6xl md:text-7xl font-bold text-gradient">10x</div>
+              <div className="text-6xl md:text-7xl font-bold text-gradient">50x</div>
               <p className="text-xl text-muted-foreground">Plus rapide que le pentesting manuel</p>
             </div>
           </div>
