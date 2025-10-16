@@ -29,8 +29,8 @@ const features = [
   },
   {
     icon: Gauge,
-    title: "Performance de Pointe",
-    description: "OWASP Top 10, CVEs critiques, avec le meilleur ratio vitesse/précision du marché."
+    title: "Performance Record",
+    description: "82% au benchmark XBOW (vs 77% secteur), meilleur ratio vitesse/précision/coût du marché."
   }
 ];
 

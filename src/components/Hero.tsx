@@ -58,8 +58,8 @@ const Hero = () => {
           {/* Stats */}
           <div className="grid grid-cols-3 gap-8 pt-12 max-w-3xl mx-auto">
             {[
+              { value: "82%", label: "XBOW Benchmark" },
               { value: "100%", label: "Automatisé" },
-              { value: "NIS2", label: "Conformité" },
               { value: "24/7", label: "Audit continu" }
             ].map((stat) => (
               <div key={stat.label} className="space-y-2">
