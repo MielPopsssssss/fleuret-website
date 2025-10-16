@@ -8,7 +8,7 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center gap-2">
               <Shield className="w-6 h-6 text-primary" />
-              <span className="text-xl font-bold">SecureAI</span>
+              <span className="text-xl font-bold">fleuret.ai</span>
             </div>
             <p className="text-muted-foreground leading-relaxed">
               Pentesting automatisé par IA pour la conformité NIS2 et la souveraineté numérique française.
@@ -20,8 +20,8 @@ const Footer = () => {
             <div className="space-y-2 text-muted-foreground">
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-primary" />
-                <a href="mailto:contact@secureai.fr" className="hover:text-primary transition-colors">
-                  contact@secureai.fr
+                <a href="mailto:contact@fleuret.ai" className="hover:text-primary transition-colors">
+                  contact@fleuret.ai
                 </a>
               </div>
               <div className="flex items-center gap-2">
@@ -42,7 +42,7 @@ const Footer = () => {
         </div>
 
         <div className="pt-8 border-t border-primary/10 text-center text-muted-foreground text-sm">
-          <p>&copy; 2025 SecureAI. Tous droits réservés.</p>
+          <p>&copy; 2025 fleuret.ai. Tous droits réservés.</p>
         </div>
       </div>
     </footer>
