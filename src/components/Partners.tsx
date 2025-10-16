@@ -19,22 +19,41 @@ const Partners = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center justify-items-center max-w-6xl mx-auto">
-          {partners.map((partner) => (
-            <div 
-              key={partner.name}
-              className="group flex items-center justify-center w-full h-32 rounded-lg border border-primary/10 hover:border-primary/30 transition-all hover:card-glow bg-card/50"
-            >
-              <div className="text-center">
-                <div className="text-3xl font-bold text-muted-foreground group-hover:text-primary transition-colors">
-                  {partner.logo}
-                </div>
-                <div className="text-xs text-muted-foreground mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                  {partner.name}
+        <div className="relative overflow-hidden">
+          <div className="flex animate-scroll-x hover:pause">
+            {/* Premier set de logos */}
+            {partners.map((partner) => (
+              <div 
+                key={`${partner.name}-1`}
+                className="flex-shrink-0 w-48 h-32 mx-4 group flex items-center justify-center rounded-lg border border-primary/10 hover:border-primary/30 transition-all hover:card-glow bg-card/50 hover:scale-105"
+              >
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-muted-foreground group-hover:text-primary transition-colors">
+                    {partner.logo}
+                  </div>
+                  <div className="text-xs text-muted-foreground mt-2 opacity-70 group-hover:opacity-100 transition-opacity">
+                    {partner.name}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+            {/* Second set pour le défilement continu */}
+            {partners.map((partner) => (
+              <div 
+                key={`${partner.name}-2`}
+                className="flex-shrink-0 w-48 h-32 mx-4 group flex items-center justify-center rounded-lg border border-primary/10 hover:border-primary/30 transition-all hover:card-glow bg-card/50 hover:scale-105"
+              >
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-muted-foreground group-hover:text-primary transition-colors">
+                    {partner.logo}
+                  </div>
+                  <div className="text-xs text-muted-foreground mt-2 opacity-70 group-hover:opacity-100 transition-opacity">
+                    {partner.name}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
