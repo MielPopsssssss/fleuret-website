@@ -1,7 +1,12 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Shield, Zap, Lock } from "lucide-react";
 import heroCyber from "@/assets/hero-cyber.jpg";
+import { ContactDialog } from "@/components/ContactDialog";
+
 const Hero = () => {
+  const [contactDialogOpen, setContactDialogOpen] = useState(false);
+
   return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0" style={{
@@ -34,7 +39,11 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-            <Button size="lg" className="text-lg group relative overflow-hidden">
+            <Button 
+              size="lg" 
+              className="text-lg group relative overflow-hidden"
+              onClick={() => setContactDialogOpen(true)}
+            >
               <span className="relative z-10">Demander une démo</span>
               <Zap className="ml-2 w-5 h-5 relative z-10 transition-transform group-hover:rotate-12" />
               <div className="absolute inset-0 bg-primary-glow opacity-0 group-hover:opacity-20 transition-opacity" />
@@ -44,6 +53,8 @@ const Hero = () => {
               <Lock className="ml-2 w-5 h-5" />
             </Button>
           </div>
+
+          <ContactDialog open={contactDialogOpen} onOpenChange={setContactDialogOpen} />
 
           {/* Stats */}
           <div className="grid grid-cols-3 gap-8 pt-12 max-w-3xl mx-auto">

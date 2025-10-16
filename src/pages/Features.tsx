@@ -1,9 +1,13 @@
+import { useState } from "react";
 import { Shield, Zap, Target, Brain, Award, Lock, Trophy } from "lucide-react";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { ContactDialog } from "@/components/ContactDialog";
 
 const FeaturesPage = () => {
+  const [contactDialogOpen, setContactDialogOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
@@ -190,12 +194,16 @@ const FeaturesPage = () => {
               Rejoignez les organisations qui font confiance à l'IA pour protéger leurs infrastructures critiques.
             </p>
             <div className="flex gap-4 justify-center pt-8">
-              <Link to="/">
-                <Button size="lg" className="text-lg px-8">
-                  Demander une Démo
-                </Button>
-              </Link>
+              <Button 
+                size="lg" 
+                className="text-lg px-8"
+                onClick={() => setContactDialogOpen(true)}
+              >
+                Demander une Démo
+              </Button>
             </div>
+
+            <ContactDialog open={contactDialogOpen} onOpenChange={setContactDialogOpen} />
           </div>
         </div>
       </section>
