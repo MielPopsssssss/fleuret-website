@@ -1,4 +1,4 @@
-import { Shield, Zap, Target, Brain, Award, Lock, ArrowRight, CheckCircle2 } from "lucide-react";
+import { Shield, Zap, Target, Brain, Award, Lock } from "lucide-react";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -7,189 +7,168 @@ const FeaturesPage = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="py-16 relative">
-        <div className="container mx-auto px-4">
+      <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
+        {/* Grid Background */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#1a1a1a_1px,transparent_1px),linear-gradient(to_bottom,#1a1a1a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]" />
+        
+        <div className="container mx-auto px-4 relative z-10">
           <Link to="/">
-            <Button variant="ghost" className="mb-8">← Retour</Button>
+            <Button variant="ghost" className="mb-12">← Retour</Button>
           </Link>
           
-          <div className="text-center max-w-4xl mx-auto mb-16 space-y-6">
-            <h1 className="text-5xl md:text-6xl font-bold leading-tight">
-              Du Problème à la <span className="text-gradient">Solution</span>
+          <div className="text-center max-w-5xl mx-auto space-y-8">
+            <h1 className="text-5xl md:text-7xl font-bold leading-tight tracking-tight">
+              L'IA Offensive qui Pense Comme un Hacker
             </h1>
-            <p className="text-xl text-muted-foreground">
-              L'histoire de comment nous avons réinventé le pentesting
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
+              Automatisez vos pentests avec une IA souveraine capable d'exploiter réellement les vulnérabilités, pas seulement de les détecter.
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Story Section 1: Le Problème */}
-      <section className="py-16 relative">
-        <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            <div className="flex items-center gap-4 mb-8">
-              <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
-                <span className="text-2xl font-bold text-primary">1</span>
-              </div>
-              <h2 className="text-3xl font-bold">Le Défi</h2>
-            </div>
-            
-            <div className="grid md:grid-cols-2 gap-8 mb-12">
-              <div className="space-y-4 p-6 rounded-lg bg-card/50 border border-border">
-                <h3 className="text-xl font-semibold text-destructive">Le Pentesting Traditionnel</h3>
-                <ul className="space-y-3">
-                  <li className="flex items-start gap-2">
-                    <div className="w-2 h-2 rounded-full bg-destructive mt-2" />
-                    <span className="text-muted-foreground">Plusieurs semaines d'attente</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <div className="w-2 h-2 rounded-full bg-destructive mt-2" />
-                    <span className="text-muted-foreground">Tests limités dans le temps</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <div className="w-2 h-2 rounded-full bg-destructive mt-2" />
-                    <span className="text-muted-foreground">Coûts prohibitifs</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <div className="w-2 h-2 rounded-full bg-destructive mt-2" />
-                    <span className="text-muted-foreground">Compétences rares et demandées</span>
-                  </li>
-                </ul>
-              </div>
-              
-              <div className="space-y-4 p-6 rounded-lg bg-card/50 border border-primary/30 card-glow">
-                <h3 className="text-xl font-semibold text-primary">Notre Vision</h3>
-                <ul className="space-y-3">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-muted-foreground">Tests continus et automatisés</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-muted-foreground">Résultats en minutes</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-muted-foreground">Accessible à toutes les organisations</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-muted-foreground">Intelligence artificielle souveraine</span>
-                  </li>
-                </ul>
-              </div>
+            <div className="flex gap-4 justify-center pt-8">
+              <Link to="/">
+                <Button size="lg" className="text-lg px-8">Voir la Démo</Button>
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Story Section 2: Notre Approche */}
-      <section className="py-16 relative bg-card/30">
+      {/* Stats Section */}
+      <section className="py-24 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            <div className="flex items-center gap-4 mb-8">
-              <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
-                <span className="text-2xl font-bold text-primary">2</span>
-              </div>
-              <h2 className="text-3xl font-bold">L'Innovation</h2>
+          <div className="text-center max-w-4xl mx-auto mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Des Résultats Mesurables.<br />Vérifiables et Reproductibles.
+            </h2>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto">
+            <div className="text-center space-y-4">
+              <div className="text-6xl md:text-7xl font-bold text-gradient">82%</div>
+              <p className="text-xl text-muted-foreground">Taux de réussite au benchmark XBOW</p>
             </div>
-            
-            <div className="space-y-8">
-              {/* Feature 1 */}
-              <div className="flex gap-6 items-start group">
-                <div className="flex-shrink-0">
-                  <div className="w-16 h-16 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                    <Brain className="w-8 h-8 text-primary" />
-                  </div>
-                </div>
-                <div className="space-y-2 flex-1">
-                  <h3 className="text-2xl font-semibold">IA Agentique Autonome</h3>
-                  <p className="text-muted-foreground text-lg">
-                    Notre système multi-agents orchestre automatiquement reconnaissance, exploitation et validation. 
-                    Comme une équipe de pentesters expérimentés, chaque agent a sa spécialité et collabore pour identifier les failles.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex justify-center py-4">
-                <ArrowRight className="w-6 h-6 text-primary/50" />
-              </div>
-
-              {/* Feature 2 */}
-              <div className="flex gap-6 items-start group">
-                <div className="flex-shrink-0">
-                  <div className="w-16 h-16 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                    <Target className="w-8 h-8 text-primary" />
-                  </div>
-                </div>
-                <div className="space-y-2 flex-1">
-                  <h3 className="text-2xl font-semibold">Exploitation Réelle</h3>
-                  <p className="text-muted-foreground text-lg">
-                    82% de taux de réussite au benchmark XBOW. Notre IA n'identifie pas seulement les vulnérabilités, 
-                    elle les exploite réellement, atteignant le niveau d'un pentester junior avec 2-3 ans d'expérience.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex justify-center py-4">
-                <ArrowRight className="w-6 h-6 text-primary/50" />
-              </div>
-
-              {/* Feature 3 */}
-              <div className="flex gap-6 items-start group">
-                <div className="flex-shrink-0">
-                  <div className="w-16 h-16 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                    <Zap className="w-8 h-8 text-primary" />
-                  </div>
-                </div>
-                <div className="space-y-2 flex-1">
-                  <h3 className="text-2xl font-semibold">Rapidité Sans Compromis</h3>
-                  <p className="text-muted-foreground text-lg">
-                    Détection et exploitation en quelques minutes, pas en semaines. 
-                    Notre plateforme teste en continu, vous alertant immédiatement des nouvelles vulnérabilités.
-                  </p>
-                </div>
-              </div>
+            <div className="text-center space-y-4">
+              <div className="text-6xl md:text-7xl font-bold text-gradient">100%</div>
+              <p className="text-xl text-muted-foreground">Infrastructure souveraine européenne</p>
+            </div>
+            <div className="text-center space-y-4">
+              <div className="text-6xl md:text-7xl font-bold text-gradient">10x</div>
+              <p className="text-xl text-muted-foreground">Plus rapide que le pentesting manuel</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Story Section 3: Les Garanties */}
-      <section className="py-16 relative">
+      {/* Features Sections */}
+      <section className="py-24">
         <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            <div className="flex items-center gap-4 mb-8">
-              <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
-                <span className="text-2xl font-bold text-primary">3</span>
-              </div>
-              <h2 className="text-3xl font-bold">La Confiance</h2>
-            </div>
+          <div className="max-w-6xl mx-auto space-y-32">
             
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="p-6 rounded-lg border border-border bg-card/50 space-y-4 hover:border-primary/30 transition-all">
-                <Shield className="w-12 h-12 text-primary" />
-                <h3 className="text-xl font-semibold">Conformité NIS2 & DORA</h3>
-                <p className="text-muted-foreground">
-                  Automatisation complète des exigences réglementaires en matière de tests d'intrusion.
+            {/* Feature 1 */}
+            <div className="grid md:grid-cols-2 gap-16 items-center">
+              <div className="space-y-6">
+                <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
+                  <Brain className="w-5 h-5 text-primary" />
+                  <span className="text-sm font-medium text-primary">IA Agentique</span>
+                </div>
+                <h2 className="text-4xl md:text-5xl font-bold leading-tight">
+                  Des Agents IA qui Pensent Comme des Hackers
+                </h2>
+                <p className="text-xl text-muted-foreground leading-relaxed">
+                  Des centaines d'agents IA spécialisés travaillent en parallèle pour découvrir, valider et exploiter les vulnérabilités sans intervention humaine. Chaque agent possède une expertise unique et collabore pour trouver ce que d'autres outils manquent.
                 </p>
               </div>
+              <div className="relative h-[400px] rounded-lg bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/20 flex items-center justify-center">
+                <Brain className="w-32 h-32 text-primary/40" />
+              </div>
+            </div>
 
-              <div className="p-6 rounded-lg border border-border bg-card/50 space-y-4 hover:border-primary/30 transition-all">
-                <Lock className="w-12 h-12 text-primary" />
-                <h3 className="text-xl font-semibold">Souveraineté Garantie</h3>
-                <p className="text-muted-foreground">
-                  Infrastructure 100% européenne. Vos données restent en Europe, aucune dépendance aux LLM américains ou chinois.
+            {/* Feature 2 */}
+            <div className="grid md:grid-cols-2 gap-16 items-center">
+              <div className="relative h-[400px] rounded-lg bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/20 flex items-center justify-center order-2 md:order-1">
+                <Zap className="w-32 h-32 text-primary/40" />
+              </div>
+              <div className="space-y-6 order-1 md:order-2">
+                <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
+                  <Zap className="w-5 h-5 text-primary" />
+                  <span className="text-sm font-medium text-primary">Rapidité</span>
+                </div>
+                <h2 className="text-4xl md:text-5xl font-bold leading-tight">
+                  Pentestez en Heures, Pas en Semaines
+                </h2>
+                <p className="text-xl text-muted-foreground leading-relaxed">
+                  Pas de planification, pas de délais. Déployez votre code et regardez notre IA se mettre au travail immédiatement. Des résultats en quelques minutes, une couverture complète en quelques heures.
                 </p>
               </div>
+            </div>
 
-              <div className="p-6 rounded-lg border border-border bg-card/50 space-y-4 hover:border-primary/30 transition-all">
-                <Award className="w-12 h-12 text-primary" />
-                <h3 className="text-xl font-semibold">Preuves Automatiques</h3>
-                <p className="text-muted-foreground">
-                  Chaque exploitation génère des PoC vérifiables et des rapports techniques détaillés.
+            {/* Feature 3 */}
+            <div className="grid md:grid-cols-2 gap-16 items-center">
+              <div className="space-y-6">
+                <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
+                  <Target className="w-5 h-5 text-primary" />
+                  <span className="text-sm font-medium text-primary">Exploitation Réelle</span>
+                </div>
+                <h2 className="text-4xl md:text-5xl font-bold leading-tight">
+                  Ne Détecte Pas. Exploite.
+                </h2>
+                <p className="text-xl text-muted-foreground leading-relaxed">
+                  Notre IA n'identifie pas seulement les vulnérabilités - elle les exploite réellement. Avec un niveau équivalent à un pentester junior avec 2-3 ans d'expérience, chaque faille est vérifiée et documentée avec des PoC automatiques.
                 </p>
+              </div>
+              <div className="relative h-[400px] rounded-lg bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/20 flex items-center justify-center">
+                <Target className="w-32 h-32 text-primary/40" />
+              </div>
+            </div>
+
+            {/* Feature 4 */}
+            <div className="grid md:grid-cols-2 gap-16 items-center">
+              <div className="relative h-[400px] rounded-lg bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/20 flex items-center justify-center order-2 md:order-1">
+                <Shield className="w-32 h-32 text-primary/40" />
+              </div>
+              <div className="space-y-6 order-1 md:order-2">
+                <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
+                  <Shield className="w-5 h-5 text-primary" />
+                  <span className="text-sm font-medium text-primary">Conformité</span>
+                </div>
+                <h2 className="text-4xl md:text-5xl font-bold leading-tight">
+                  Conforme NIS2 & DORA par Design
+                </h2>
+                <p className="text-xl text-muted-foreground leading-relaxed">
+                  Automatisation complète des exigences réglementaires. Notre plateforme documente chaque test, génère des rapports d'audit détaillés et maintient une traçabilité totale pour vos besoins de conformité.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* Sovereignty Section */}
+      <section className="py-24 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center space-y-8">
+            <Lock className="w-20 h-20 text-primary mx-auto" />
+            <h2 className="text-4xl md:text-5xl font-bold">
+              Souveraineté Numérique Garantie
+            </h2>
+            <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+              Infrastructure 100% hébergée en Europe. Vos données sensibles ne quittent jamais le territoire européen. Aucune dépendance aux modèles américains ou chinois. Votre sécurité, sous votre contrôle.
+            </p>
+            <div className="grid md:grid-cols-3 gap-8 pt-8">
+              <div className="space-y-2">
+                <Award className="w-12 h-12 text-primary mx-auto" />
+                <h3 className="text-lg font-semibold">RGPD Compliant</h3>
+                <p className="text-muted-foreground">Conformité totale aux réglementations européennes</p>
+              </div>
+              <div className="space-y-2">
+                <Lock className="w-12 h-12 text-primary mx-auto" />
+                <h3 className="text-lg font-semibold">Données Maîtrisées</h3>
+                <p className="text-muted-foreground">Hébergement et traitement en Europe uniquement</p>
+              </div>
+              <div className="space-y-2">
+                <Shield className="w-12 h-12 text-primary mx-auto" />
+                <h3 className="text-lg font-semibold">IA Souveraine</h3>
+                <p className="text-muted-foreground">Modèles propriétaires développés en Europe</p>
               </div>
             </div>
           </div>
@@ -197,19 +176,19 @@ const FeaturesPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 relative">
+      <section className="py-32">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center space-y-8 p-12 rounded-lg bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20">
-            <h2 className="text-4xl font-bold">
-              Prêt à Sécuriser Votre Infrastructure ?
+          <div className="max-w-4xl mx-auto text-center space-y-8">
+            <h2 className="text-5xl md:text-6xl font-bold leading-tight">
+              Prêt à Automatiser Votre Sécurité Offensive ?
             </h2>
-            <p className="text-xl text-muted-foreground">
-              Rejoignez les organisations qui ont choisi l'excellence en cybersécurité offensive
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Rejoignez les organisations qui font confiance à l'IA pour protéger leurs infrastructures critiques.
             </p>
-            <div className="flex gap-4 justify-center">
+            <div className="flex gap-4 justify-center pt-8">
               <Link to="/">
-                <Button size="lg" className="text-lg">
-                  Voir la Démo <ArrowRight className="ml-2 w-5 h-5" />
+                <Button size="lg" className="text-lg px-8">
+                  Demander une Démo
                 </Button>
               </Link>
             </div>
