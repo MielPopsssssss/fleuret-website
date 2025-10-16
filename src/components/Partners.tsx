@@ -32,16 +32,13 @@ const Partners = () => {
               <div 
                 key={`${partner.name}-1`}
                 className="flex-shrink-0 w-48 h-32 mx-8 group flex items-center justify-center hover:scale-110 transition-all"
-                style={{
-                  filter: 'drop-shadow(0 0 20px rgba(239, 68, 68, 0.3))',
-                }}
               >
                 <img 
                   src={partner.logo} 
                   alt={partner.name}
                   className="h-24 w-auto object-contain opacity-90 group-hover:opacity-100 transition-opacity"
                   style={{
-                    filter: 'drop-shadow(0 0 15px rgba(239, 68, 68, 0.4))',
+                    filter: 'drop-shadow(0 0 3px rgba(239, 68, 68, 0.15))',
                   }}
                 />
               </div>
@@ -51,16 +48,13 @@ const Partners = () => {
               <div 
                 key={`${partner.name}-2`}
                 className="flex-shrink-0 w-48 h-32 mx-8 group flex items-center justify-center hover:scale-110 transition-all"
-                style={{
-                  filter: 'drop-shadow(0 0 20px rgba(239, 68, 68, 0.3))',
-                }}
               >
                 <img 
                   src={partner.logo} 
                   alt={partner.name}
                   className="h-24 w-auto object-contain opacity-90 group-hover:opacity-100 transition-opacity"
                   style={{
-                    filter: 'drop-shadow(0 0 15px rgba(239, 68, 68, 0.4))',
+                    filter: 'drop-shadow(0 0 3px rgba(239, 68, 68, 0.15))',
                   }}
                 />
               </div>
