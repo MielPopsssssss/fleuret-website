@@ -1,13 +1,14 @@
 import ceaLogo from "@/assets/logo-cea.png";
 import edfLogo from "@/assets/logo-edf.png";
 import thalesLogo from "@/assets/logo-thales.png";
+import hecLogo from "@/assets/logo-hec.png";
 
 const partners = [
   { name: "EDF", logo: edfLogo, isText: false },
   { name: "Thales", logo: thalesLogo, isText: false },
   { name: "CEA", logo: ceaLogo, isText: false },
   { name: "École Polytechnique", logo: "X", isText: true },
-  { name: "HEC Paris", logo: "HEC", isText: true }
+  { name: "HEC Paris", logo: hecLogo, isText: false }
 ];
 
 const Partners = () => {
