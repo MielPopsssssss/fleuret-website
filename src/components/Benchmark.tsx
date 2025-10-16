@@ -76,47 +76,6 @@ const Benchmark = () => {
           </Card>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
-          <Card className="p-6 border-primary/10 hover:border-primary/30 transition-all">
-            <div className="space-y-4">
-              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                <Shield className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="text-xl font-semibold">Méthodologie Agentique</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">
-                Orchestration multi-agents : coordinator de planification, agents d'exécution sandboxés, 
-                et agent de validation pour prouver l'impact réel de chaque exploit.
-              </p>
-            </div>
-          </Card>
-
-          <Card className="p-6 border-primary/10 hover:border-primary/30 transition-all">
-            <div className="space-y-4">
-              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                <Target className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="text-xl font-semibold">Blackbox & Whitebox</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">
-                Tests en mode blackbox (attaque externe sans code source) et whitebox 
-                (accès complet pour workflows internes), adaptés à vos besoins d'audit.
-              </p>
-            </div>
-          </Card>
-
-          <Card className="p-6 border-primary/10 hover:border-primary/30 transition-all">
-            <div className="space-y-4">
-              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                <CheckCircle className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="text-xl font-semibold">Preuves Automatiques</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">
-                Chaque vulnérabilité exploitée génère un rapport avec preuve technique (flag CTF exfiltré), 
-                explication détaillée et recommandations de remédiation.
-              </p>
-            </div>
-          </Card>
-        </div>
-
         <div className="mt-12 max-w-3xl mx-auto">
           <Card className="p-6 border-primary/20 bg-card/30">
             <p className="text-sm text-muted-foreground leading-relaxed text-center">

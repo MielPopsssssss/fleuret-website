@@ -14,13 +14,13 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Hero />
       <Partners />
+      <Roadmap />
+      <Team />
       <Problem />
       <FeaturesPreview />
       <Testimonial />
       <Benchmark />
-      <Roadmap />
       <Urgency />
-      <Team />
       <Footer />
     </div>
   );
