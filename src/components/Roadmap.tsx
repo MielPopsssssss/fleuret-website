@@ -3,15 +3,29 @@ import { CheckCircle2, Circle } from "lucide-react";
 
 const milestones = [
   {
-    date: "Q4 2025",
-    title: "Model Alloy",
-    description: "Combinaison dynamique de plusieurs LLMs pour optimiser les performances selon le type de vulnérabilité.",
+    date: "Sept - Oct 2025",
+    title: "Phase de Validation",
+    items: [
+      "Étude de marché approfondie",
+      "Interviews avec 100+ acteurs du secteur : DSI, RSSI, CEO, CTO, pentesters",
+      "Réalisation d'un POC qui benchmark à 50%"
+    ],
+    completed: false
+  },
+  {
+    date: "Nov - Déc 2025",
+    title: "Phase de Croissance",
+    items: [
+      "Finalisation du MVP",
+      "Recherche de LOI (Letters of Intent)",
+      "Préparation de la levée de fonds"
+    ],
     completed: false
   },
   {
     date: "Q1 2026",
-    title: "Entraînement Continu",
-    description: "Boucle d'apprentissage automatique sur vos propres découvertes pour améliorer constamment la détection.",
+    title: "Model Alloy",
+    description: "Combinaison dynamique de plusieurs LLMs pour optimiser les performances selon le type de vulnérabilité.",
     completed: false
   },
   {
@@ -66,7 +80,7 @@ const Roadmap = () => {
                   </div>
 
                   <Card className={`p-6 ${milestone.completed ? 'border-primary/30 card-glow' : 'border-primary/10'} transition-all hover:border-primary/30`}>
-                    <div className="space-y-2">
+                    <div className="space-y-3">
                       <div className="flex items-center gap-3">
                         <span className="text-sm font-mono text-primary">{milestone.date}</span>
                         {milestone.completed && (
@@ -76,9 +90,20 @@ const Roadmap = () => {
                         )}
                       </div>
                       <h3 className="text-xl font-semibold">{milestone.title}</h3>
-                      <p className="text-muted-foreground leading-relaxed">
-                        {milestone.description}
-                      </p>
+                      {'items' in milestone ? (
+                        <ul className="space-y-2">
+                          {milestone.items.map((item, i) => (
+                            <li key={i} className="flex items-start gap-2 text-muted-foreground">
+                              <span className="text-primary mt-1.5">•</span>
+                              <span className="leading-relaxed">{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      ) : (
+                        <p className="text-muted-foreground leading-relaxed">
+                          {milestone.description}
+                        </p>
+                      )}
                     </div>
                   </Card>
                 </div>
