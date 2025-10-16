@@ -9,28 +9,28 @@ const features = [
   },
   {
     icon: Brain,
-    title: "IA Mistral Fine-Tuned",
-    description: "Souveraineté française avec orchestration intelligente des tests."
+    title: "IA Mistral Souveraine",
+    description: "LLM fine-tuné sur infrastructure française certifiée, conformité RGPD garantie et auditable."
   },
   {
     icon: Shield,
-    title: "Conformité NIS2",
-    description: "Ciblage prioritaire des exigences réglementaires européennes."
+    title: "Conformité NIS2 & DORA",
+    description: "Ciblage prioritaire des exigences réglementaires européennes, anticipation des standards à venir."
   },
   {
     icon: FileCheck,
     title: "Rapports Standards",
-    description: "Format professionnel avec synthèse exécutive et preuves techniques."
+    description: "Format professionnel avec synthèse exécutive et preuves techniques exploitables."
   },
   {
     icon: Repeat,
     title: "Audit Continu",
-    description: "Scans récurrents pour surveillance permanente de votre sécurité."
+    description: "Scans récurrents pour surveillance permanente et amélioration continue du modèle."
   },
   {
     icon: Gauge,
-    title: "Priorisation Intelligente",
-    description: "OWASP Top 10 et CVEs à fort impact identifiés automatiquement."
+    title: "Performance de Pointe",
+    description: "OWASP Top 10, CVEs critiques, avec le meilleur ratio vitesse/précision du marché."
   }
 ];
 
@@ -44,7 +44,7 @@ const Features = () => {
           </h2>
           <p className="text-xl text-muted-foreground">
             Reconnaissance, scanning, énumération, exploitation, post-exploitation et reporting, 
-            entièrement orchestrés par notre IA.
+            entièrement orchestrés par notre IA souveraine. Maîtrise totale des données, conformité européenne, leadership technologique.
           </p>
         </div>
 

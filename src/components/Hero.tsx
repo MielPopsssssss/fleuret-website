@@ -38,8 +38,9 @@ const Hero = () => {
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             De l'IP au rapport final sans intervention humaine. 
             <span className="text-primary font-semibold"> Audit continu</span>, 
-            <span className="text-primary font-semibold"> conformité NIS2</span>, 
-            souveraineté française garantie.
+            <span className="text-primary font-semibold"> conformité NIS2 & DORA</span>, 
+            <span className="text-primary font-semibold"> souveraineté technologique</span> garantie.
+            Infrastructure et données 100% maîtrisées en Europe.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">

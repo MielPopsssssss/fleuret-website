@@ -34,8 +34,14 @@ const milestones = [
   },
   {
     date: "Q3-Q4 2025",
-    title: "Scale & Expansion",
-    description: "Multi-tenancy, couverture techno élargie, partenariats stratégiques.",
+    title: "Scale & Leadership Européen",
+    description: "Multi-tenancy, couverture techno élargie, positionnement Top 3 du classement IA offensive EU.",
+    completed: false
+  },
+  {
+    date: "2030",
+    title: "Leader Souverain Mondial",
+    description: "Domination du marché européen, exportation vers pays alliés, référence mondiale en IA offensive souveraine.",
     completed: false
   }
 ];
