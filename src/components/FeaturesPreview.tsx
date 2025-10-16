@@ -1,11 +1,11 @@
-import { Shield, Zap, Target } from "lucide-react";
+import { Shield, Zap, Target, Clock } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 const featuresPreview = [
   {
-    icon: Target,
+    icon: Clock,
     title: "Résultats en Heures",
     description: "Obtenez vos résultats de pentest en quelques heures au lieu de plusieurs semaines."
   },
