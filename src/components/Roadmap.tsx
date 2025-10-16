@@ -17,7 +17,7 @@ const milestones = [
   {
     date: "Décembre 2024",
     title: "PoC Fonctionnel",
-    description: "Démonstration bout-en-bout : IP → reconnaissance → exploitation → rapport.",
+    description: "Démonstration bout-en-bout : IP → reconnaissance → exploitation → rapport. L'IA atteint le niveau d'un pentester junior avec 2-3 ans d'expérience, validé par 82% de réussite au benchmark XBOW.",
     completed: true
   },
   {
@@ -55,7 +55,7 @@ const Roadmap = () => {
             Notre <span className="text-gradient">Roadmap</span>
           </h2>
           <p className="text-xl text-muted-foreground">
-            3 mois d'innovation intensive, et ce n'est que le début.
+            3 mois d'innovation intensive : notre IA a déjà le niveau d'un pentester junior (2-3 ans d'XP).
           </p>
         </div>
 
