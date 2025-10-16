@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { Shield, ArrowLeft, Mail, Building2, User, MessageSquare } from "lucide-react";
+import { Shield, Mail, Building2, User, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 
 const Demo = () => {
   const [formData, setFormData] = useState({
@@ -40,22 +40,7 @@ const Demo = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <header className="border-b border-primary/10 py-4 sticky top-0 bg-background/95 backdrop-blur-sm z-50">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between">
-            <Link to="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-              <Shield className="w-6 h-6 text-primary" />
-              <span className="text-xl font-bold">fleuret.ai</span>
-            </Link>
-            <Link to="/">
-              <Button variant="ghost" size="sm">
-                <ArrowLeft className="w-4 h-4 mr-2" />
-                Retour
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </header>
+      <Navbar />
 
       <main className="flex-1">
         <section className="py-20 px-4">
