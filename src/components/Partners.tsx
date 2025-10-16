@@ -1,4 +1,3 @@
-import { useRef, useEffect } from "react";
 import ceaLogo from "@/assets/logo-cea.png";
 import edfLogo from "@/assets/logo-edf.png";
 import thalesLogo from "@/assets/logo-thales.png";
@@ -14,59 +13,6 @@ const partners = [
 ];
 
 const Partners = () => {
-  const scrollRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const scrollContainer = scrollRef.current;
-    if (!scrollContainer) return;
-
-    let isScrolling = false;
-    let startX: number;
-    let scrollLeft: number;
-
-    const handleMouseDown = (e: MouseEvent) => {
-      isScrolling = true;
-      startX = e.pageX - scrollContainer.offsetLeft;
-      scrollLeft = scrollContainer.scrollLeft;
-      scrollContainer.style.cursor = 'grabbing';
-    };
-
-    const handleMouseUp = () => {
-      isScrolling = false;
-      scrollContainer.style.cursor = 'grab';
-    };
-
-    const handleMouseMove = (e: MouseEvent) => {
-      if (!isScrolling) return;
-      e.preventDefault();
-      const x = e.pageX - scrollContainer.offsetLeft;
-      const walk = (x - startX) * 2;
-      scrollContainer.scrollLeft = scrollLeft - walk;
-    };
-
-    const handleScroll = () => {
-      const maxScroll = scrollContainer.scrollWidth / 2;
-      if (scrollContainer.scrollLeft >= maxScroll) {
-        scrollContainer.scrollLeft = 0;
-      } else if (scrollContainer.scrollLeft <= 0) {
-        scrollContainer.scrollLeft = maxScroll;
-      }
-    };
-
-    scrollContainer.addEventListener('mousedown', handleMouseDown);
-    scrollContainer.addEventListener('mouseup', handleMouseUp);
-    scrollContainer.addEventListener('mouseleave', handleMouseUp);
-    scrollContainer.addEventListener('mousemove', handleMouseMove);
-    scrollContainer.addEventListener('scroll', handleScroll);
-
-    return () => {
-      scrollContainer.removeEventListener('mousedown', handleMouseDown);
-      scrollContainer.removeEventListener('mouseup', handleMouseUp);
-      scrollContainer.removeEventListener('mouseleave', handleMouseUp);
-      scrollContainer.removeEventListener('mousemove', handleMouseMove);
-      scrollContainer.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
 
   return (
     <section className="py-24 relative border-y border-primary/10">
@@ -80,52 +26,41 @@ const Partners = () => {
           </p>
         </div>
 
-        <div 
-          ref={scrollRef}
-          className="relative overflow-x-auto cursor-grab active:cursor-grabbing"
-          style={{
-            scrollbarWidth: 'none',
-            msOverflowStyle: 'none',
-            WebkitOverflowScrolling: 'touch'
-          }}
-        >
+        <div className="relative overflow-hidden">
           <style>{`
-            .scrollbar-hide::-webkit-scrollbar {
-              display: none;
+            @keyframes scroll-infinite {
+              0% {
+                transform: translateX(0);
+              }
+              100% {
+                transform: translateX(-50%);
+              }
+            }
+            .animate-scroll-infinite {
+              animation: scroll-infinite 30s linear infinite;
+            }
+            .animate-scroll-infinite:hover {
+              animation-play-state: paused;
             }
           `}</style>
-          <div className="flex animate-scroll-x hover:pause scrollbar-hide">
-            {/* Premier set de logos */}
-            {partners.map((partner) => (
-              <div
-                key={`${partner.name}-1`}
-                className="flex-shrink-0 w-48 h-32 mx-8 group flex items-center justify-center hover:scale-110 transition-all"
-              >
-                <img
-                  src={partner.logo}
-                  alt={partner.name}
-                  className="h-24 w-auto object-contain opacity-90 group-hover:opacity-100 transition-opacity"
-                  style={{
-                    filter: "drop-shadow(0 0 10px hsl(var(--primary) / 0.15))",
-                  }}
-                />
-              </div>
-            ))}
-            {/* Second set pour le défilement continu */}
-            {partners.map((partner) => (
-              <div
-                key={`${partner.name}-2`}
-                className="flex-shrink-0 w-48 h-32 mx-8 group flex items-center justify-center hover:scale-110 transition-all"
-              >
-                <img
-                  src={partner.logo}
-                  alt={partner.name}
-                  className="h-24 w-auto object-contain opacity-90 group-hover:opacity-100 transition-opacity"
-                  style={{
-                    filter: "drop-shadow(0 0 3px hsl(var(--primary) / 0.15))",
-                  }}
-                />
-              </div>
+          <div className="flex animate-scroll-infinite">
+            {/* Triple duplication pour un défilement fluide */}
+            {[...Array(3)].map((_, setIndex) => (
+              partners.map((partner, index) => (
+                <div
+                  key={`${partner.name}-${setIndex}-${index}`}
+                  className="flex-shrink-0 w-48 h-32 mx-8 group flex items-center justify-center hover:scale-110 transition-transform"
+                >
+                  <img
+                    src={partner.logo}
+                    alt={partner.name}
+                    className="h-24 w-auto object-contain opacity-90 group-hover:opacity-100 transition-opacity"
+                    style={{
+                      filter: "drop-shadow(0 0 10px hsl(var(--primary) / 0.15))",
+                    }}
+                  />
+                </div>
+              ))
             ))}
           </div>
         </div>
