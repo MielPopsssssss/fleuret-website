@@ -1,3 +1,4 @@
+import { useRef, useEffect } from "react";
 import ceaLogo from "@/assets/logo-cea.png";
 import edfLogo from "@/assets/logo-edf.png";
 import thalesLogo from "@/assets/logo-thales.png";
@@ -13,6 +14,60 @@ const partners = [
 ];
 
 const Partners = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const scrollContainer = scrollRef.current;
+    if (!scrollContainer) return;
+
+    let isScrolling = false;
+    let startX: number;
+    let scrollLeft: number;
+
+    const handleMouseDown = (e: MouseEvent) => {
+      isScrolling = true;
+      startX = e.pageX - scrollContainer.offsetLeft;
+      scrollLeft = scrollContainer.scrollLeft;
+      scrollContainer.style.cursor = 'grabbing';
+    };
+
+    const handleMouseUp = () => {
+      isScrolling = false;
+      scrollContainer.style.cursor = 'grab';
+    };
+
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!isScrolling) return;
+      e.preventDefault();
+      const x = e.pageX - scrollContainer.offsetLeft;
+      const walk = (x - startX) * 2;
+      scrollContainer.scrollLeft = scrollLeft - walk;
+    };
+
+    const handleScroll = () => {
+      const maxScroll = scrollContainer.scrollWidth / 2;
+      if (scrollContainer.scrollLeft >= maxScroll) {
+        scrollContainer.scrollLeft = 0;
+      } else if (scrollContainer.scrollLeft <= 0) {
+        scrollContainer.scrollLeft = maxScroll;
+      }
+    };
+
+    scrollContainer.addEventListener('mousedown', handleMouseDown);
+    scrollContainer.addEventListener('mouseup', handleMouseUp);
+    scrollContainer.addEventListener('mouseleave', handleMouseUp);
+    scrollContainer.addEventListener('mousemove', handleMouseMove);
+    scrollContainer.addEventListener('scroll', handleScroll);
+
+    return () => {
+      scrollContainer.removeEventListener('mousedown', handleMouseDown);
+      scrollContainer.removeEventListener('mouseup', handleMouseUp);
+      scrollContainer.removeEventListener('mouseleave', handleMouseUp);
+      scrollContainer.removeEventListener('mousemove', handleMouseMove);
+      scrollContainer.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <section className="py-24 relative border-y border-primary/10">
       <div className="container mx-auto px-4">
@@ -25,8 +80,21 @@ const Partners = () => {
           </p>
         </div>
 
-        <div className="relative overflow-x-auto scrollbar-hide cursor-grab active:cursor-grabbing">
-          <div className="flex animate-scroll-x hover:pause">
+        <div 
+          ref={scrollRef}
+          className="relative overflow-x-auto cursor-grab active:cursor-grabbing"
+          style={{
+            scrollbarWidth: 'none',
+            msOverflowStyle: 'none',
+            WebkitOverflowScrolling: 'touch'
+          }}
+        >
+          <style>{`
+            .scrollbar-hide::-webkit-scrollbar {
+              display: none;
+            }
+          `}</style>
+          <div className="flex animate-scroll-x hover:pause scrollbar-hide">
             {/* Premier set de logos */}
             {partners.map((partner) => (
               <div
