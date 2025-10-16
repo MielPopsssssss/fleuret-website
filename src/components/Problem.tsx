@@ -7,10 +7,6 @@ const Problem = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12 space-y-4">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-primary/5 backdrop-blur-sm mb-4">
-              <AlertTriangle className="w-4 h-4 text-primary" />
-              <span className="text-sm font-medium">Le Problème Actuel</span>
-            </div>
             <h2 className="text-4xl md:text-5xl font-bold">
               Votre Équipe de Sécurité <span className="text-gradient">Est Débordée</span>
             </h2>
