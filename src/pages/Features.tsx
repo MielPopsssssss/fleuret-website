@@ -112,7 +112,7 @@ const FeaturesPage = () => {
                   Ne Détecte Pas. Exploite.
                 </h2>
                 <p className="text-xl text-muted-foreground leading-relaxed">
-                  Notre IA n'identifie pas seulement les vulnérabilités - elle les exploite réellement. Avec un niveau équivalent à un pentester junior avec 2-3 ans d'expérience, chaque faille est vérifiée et documentée avec des PoC automatiques.
+                  Notre IA n'identifie pas seulement les vulnérabilités - elle les exploite réellement. Avec un niveau équivalent à un pentester junior, chaque faille est vérifiée et documentée avec des PoC automatiques.
                 </p>
               </div>
               <div className="relative h-[400px] rounded-lg bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/20 flex items-center justify-center">

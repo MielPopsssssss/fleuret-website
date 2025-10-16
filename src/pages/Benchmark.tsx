@@ -32,7 +32,7 @@ const BenchmarkPage = () => {
                 
                 <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
                   XBOW est un benchmark standardisé reconnu qui évalue les capacités réelles d'exploitation de vulnérabilités. 
-                  Notre IA atteint <span className="text-primary font-semibold">le niveau d'un pentester junior avec 2-3 ans d'expérience</span>, 
+                  Notre IA atteint <span className="text-primary font-semibold">le niveau d'un pentester junior</span>, 
                   là où la moyenne du marché stagne à 40-50%.
                 </p>
 
