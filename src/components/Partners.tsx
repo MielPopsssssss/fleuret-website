@@ -31,48 +31,38 @@ const Partners = () => {
             {partners.map((partner) => (
               <div 
                 key={`${partner.name}-1`}
-                className="flex-shrink-0 w-48 h-32 mx-4 group flex items-center justify-center rounded-lg border border-primary/10 hover:border-primary/30 transition-all hover:card-glow bg-card/50 hover:scale-105"
+                className="flex-shrink-0 w-48 h-32 mx-8 group flex items-center justify-center hover:scale-110 transition-all"
+                style={{
+                  filter: 'drop-shadow(0 0 20px rgba(239, 68, 68, 0.3))',
+                }}
               >
-                <div className="text-center flex flex-col items-center justify-center">
-                  {partner.isText ? (
-                    <div className="text-3xl font-bold text-muted-foreground group-hover:text-primary transition-colors">
-                      {partner.logo}
-                    </div>
-                  ) : (
-                    <img 
-                      src={partner.logo} 
-                      alt={partner.name}
-                      className="h-20 w-auto object-contain"
-                    />
-                  )}
-                  <div className="text-xs text-muted-foreground mt-2 opacity-70 group-hover:opacity-100 transition-opacity">
-                    {partner.name}
-                  </div>
-                </div>
+                <img 
+                  src={partner.logo} 
+                  alt={partner.name}
+                  className="h-24 w-auto object-contain opacity-90 group-hover:opacity-100 transition-opacity"
+                  style={{
+                    filter: 'drop-shadow(0 0 15px rgba(239, 68, 68, 0.4))',
+                  }}
+                />
               </div>
             ))}
             {/* Second set pour le défilement continu */}
             {partners.map((partner) => (
               <div 
                 key={`${partner.name}-2`}
-                className="flex-shrink-0 w-48 h-32 mx-4 group flex items-center justify-center rounded-lg border border-primary/10 hover:border-primary/30 transition-all hover:card-glow bg-card/50 hover:scale-105"
+                className="flex-shrink-0 w-48 h-32 mx-8 group flex items-center justify-center hover:scale-110 transition-all"
+                style={{
+                  filter: 'drop-shadow(0 0 20px rgba(239, 68, 68, 0.3))',
+                }}
               >
-                <div className="text-center flex flex-col items-center justify-center">
-                  {partner.isText ? (
-                    <div className="text-3xl font-bold text-muted-foreground group-hover:text-primary transition-colors">
-                      {partner.logo}
-                    </div>
-                  ) : (
-                    <img 
-                      src={partner.logo} 
-                      alt={partner.name}
-                      className="h-20 w-auto object-contain"
-                    />
-                  )}
-                  <div className="text-xs text-muted-foreground mt-2 opacity-70 group-hover:opacity-100 transition-opacity">
-                    {partner.name}
-                  </div>
-                </div>
+                <img 
+                  src={partner.logo} 
+                  alt={partner.name}
+                  className="h-24 w-auto object-contain opacity-90 group-hover:opacity-100 transition-opacity"
+                  style={{
+                    filter: 'drop-shadow(0 0 15px rgba(239, 68, 68, 0.4))',
+                  }}
+                />
               </div>
             ))}
           </div>
