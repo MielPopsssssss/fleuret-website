@@ -1,4 +1,3 @@
-import { Shield } from "lucide-react";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import PentestTerminal from "@/components/PentestTerminal";
@@ -20,44 +19,6 @@ const Demo = () => {
                 <p className="text-xl text-muted-foreground leading-relaxed">
                   Découvrez comment notre IA autonome réalise un pentest complet sur un environnement Active Directory.
                 </p>
-              </div>
-
-              <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-8">
-                <div className="flex gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <Shield className="w-5 h-5 text-primary" />
-                  </div>
-                  <div className="space-y-1">
-                    <h3 className="font-semibold">Reconnaissance</h3>
-                    <p className="text-sm text-muted-foreground">
-                      Scan et énumération
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <Shield className="w-5 h-5 text-primary" />
-                  </div>
-                  <div className="space-y-1">
-                    <h3 className="font-semibold">Exploitation</h3>
-                    <p className="text-sm text-muted-foreground">
-                      Accès initial
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <Shield className="w-5 h-5 text-primary" />
-                  </div>
-                  <div className="space-y-1">
-                    <h3 className="font-semibold">Escalade</h3>
-                    <p className="text-sm text-muted-foreground">
-                      Privilèges SYSTEM
-                    </p>
-                  </div>
-                </div>
               </div>
 
               <PentestTerminal />
