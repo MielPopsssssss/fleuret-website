@@ -25,7 +25,7 @@ const Partners = () => {
           </p>
         </div>
 
-        <div className="relative overflow-hidden">
+        <div className="relative overflow-x-auto scrollbar-hide cursor-grab active:cursor-grabbing">
           <div className="flex animate-scroll-x hover:pause">
             {/* Premier set de logos */}
             {partners.map((partner) => (
@@ -38,7 +38,7 @@ const Partners = () => {
                   alt={partner.name}
                   className="h-24 w-auto object-contain opacity-90 group-hover:opacity-100 transition-opacity"
                   style={{
-                    filter: "drop-shadow(0 0 10px rgba(239, 68, 68, 0.15))",
+                    filter: "drop-shadow(0 0 10px hsl(var(--primary) / 0.15))",
                   }}
                 />
               </div>
@@ -54,7 +54,7 @@ const Partners = () => {
                   alt={partner.name}
                   className="h-24 w-auto object-contain opacity-90 group-hover:opacity-100 transition-opacity"
                   style={{
-                    filter: "drop-shadow(0 0 3px rgba(239, 68, 68, 0.15))",
+                    filter: "drop-shadow(0 0 3px hsl(var(--primary) / 0.15))",
                   }}
                 />
               </div>
