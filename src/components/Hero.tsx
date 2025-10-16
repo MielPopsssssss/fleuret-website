@@ -1,19 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { Shield, Zap, Lock } from "lucide-react";
 import heroCyber from "@/assets/hero-cyber.jpg";
-
 const Hero = () => {
-  return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
-      <div 
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: `url(${heroCyber})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
+      <div className="absolute inset-0 z-0" style={{
+      backgroundImage: `url(${heroCyber})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center'
+    }}>
         <div className="absolute inset-0 bg-background/90" />
       </div>
 
@@ -25,10 +20,7 @@ const Hero = () => {
       {/* Content */}
       <div className="container mx-auto px-4 z-10">
         <div className="max-w-5xl mx-auto text-center space-y-8 animate-in fade-in duration-1000">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-card/50 backdrop-blur-sm mb-4">
-            <Shield className="w-4 h-4 text-primary" />
-            <span className="text-sm font-medium">Pentesting Nouvelle Génération</span>
-          </div>
+          
 
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
             <span className="block mb-2">Pentesting Automatisé</span>
@@ -57,26 +49,27 @@ const Hero = () => {
 
           {/* Stats */}
           <div className="grid grid-cols-3 gap-8 pt-12 max-w-3xl mx-auto">
-            {[
-              { value: "82%", label: "XBOW Benchmark" },
-              { value: "100%", label: "Automatisé" },
-              { value: "24/7", label: "Audit continu" }
-            ].map((stat) => (
-              <div key={stat.label} className="space-y-2">
+            {[{
+            value: "82%",
+            label: "XBOW Benchmark"
+          }, {
+            value: "100%",
+            label: "Automatisé"
+          }, {
+            value: "24/7",
+            label: "Audit continu"
+          }].map(stat => <div key={stat.label} className="space-y-2">
                 <div className="text-3xl md:text-4xl font-bold text-primary glow-effect">
                   {stat.value}
                 </div>
                 <div className="text-sm text-muted-foreground">{stat.label}</div>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </div>
 
       {/* Bottom Gradient */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent z-0" />
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
