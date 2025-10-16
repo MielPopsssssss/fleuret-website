@@ -94,7 +94,7 @@ const Partners = () => {
               display: none;
             }
           `}</style>
-          <div className="flex animate-scroll-x hover:pause scrollbar-hide bg-white/10 backdrop-blur-sm rounded-lg py-4">
+          <div className="flex animate-scroll-x hover:pause scrollbar-hide">
             {/* Premier set de logos */}
             {partners.map((partner) => (
               <div
