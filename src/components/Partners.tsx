@@ -1,9 +1,11 @@
+import ceaLogo from "@/assets/logo-cea.png";
+
 const partners = [
-  { name: "EDF", logo: "EDF" },
-  { name: "Thales", logo: "THALES" },
-  { name: "CEA", logo: "CEA" },
-  { name: "École Polytechnique", logo: "X" },
-  { name: "HEC Paris", logo: "HEC" }
+  { name: "EDF", logo: "EDF", isText: true },
+  { name: "Thales", logo: "THALES", isText: true },
+  { name: "CEA", logo: ceaLogo, isText: false },
+  { name: "École Polytechnique", logo: "X", isText: true },
+  { name: "HEC Paris", logo: "HEC", isText: true }
 ];
 
 const Partners = () => {
@@ -27,10 +29,18 @@ const Partners = () => {
                 key={`${partner.name}-1`}
                 className="flex-shrink-0 w-48 h-32 mx-4 group flex items-center justify-center rounded-lg border border-primary/10 hover:border-primary/30 transition-all hover:card-glow bg-card/50 hover:scale-105"
               >
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-muted-foreground group-hover:text-primary transition-colors">
-                    {partner.logo}
-                  </div>
+                <div className="text-center flex flex-col items-center justify-center">
+                  {partner.isText ? (
+                    <div className="text-3xl font-bold text-muted-foreground group-hover:text-primary transition-colors">
+                      {partner.logo}
+                    </div>
+                  ) : (
+                    <img 
+                      src={partner.logo} 
+                      alt={partner.name}
+                      className="h-20 w-auto object-contain"
+                    />
+                  )}
                   <div className="text-xs text-muted-foreground mt-2 opacity-70 group-hover:opacity-100 transition-opacity">
                     {partner.name}
                   </div>
@@ -43,10 +53,18 @@ const Partners = () => {
                 key={`${partner.name}-2`}
                 className="flex-shrink-0 w-48 h-32 mx-4 group flex items-center justify-center rounded-lg border border-primary/10 hover:border-primary/30 transition-all hover:card-glow bg-card/50 hover:scale-105"
               >
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-muted-foreground group-hover:text-primary transition-colors">
-                    {partner.logo}
-                  </div>
+                <div className="text-center flex flex-col items-center justify-center">
+                  {partner.isText ? (
+                    <div className="text-3xl font-bold text-muted-foreground group-hover:text-primary transition-colors">
+                      {partner.logo}
+                    </div>
+                  ) : (
+                    <img 
+                      src={partner.logo} 
+                      alt={partner.name}
+                      className="h-20 w-auto object-contain"
+                    />
+                  )}
                   <div className="text-xs text-muted-foreground mt-2 opacity-70 group-hover:opacity-100 transition-opacity">
                     {partner.name}
                   </div>
