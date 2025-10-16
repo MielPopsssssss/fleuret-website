@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card";
-import { Shield, Database, Lock, Trophy, AlertTriangle, CheckCircle } from "lucide-react";
+import { Sword, Database, Lock, Trophy, AlertTriangle, CheckCircle } from "lucide-react";
 
 const Sovereignty = () => {
   return (
@@ -7,14 +7,14 @@ const Sovereignty = () => {
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-card/50 backdrop-blur-sm mb-4">
-            <Shield className="w-4 h-4 text-primary" />
-            <span className="text-sm font-medium">Souveraineté Technologique</span>
+            <Sword className="w-4 h-4 text-primary" />
+            <span className="text-sm font-medium">🇫🇷 Souveraineté Française & Européenne</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold">
-            Pourquoi la <span className="text-gradient">Souveraineté</span> est Cruciale
+            Le Fleuret : <span className="text-gradient">Précision, Intelligence & Excellence</span>
           </h2>
           <p className="text-xl text-muted-foreground">
-            Dans le cyber et l'IA offensive, la maîtrise des données, des infrastructures et de l'évolution technologique détermine le leadership européen de demain.
+            Comme le fleuret incarne la tradition française de l'escrime par sa précision et son intelligence tactique, <strong className="text-foreground">Fleuret AI</strong> représente l'excellence de la cybersécurité offensive européenne. Dans le cyber et l'IA offensive, la maîtrise des données, des infrastructures et de l'évolution technologique détermine le leadership de demain.
           </p>
         </div>
 
@@ -55,11 +55,11 @@ const Sovereignty = () => {
               <ul className="space-y-3 text-muted-foreground">
                 <li className="flex gap-3">
                   <span className="text-primary mt-1">✓</span>
-                  <span>LLM Mistral fine-tuné sur infrastructure française certifiée</span>
+                  <span>🇫🇷 LLM Mistral fine-tuné sur infrastructure française certifiée</span>
                 </li>
                 <li className="flex gap-3">
                   <span className="text-primary mt-1">✓</span>
-                  <span>Hébergement cloud souverain (Scaleway, OVH)</span>
+                  <span>🇪🇺 Hébergement cloud souverain européen (Scaleway, OVH)</span>
                 </li>
                 <li className="flex gap-3">
                   <span className="text-primary mt-1">✓</span>
@@ -78,18 +78,18 @@ const Sovereignty = () => {
           {[
             {
               icon: Database,
-              title: "Maîtrise des Données",
-              description: "Contrôle total sur les données d'entraînement et leur gouvernance, sans exposition aux lois extraterritoriales."
+              title: "🇫🇷 Maîtrise des Données",
+              description: "Contrôle total sur les données d'entraînement et leur gouvernance, sans exposition aux lois extraterritoriales américaines (Cloud Act, Patriot Act)."
             },
             {
               icon: Lock,
-              title: "Infrastructure Souveraine",
-              description: "Hébergement certifié EU, audits transparents, garantie de non-accès par des puissances tierces."
+              title: "🇪🇺 Infrastructure Souveraine",
+              description: "Hébergement certifié EU, audits transparents, garantie de non-accès par des puissances tierces. Solution 100% européenne."
             },
             {
               icon: Trophy,
-              title: "Leadership Européen 2030",
-              description: "Ambition de dominer le classement des IA offensives avec excellence technique et conformité exemplaire."
+              title: "Excellence Française 2030",
+              description: "Ambition de dominer le classement européen des IA offensives avec excellence technique française et conformité exemplaire."
             }
           ].map((item, index) => (
             <Card 

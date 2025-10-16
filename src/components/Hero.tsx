@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Shield, Zap, Lock } from "lucide-react";
+import { Sword, Zap, Lock } from "lucide-react";
 import heroCyber from "@/assets/hero-cyber.jpg";
 import { Link } from "react-router-dom";
 
@@ -22,17 +22,24 @@ const Hero = () => {
       {/* Content */}
       <div className="container mx-auto px-4 z-10">
         <div className="max-w-5xl mx-auto text-center space-y-8 animate-in fade-in duration-1000">
-          
+          {/* Logo emblème */}
+          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full border border-primary/30 bg-card/50 backdrop-blur-sm">
+            <Sword className="w-5 h-5 text-primary" />
+            <span className="text-lg font-bold">Fleuret AI</span>
+            <span className="text-sm text-muted-foreground">• Précision • Intelligence • Souveraineté</span>
+          </div>
 
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
             <span className="block mb-2">Pentesting Automatisé</span>
-            <span className="text-gradient glow-effect">Piloté par IA</span>
+            <span className="text-gradient glow-effect">Piloté par IA Souveraine</span>
           </h1>
 
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             De l'IP au rapport final sans intervention humaine. 
             <span className="text-primary font-semibold"> Audit continu</span>, 
             <span className="text-primary font-semibold"> conformité NIS2 & DORA</span>.
+            <br />
+            <span className="text-sm mt-2 inline-block">🇫🇷 Solution française pour la cybersécurité européenne</span>
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
