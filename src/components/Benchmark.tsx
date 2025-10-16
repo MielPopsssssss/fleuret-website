@@ -11,10 +11,10 @@ const Benchmark = () => {
             <span className="text-sm font-medium">Performance de Pointe</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold">
-            <span className="text-gradient">82% au Benchmark XBOW</span>
+            <span className="text-gradient">72% de Taux de Réussite</span>
           </h2>
           <p className="text-xl text-muted-foreground">
-            Le standard industriel pour évaluer objectivement les capacités des agents autonomes à exploiter des vulnérabilités réelles, à grande échelle.
+            Performance validée sur des benchmarks exigeants. Notre IA triple les performances par rapport à l'utilisation directe des LLMs standards.
           </p>
         </div>
 
@@ -23,18 +23,18 @@ const Benchmark = () => {
             <div className="grid md:grid-cols-2 gap-12">
               <div className="space-y-6">
                 <div>
-                  <div className="text-6xl md:text-7xl font-bold text-gradient mb-2">82%</div>
-                  <div className="text-xl text-muted-foreground">Taux de réussite XBOW</div>
-                  <div className="text-sm text-muted-foreground mt-1">vs 77% moyenne du secteur (MAPTA)</div>
+                  <div className="text-6xl md:text-7xl font-bold text-gradient mb-2">72%</div>
+                  <div className="text-xl text-muted-foreground">Taux de réussite</div>
+                  <div className="text-sm text-muted-foreground mt-1">vs ~30% GPT-4o | ~40% Gemini 2.5 Flash</div>
                 </div>
                 <p className="text-muted-foreground leading-relaxed">
-                  Sur 104 challenges CTF représentant des vulnérabilités réelles (SSRF, SQLi, XSS, IDOR...), 
-                  notre IA exploite avec succès <span className="text-primary font-semibold">82% des failles</span>, 
-                  surpassant les références actuelles du marché.
+                  Sur plus de 500 scénarios CTF et challenges pratiques représentant des vulnérabilités réelles, 
+                  notre architecture multi-agents atteint <span className="text-primary font-semibold">72% de réussite</span>, 
+                  triplant les performances des LLMs utilisés directement.
                 </p>
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary/10 border border-primary/20 mt-4">
                   <Trophy className="w-4 h-4 text-primary" />
-                  <span className="text-sm font-medium">Rank <span className="text-primary font-semibold">Pro Hacker</span> sur Hack The Box</span>
+                  <span className="text-sm font-medium">Entraîné sur <span className="text-primary font-semibold">500+ challenges réels</span></span>
                 </div>
               </div>
 

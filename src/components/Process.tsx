@@ -4,23 +4,18 @@ import { ArrowRight } from "lucide-react";
 const steps = [
   {
     number: "01",
-    title: "Entrée IP",
-    description: "Fournissez l'adresse IP ou la plage cible à auditer."
+    title: "Déploiement en 1 Clic",
+    description: "Connectez vos applications, zéro configuration complexe. Mise en place instantanée."
   },
   {
     number: "02",
-    title: "Reconnaissance",
-    description: "L'IA collecte les informations sur la cible et planifie l'attaque."
+    title: "Attaque Automatisée",
+    description: "Des agents IA reproduisent les techniques des meilleurs pentesters et collaborent pour découvrir toutes les failles."
   },
   {
     number: "03",
-    title: "Exploitation",
-    description: "Tests d'intrusion automatisés avec outils standards (Nmap, Metasploit, etc.)."
-  },
-  {
-    number: "04",
-    title: "Rapport",
-    description: "Génération automatique du rapport avec score de risque et recommandations."
+    title: "Exploits Validés",
+    description: "Pas de faux positifs, seulement des preuves exploitables et des recommandations prioritaires avec rapports détaillés."
   }
 ];
 
@@ -38,7 +33,7 @@ const Process = () => {
         </div>
 
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {steps.map((step, index) => (
               <div key={step.number} className="relative">
                 <Card className="p-6 h-full border-primary/10 hover:border-primary/30 transition-all hover:card-glow group">

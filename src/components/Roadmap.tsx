@@ -3,33 +3,27 @@ import { CheckCircle2, Circle } from "lucide-react";
 
 const milestones = [
   {
-    date: "Sept-Oct-Nov 2025",
-    title: "Inception, Recherche & Architecture",
-    description: "Définition du concept, constitution de l'équipe, étude de marché, conception système, fine-tuning Mistral, premiers tests sur Hack The Box.",
-    completed: true
-  },
-  {
-    date: "Déc-Jan-Fév 2025-2026",
-    title: "PoC Fonctionnel & HEC Launchpad",
-    description: "Démonstration bout-en-bout : IP → reconnaissance → exploitation → rapport. L'IA atteint le niveau d'un pentester junior, validé par 82% de réussite au benchmark XBOW. Présentation aux investisseurs, début de la levée de fonds.",
-    completed: true
-  },
-  {
-    date: "Q1-Q2 2026",
-    title: "V1 Production",
-    description: "Durcissement, conformité NIS2 complète, premiers clients pilotes.",
+    date: "Q4 2025",
+    title: "Model Alloy",
+    description: "Combinaison dynamique de plusieurs LLMs pour optimiser les performances selon le type de vulnérabilité.",
     completed: false
   },
   {
-    date: "Q3-Q4 2026",
-    title: "Scale & Leadership Européen",
-    description: "Multi-tenancy, couverture techno élargie, positionnement Top 3 du classement IA offensive EU.",
+    date: "Q1 2026",
+    title: "Entraînement Continu",
+    description: "Boucle d'apprentissage automatique sur vos propres découvertes pour améliorer constamment la détection.",
     completed: false
   },
   {
-    date: "2030",
-    title: "Leader Souverain Mondial",
-    description: "Domination du marché européen, exportation vers pays alliés, référence mondiale en IA offensive souveraine.",
+    date: "Q1 2026",
+    title: "Agents Spécialisés Avancés",
+    description: "Détection des failles métier complexes et recherche de zero-day avec agents hautement spécialisés.",
+    completed: false
+  },
+  {
+    date: "Continu",
+    title: "Transparence Totale",
+    description: "Publication trimestrielle de nos benchmarks et performances pour garantir la confiance et la traçabilité.",
     completed: false
   }
 ];
@@ -43,7 +37,7 @@ const Roadmap = () => {
             Notre <span className="text-gradient">Roadmap</span>
           </h2>
           <p className="text-xl text-muted-foreground">
-            3 mois d'innovation intensive : notre IA a déjà le niveau d'un pentester junior.
+            Innovation continue et amélioration constante de nos capacités de détection.
           </p>
         </div>
 

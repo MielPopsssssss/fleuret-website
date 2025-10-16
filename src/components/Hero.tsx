@@ -30,16 +30,13 @@ const Hero = () => {
           </div>
 
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
-            <span className="block mb-2">Pentesting Automatisé</span>
-            <span className="text-gradient glow-effect">Piloté par IA Souveraine</span>
+            <span className="block mb-2">Sécurisez Votre Entreprise</span>
+            <span className="text-gradient glow-effect">en Heures, Pas en Semaines</span>
           </h1>
 
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            De l'IP au rapport final sans intervention humaine. 
-            <span className="text-primary font-semibold"> Audit continu</span>, 
-            <span className="text-primary font-semibold"> conformité NIS2 & DORA</span>.
-            <br />
-            <span className="text-sm mt-2 inline-block">🇫🇷 Solution française pour la cybersécurité européenne</span>
+            La première plateforme de pentesting autonome pilotée par IA qui détecte, exploite et valide les vulnérabilités 24/7 — avec{" "}
+            <span className="text-primary font-semibold">très peu d'intervention manuelle</span>
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
@@ -48,13 +45,13 @@ const Hero = () => {
                 size="lg" 
                 className="text-lg group relative overflow-hidden"
               >
-                <span className="relative z-10">Demander une démo</span>
+                <span className="relative z-10">Démarrer un Scan Gratuit</span>
                 <Zap className="ml-2 w-5 h-5 relative z-10 transition-transform group-hover:rotate-12" />
                 <div className="absolute inset-0 bg-primary-glow opacity-0 group-hover:opacity-20 transition-opacity" />
               </Button>
             </Link>
             <Button size="lg" variant="outline" className="text-lg border-primary/30 hover:border-primary">
-              En savoir plus
+              Voir une Démo en Direct
               <Lock className="ml-2 w-5 h-5" />
             </Button>
           </div>
@@ -62,14 +59,14 @@ const Hero = () => {
           {/* Stats */}
           <div className="grid grid-cols-3 gap-8 pt-12 max-w-3xl mx-auto">
             {[{
-            value: "82%",
-            label: "XBOW Benchmark"
+            value: "72%",
+            label: "Taux de Réussite"
           }, {
-            value: "100%",
-            label: "Automatisé"
+            value: "<5%",
+            label: "Intervention Humaine"
           }, {
             value: "24/7",
-            label: "Audit continu"
+            label: "Tests Continus"
           }].map(stat => <div key={stat.label} className="space-y-2">
                 <div className="text-3xl md:text-4xl font-bold text-primary glow-effect">
                   {stat.value}
