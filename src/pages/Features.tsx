@@ -1,4 +1,4 @@
-import { Shield, Zap, Target, Brain, Award, Lock } from "lucide-react";
+import { Shield, Zap, Target, Brain, Award, Lock, Trophy } from "lucide-react";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -114,6 +114,10 @@ const FeaturesPage = () => {
                 <p className="text-xl text-muted-foreground leading-relaxed">
                   Notre IA n'identifie pas seulement les vulnérabilités - elle les exploite réellement. Avec un niveau équivalent à un pentester junior, chaque faille est vérifiée et documentée avec des PoC automatiques.
                 </p>
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary/10 border border-primary/20 mt-4">
+                  <Trophy className="w-4 h-4 text-primary" />
+                  <span className="text-sm font-medium">Rank <span className="text-primary font-semibold">Pro Hacker</span> sur Hack The Box</span>
+                </div>
               </div>
               <div className="relative h-[400px] rounded-lg bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/20 flex items-center justify-center">
                 <Target className="w-32 h-32 text-primary/40" />

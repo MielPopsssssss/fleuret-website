@@ -32,6 +32,10 @@ const Benchmark = () => {
                   notre IA exploite avec succès <span className="text-primary font-semibold">82% des failles</span>, 
                   surpassant les références actuelles du marché.
                 </p>
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary/10 border border-primary/20 mt-4">
+                  <Trophy className="w-4 h-4 text-primary" />
+                  <span className="text-sm font-medium">Rank <span className="text-primary font-semibold">Pro Hacker</span> sur Hack The Box</span>
+                </div>
               </div>
 
               <div className="space-y-4">

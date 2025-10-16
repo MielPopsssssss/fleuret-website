@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card";
-import { Target, Zap, CheckCircle2, TrendingUp } from "lucide-react";
+import { Target, Zap, CheckCircle2, TrendingUp, Trophy } from "lucide-react";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -35,6 +35,11 @@ const BenchmarkPage = () => {
                   Notre IA atteint <span className="text-primary font-semibold">le niveau d'un pentester junior</span>, 
                   là où la moyenne du marché stagne à 40-50%.
                 </p>
+
+                <div className="flex items-center justify-center gap-2 mt-6 p-4 rounded-lg bg-primary/5 border border-primary/20">
+                  <Trophy className="w-5 h-5 text-primary" />
+                  <span className="text-sm font-medium">Rank <span className="text-primary">Pro Hacker</span> sur Hack The Box</span>
+                </div>
 
                 <div className="grid md:grid-cols-2 gap-4 pt-6">
                   <div className="text-center p-4 rounded-lg bg-primary/5">
