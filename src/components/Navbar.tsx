@@ -52,16 +52,16 @@ const Navbar = () => {
                 Partenaires
                 <ChevronDown className="w-4 h-4" />
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-background p-0 w-auto max-w-[400px]">
-                <div className="flex gap-4 p-4 overflow-x-auto">
-                  <div className="flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity">
-                    <img src={logoEpita} alt="EPITA" className="h-12 w-auto" />
+              <DropdownMenuContent className="bg-background p-0 w-[250px]">
+                <div className="flex gap-6 p-4 overflow-x-scroll overflow-y-hidden scrollbar-thin">
+                  <div className="flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity w-32">
+                    <img src={logoEpita} alt="EPITA" className="h-16 w-auto object-contain" />
                   </div>
-                  <div className="flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity">
-                    <img src={logoEns} alt="ENS" className="h-12 w-auto" />
+                  <div className="flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity w-32">
+                    <img src={logoEns} alt="ENS" className="h-16 w-auto object-contain" />
                   </div>
-                  <div className="flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity">
-                    <img src={logoMva} alt="Mathématiques Vision Apprentissage" className="h-12 w-auto" />
+                  <div className="flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity w-32">
+                    <img src={logoMva} alt="Mathématiques Vision Apprentissage" className="h-16 w-auto object-contain" />
                   </div>
                 </div>
               </DropdownMenuContent>
