@@ -52,16 +52,18 @@ const Navbar = () => {
                 Partenaires
                 <ChevronDown className="w-4 h-4" />
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-background">
-                <DropdownMenuItem className="cursor-pointer">
-                  <img src={logoEpita} alt="EPITA" className="h-8 w-auto" />
-                </DropdownMenuItem>
-                <DropdownMenuItem className="cursor-pointer">
-                  <img src={logoEns} alt="ENS" className="h-8 w-auto" />
-                </DropdownMenuItem>
-                <DropdownMenuItem className="cursor-pointer">
-                  <img src={logoMva} alt="Mathématiques Vision Apprentissage" className="h-8 w-auto" />
-                </DropdownMenuItem>
+              <DropdownMenuContent className="bg-background p-0 w-auto max-w-[400px]">
+                <div className="flex gap-4 p-4 overflow-x-auto">
+                  <div className="flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity">
+                    <img src={logoEpita} alt="EPITA" className="h-12 w-auto" />
+                  </div>
+                  <div className="flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity">
+                    <img src={logoEns} alt="ENS" className="h-12 w-auto" />
+                  </div>
+                  <div className="flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity">
+                    <img src={logoMva} alt="Mathématiques Vision Apprentissage" className="h-12 w-auto" />
+                  </div>
+                </div>
               </DropdownMenuContent>
             </DropdownMenu>
           </nav>
