@@ -1,7 +1,16 @@
 import { Link, useLocation } from "react-router-dom";
-import { Sword } from "lucide-react";
+import { Sword, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import logoEpita from "@/assets/logo-epita.png";
+import logoEns from "@/assets/logo-ens.png";
+import logoMva from "@/assets/logo-mva.png";
 
 const Navbar = () => {
   const location = useLocation();
@@ -37,6 +46,24 @@ const Navbar = () => {
                 {item.label}
               </Link>
             ))}
+            
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+                Partenaires
+                <ChevronDown className="w-4 h-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="bg-background">
+                <DropdownMenuItem className="cursor-pointer">
+                  <img src={logoEpita} alt="EPITA" className="h-8 w-auto" />
+                </DropdownMenuItem>
+                <DropdownMenuItem className="cursor-pointer">
+                  <img src={logoEns} alt="ENS" className="h-8 w-auto" />
+                </DropdownMenuItem>
+                <DropdownMenuItem className="cursor-pointer">
+                  <img src={logoMva} alt="Mathématiques Vision Apprentissage" className="h-8 w-auto" />
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </nav>
 
           <Link to="/demo">
