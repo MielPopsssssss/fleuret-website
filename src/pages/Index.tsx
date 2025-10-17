@@ -1,7 +1,6 @@
 import Hero from "@/components/Hero";
 import Problem from "@/components/Problem";
 import Partners from "@/components/Partners";
-import Testimonial from "@/components/Testimonial";
 import Benchmark from "@/components/Benchmark";
 import Roadmap from "@/components/Roadmap";
 import Urgency from "@/components/Urgency";
@@ -16,7 +15,6 @@ const Index = () => {
       <Roadmap />
       <Team />
       <Problem />
-      <Testimonial />
       <Benchmark />
       <Urgency />
       <Footer />
