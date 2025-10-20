@@ -10,21 +10,24 @@ const team = [
     role: "CEO & Co-fondateur",
     education: "Télécom Paris, X-HEC Entrepreneur",
     description: "Vision stratégique et développement business.",
-    photo: yanisPhoto
+    photo: yanisPhoto,
+    linkedin: "https://www.linkedin.com/in/yanis-grigy-793635237/"
   },
   {
     name: "Pierre-Gabriel Berlureau",
     role: "CTO & Co-fondateur",
     education: "ENS Ulm, MVA",
     description: "Architecture IA et développement technique.",
-    photo: pierreGabrielPhoto
+    photo: pierreGabrielPhoto,
+    linkedin: "https://www.linkedin.com/in/pierre-gabriel-berlureau-427320313/"
   },
   {
     name: "Augustin Ponsin",
     role: "CPO & Co-fondateur",
     education: "Ex-Pentester, EPITA, EFREI, X-HEC",
     description: "Expertise pentesting et méthodologie.",
-    photo: augustinPhoto
+    photo: augustinPhoto,
+    linkedin: "https://www.linkedin.com/in/augustinponsin/"
   }
 ];
 
@@ -67,10 +70,15 @@ const Team = () => {
                 <p className="text-muted-foreground leading-relaxed">
                   {member.description}
                 </p>
-                <button className="flex items-center gap-2 text-sm text-primary hover:text-primary-glow transition-colors">
+                <a 
+                  href={member.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-sm text-primary hover:text-primary-glow transition-colors"
+                >
                   <Linkedin className="w-4 h-4" />
                   LinkedIn
-                </button>
+                </a>
               </div>
             </Card>
           ))}
