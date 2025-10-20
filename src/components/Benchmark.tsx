@@ -11,10 +11,10 @@ const Benchmark = () => {
             <span className="text-sm font-medium">Performance de Pointe</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold">
-            <span className="text-gradient">72% de Taux de Réussite</span>
+            <span className="text-gradient">72% sur le Benchmark XBOW</span>
           </h2>
           <p className="text-xl text-muted-foreground">
-            Performance validée sur des benchmarks exigeants. Notre IA triple les performances par rapport à l'utilisation directe des LLMs standards.
+            Performance validée sur le benchmark XBOW, le plus exigeant du marché. Notre IA triple les performances par rapport à l'utilisation directe des LLMs standards.
           </p>
         </div>
 
@@ -24,12 +24,12 @@ const Benchmark = () => {
               <div className="space-y-6">
                 <div>
                   <div className="text-6xl md:text-7xl font-bold text-gradient mb-2">72%</div>
-                  <div className="text-xl text-muted-foreground">Taux de réussite</div>
+                  <div className="text-xl text-muted-foreground">Benchmark XBOW</div>
                   <div className="text-sm text-muted-foreground mt-1">vs ~30% GPT-4o | ~40% Gemini 2.5 Flash</div>
                 </div>
                 <p className="text-muted-foreground leading-relaxed">
-                  Sur plus de 500 scénarios CTF et challenges pratiques représentant des vulnérabilités réelles, 
-                  notre architecture multi-agents atteint <span className="text-primary font-semibold">72% de réussite</span>, 
+                  Le benchmark XBOW représente le standard le plus exigeant en pentest automatisé avec plus de 500 scénarios CTF et challenges pratiques. 
+                  Notre architecture multi-agents atteint <span className="text-primary font-semibold">72% de réussite</span>, 
                   triplant les performances des LLMs utilisés directement.
                 </p>
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary/10 border border-primary/20 mt-4">

@@ -56,7 +56,8 @@ const Hero = () => {
           <div className="grid grid-cols-3 gap-8 pt-12 max-w-3xl mx-auto">
             {[{
             value: "72%",
-            label: "Taux de Réussite"
+            label: "Taux de Réussite",
+            sublabel: "Benchmark XBOW"
           }, {
             value: "<5%",
             label: "Intervention Humaine"
