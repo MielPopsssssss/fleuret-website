@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Sword, Zap, Lock } from "lucide-react";
+import { Sword, Zap } from "lucide-react";
 import heroCyber from "@/assets/hero-cyber.jpg";
 import { Link } from "react-router-dom";
 
@@ -50,10 +50,6 @@ const Hero = () => {
                 <div className="absolute inset-0 bg-primary-glow opacity-0 group-hover:opacity-20 transition-opacity" />
               </Button>
             </Link>
-            <Button size="lg" variant="outline" className="text-lg border-primary/30 hover:border-primary">
-              Voir une Démo en Direct
-              <Lock className="ml-2 w-5 h-5" />
-            </Button>
           </div>
 
           {/* Stats */}
