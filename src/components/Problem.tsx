@@ -30,8 +30,8 @@ const Problem = () => {
                 <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto">
                   <AlertTriangle className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="text-2xl font-bold">30%</h3>
-                <p className="text-muted-foreground">Des failles critiques peuvent passer inaperçues</p>
+                <h3 className="text-2xl font-bold">Tests Ponctuels</h3>
+                <p className="text-muted-foreground">Les pentests manuels ne testent qu'à un instant T</p>
               </div>
 
               <div className="text-center space-y-3">
