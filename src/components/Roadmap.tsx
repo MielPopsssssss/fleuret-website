@@ -27,18 +27,6 @@ const milestones = [
     title: "Model Alloy",
     description: "Combinaison dynamique de plusieurs LLMs pour optimiser les performances selon le type de vulnérabilité.",
     completed: false
-  },
-  {
-    date: "Q1 2026",
-    title: "Agents Spécialisés Avancés",
-    description: "Détection des failles métier complexes et recherche de zero-day avec agents hautement spécialisés.",
-    completed: false
-  },
-  {
-    date: "Continu",
-    title: "Transparence Totale",
-    description: "Publication trimestrielle de nos benchmarks et performances pour garantir la confiance et la traçabilité.",
-    completed: false
   }
 ];
 
