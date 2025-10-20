@@ -53,14 +53,11 @@ const Hero = () => {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-8 pt-12 max-w-3xl mx-auto">
+          <div className="grid grid-cols-2 gap-8 pt-12 max-w-2xl mx-auto">
             {[{
             value: "72%",
             label: "Taux de Réussite",
             sublabel: "Benchmark XBOW"
-          }, {
-            value: "<5%",
-            label: "Intervention Humaine"
           }, {
             value: "24/7",
             label: "Tests Continus"
