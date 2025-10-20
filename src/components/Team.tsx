@@ -1,24 +1,30 @@
 import { Card } from "@/components/ui/card";
 import { Linkedin } from "lucide-react";
+import yanisPhoto from "@/assets/yanis.png";
+import augustinPhoto from "@/assets/augustin.png";
+import pierreGabrielPhoto from "@/assets/pierre-gabriel.png";
 
 const team = [
   {
     name: "Yanis Grigy",
     role: "CEO & Co-fondateur",
     education: "Télécom Paris, X-HEC Entrepreneur",
-    description: "Vision stratégique et développement business."
+    description: "Vision stratégique et développement business.",
+    photo: yanisPhoto
   },
   {
     name: "Pierre-Gabriel Berlureau",
     role: "CTO & Co-fondateur",
     education: "ENS Ulm, MVA",
-    description: "Architecture IA et développement technique."
+    description: "Architecture IA et développement technique.",
+    photo: pierreGabrielPhoto
   },
   {
     name: "Augustin Ponsin",
     role: "CPO & Co-fondateur",
     education: "Ex-Pentester, EPITA, EFREI, X-HEC",
-    description: "Expertise pentesting et méthodologie."
+    description: "Expertise pentesting et méthodologie.",
+    photo: augustinPhoto
   }
 ];
 
@@ -46,9 +52,11 @@ const Team = () => {
               }}
             >
               <div className="space-y-4">
-                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center text-2xl font-bold text-primary">
-                  {member.name.split(' ').map(n => n[0]).join('')}
-                </div>
+                <img 
+                  src={member.photo} 
+                  alt={member.name}
+                  className="w-20 h-20 rounded-full object-cover"
+                />
                 <div>
                   <h3 className="text-xl font-semibold">{member.name}</h3>
                   <p className="text-primary font-medium text-sm">{member.role}</p>
