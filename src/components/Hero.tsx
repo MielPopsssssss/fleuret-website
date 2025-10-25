@@ -30,13 +30,11 @@ const Hero = () => {
           </div>
 
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
-            <span className="block mb-2">Sécurisez Votre Entreprise</span>
-            <span className="text-gradient glow-effect">en Heures, Pas en Semaines</span>
+            <span className="text-gradient glow-effect">Pentest automatisé, rapports prêts NIS2</span>
           </h1>
 
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            La première plateforme de pentesting autonome pilotée par IA qui détecte, exploite et valide les vulnérabilités 24/7 — avec{" "}
-            <span className="text-primary font-semibold">très peu d'intervention manuelle</span>
+            De l'IP au rapport audit‑ready, en continu, hébergé en Europe.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
