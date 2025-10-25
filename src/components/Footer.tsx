@@ -20,8 +20,8 @@ const Footer = () => {
             <div className="space-y-2 text-muted-foreground">
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-primary" />
-                <a href="mailto:contact@fleuret.ai" className="hover:text-primary transition-colors">
-                  contact@fleuret.ai
+                <a href="mailto:contact@fleuret-ai.com" className="hover:text-primary transition-colors">
+                  contact@fleuret-ai.com
                 </a>
               </div>
               <div className="flex items-center gap-2">
