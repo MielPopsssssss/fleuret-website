@@ -25,7 +25,7 @@ const Hero = () => {
         <div className="max-w-5xl mx-auto text-center space-y-8 animate-in fade-in duration-1000">
           {/* Logo */}
           <div className="inline-flex items-center justify-center">
-            <img src={logoFleuret} alt="Fleuret AI" className="h-16 md:h-20" />
+            <img src={logoFleuret} alt="Fleuret AI" className="h-32 md:h-40 lg:h-48" />
           </div>
 
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
