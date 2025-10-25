@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { Sword, Zap } from "lucide-react";
+import { Zap } from "lucide-react";
 import heroCyber from "@/assets/hero-cyber.jpg";
+import logoFleuret from "@/assets/logo-fleuret.png";
 import { Link } from "react-router-dom";
 
 const Hero = () => {
@@ -24,7 +25,7 @@ const Hero = () => {
         <div className="max-w-5xl mx-auto text-center space-y-8 animate-in fade-in duration-1000">
           {/* Logo emblème */}
           <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full border border-primary/30 bg-card/50 backdrop-blur-sm">
-            <Sword className="w-5 h-5 text-primary" />
+            <img src={logoFleuret} alt="Fleuret AI Logo" className="w-8 h-8" />
             <span className="text-lg font-bold">Fleuret AI</span>
             <span className="text-sm text-muted-foreground">• Précision • Intelligence • Souveraineté</span>
           </div>
