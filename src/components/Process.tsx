@@ -1,57 +1,60 @@
-import { Shield, Zap, FileCheck, Download } from "lucide-react";
+import { Card } from "@/components/ui/card";
+import { ArrowRight } from "lucide-react";
 
 const steps = [
   {
-    icon: Shield,
-    title: "Configuration guidée rapide",
-    description: "Pas besoin de connaître tous les détails techniques, remplissez le formulaire guidé et réservez un appel"
+    number: "01",
+    title: "Déploiement en 1 Clic",
+    description: "Connectez vos applications, zéro configuration complexe. Mise en place instantanée."
   },
   {
-    icon: Zap,
-    title: "Notre IA attaque vos actifs",
-    description: "Nous testons votre infrastructure pour détecter les vulnérabilités automatiquement"
+    number: "02",
+    title: "Attaque Automatisée",
+    description: "Des agents IA reproduisent les techniques des meilleurs pentesters et collaborent pour découvrir toutes les failles."
   },
   {
-    icon: FileCheck,
-    title: "Remédiation assistée des vulnérabilités critiques",
-    description: "Recevez une notification instantanée pour chaque vulnérabilité découverte"
-  },
-  {
-    icon: Download,
-    title: "Téléchargez votre rapport de conformité",
-    description: "Choisissez entre résumé exécutif ou rapport détaillé. Partagez-le ou exportez-le en PDF"
+    number: "03",
+    title: "Exploits Validés",
+    description: "Pas de faux positifs, seulement des preuves exploitables et des recommandations prioritaires avec rapports détaillés."
   }
 ];
 
 const Process = () => {
   return (
-    <section className="py-32 px-4">
-      <div className="container mx-auto max-w-6xl">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-24">
-          Comment obtenir votre pentest<br />
-          <span className="text-muted-foreground">en moins d'une semaine</span>
-        </h2>
+    <section className="py-24 relative">
+      <div className="container mx-auto px-4">
+        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+          <h2 className="text-4xl md:text-5xl font-bold">
+            Comment ça <span className="text-gradient">Fonctionne</span>
+          </h2>
+          <p className="text-xl text-muted-foreground">
+            Un processus simple, entièrement automatisé du début à la fin.
+          </p>
+        </div>
 
-        <div className="space-y-32">
-          {steps.map((step, index) => (
-            <div 
-              key={index}
-              className="grid md:grid-cols-2 gap-12 items-center"
-            >
-              <div className={`space-y-6 ${index % 2 === 1 ? 'md:order-2' : ''}`}>
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-muted">
-                  <step.icon className="w-8 h-8" />
-                </div>
-                <h3 className="text-3xl font-bold">{step.title}</h3>
-                <p className="text-xl text-muted-foreground leading-relaxed">
-                  {step.description}
-                </p>
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {steps.map((step, index) => (
+              <div key={step.number} className="relative">
+                <Card className="p-6 h-full border-primary/10 hover:border-primary/30 transition-all hover:card-glow group">
+                  <div className="space-y-4">
+                    <div className="text-5xl font-bold text-primary/20 group-hover:text-primary/40 transition-colors">
+                      {step.number}
+                    </div>
+                    <h3 className="text-xl font-semibold">{step.title}</h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {step.description}
+                    </p>
+                  </div>
+                </Card>
+                {index < steps.length - 1 && (
+                  <div className="hidden lg:block absolute top-1/2 -right-3 transform -translate-y-1/2 z-10">
+                    <ArrowRight className="w-6 h-6 text-primary/50" />
+                  </div>
+                )}
               </div>
-              <div className={`${index % 2 === 1 ? 'md:order-1' : ''}`}>
-                <div className="aspect-square bg-muted/30 rounded-3xl border border-border" />
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
