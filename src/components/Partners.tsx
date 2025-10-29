@@ -49,7 +49,7 @@ const Partners = () => {
   };
 
   return (
-    <section className="py-24 relative border-y border-primary/10">
+    <section id="partners" className="py-24 relative border-y border-primary/10">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <h2 className="text-4xl md:text-5xl font-bold">

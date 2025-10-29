@@ -1,16 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
-import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import logoEpita from "@/assets/logo-epita.png";
-import logoEns from "@/assets/logo-ens.png";
-import logoMva from "@/assets/logo-mva.png";
 import logoFleuretSword from "@/assets/logo-fleuret-sword.jpeg";
 
 const Navbar = () => {
@@ -45,29 +35,16 @@ const Navbar = () => {
               </Link>
             ))}
             
-            <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
-                Partenaires
-                <ChevronDown className="w-4 h-4" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-background p-0 w-[250px]">
-                <div className="flex gap-6 p-4 overflow-x-scroll overflow-y-hidden scrollbar-thin">
-                  <div className="flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity w-32">
-                    <img src={logoEpita} alt="EPITA" className="h-16 w-auto object-contain" />
-                  </div>
-                  <div className="flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity w-32">
-                    <img src={logoEns} alt="ENS" className="h-16 w-auto object-contain" />
-                  </div>
-                  <div className="flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity w-32">
-                    <img src={logoMva} alt="Mathématiques Vision Apprentissage" className="h-16 w-auto object-contain" />
-                  </div>
-                </div>
-              </DropdownMenuContent>
-            </DropdownMenu>
+            <Link
+              to="/#partners"
+              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+            >
+              Partenaires
+            </Link>
           </nav>
 
-          <Link to="/demo">
-            <Button>Voir la démo</Button>
+          <Link to="/waitlist">
+            <Button>Rejoindre notre waitlist</Button>
           </Link>
         </div>
       </div>
