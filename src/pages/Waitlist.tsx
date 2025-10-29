@@ -8,6 +8,8 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import { z } from "zod";
 import logoFleuret from "@/assets/logo-fleuret.png";
+import { Link } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
 
 const waitlistSchema = z.object({
   name: z.string().trim().min(1, { message: "Le nom est requis" }).max(100, { message: "Le nom doit faire moins de 100 caractères" }),
@@ -71,18 +73,28 @@ const Waitlist = () => {
     <div className="min-h-screen bg-gradient-to-b from-blue-50 via-blue-50/30 to-white flex items-center justify-center py-12 px-4">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(59,130,246,0.08),transparent_60%),radial-gradient(ellipse_at_bottom_left,rgba(168,85,247,0.08),transparent_60%)] pointer-events-none" />
       
-      <Card className="w-full max-w-2xl p-8 relative z-10">
-        <div className="text-center mb-8">
-          <div className="flex justify-center mb-6">
-            <img src={logoFleuret} alt="Fleuret AI" className="h-24" />
-          </div>
-          <h1 className="text-4xl font-bold mb-4">
-            Rejoindre notre <span className="text-gradient">Waitlist</span>
-          </h1>
-          <p className="text-muted-foreground">
-            Soyez parmi les premiers à découvrir nos pentests continus propulsés par l'IA
-          </p>
+      <div className="w-full max-w-2xl relative z-10">
+        <div className="mb-4">
+          <Link to="/">
+            <Button variant="outline" size="sm">
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              Retour
+            </Button>
+          </Link>
         </div>
+
+        <Card className="p-8">
+          <div className="text-center mb-8">
+            <div className="flex justify-center mb-6">
+              <img src={logoFleuret} alt="Fleuret AI" className="h-24" />
+            </div>
+            <h1 className="text-4xl font-bold mb-4">
+              Rejoindre notre <span className="text-gradient">Waitlist</span>
+            </h1>
+            <p className="text-muted-foreground">
+              Soyez parmi les premiers à découvrir nos pentests continus propulsés par l'IA
+            </p>
+          </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="space-y-2">
@@ -173,6 +185,7 @@ const Waitlist = () => {
           </div>
         </form>
       </Card>
+    </div>
     </div>
   );
 };
