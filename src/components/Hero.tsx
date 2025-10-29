@@ -9,7 +9,7 @@ const Hero = () => {
       <div className="relative z-10 max-w-5xl mx-auto text-center space-y-12">
         {/* Logo */}
         <div className="flex justify-center mb-8">
-          <img src={logoFleuret} alt="Fleuret AI" className="h-160w-auto opacity-90" />
+          <img src={logoFleuret} alt="Fleuret AI" className="h-12 w-auto" />
         </div>
 
         {/* Main headline */}
