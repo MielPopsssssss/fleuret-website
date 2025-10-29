@@ -4,10 +4,6 @@ import { Link } from "react-router-dom";
 
 const Hero = () => {
   return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Light Modern Gradient Background */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-br from-blue-50 via-purple-50 to-slate-50" />
-      <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_top_right,rgba(59,130,246,0.1),transparent_50%),radial-gradient(ellipse_at_bottom_left,rgba(168,85,247,0.1),transparent_50%)]" />
-
       {/* Animated Grid */}
       <div className="absolute inset-0 z-0 opacity-20">
         <div className="h-full w-full bg-[linear-gradient(to_right,hsl(var(--primary))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--primary))_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
