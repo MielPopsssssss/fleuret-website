@@ -26,7 +26,7 @@ const Hero = () => {
             De l'IP au rapport audit‑ready, en continu, hébergé en Europe.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4 pb-16">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4 pb-16">
             <Link to="/demo">
               <Button 
                 size="lg" 
@@ -35,12 +35,14 @@ const Hero = () => {
                 Voir notre POC fonctionel
               </Button>
             </Link>
-            <Button 
-              size="lg" 
-              className="text-lg hover:bg-white hover:text-foreground transition-colors"
-            >
-              Rejoindre notre waitlist
-            </Button>
+            <Link to="/waitlist">
+              <Button 
+                size="lg" 
+                className="text-lg hover:bg-white hover:text-foreground transition-colors"
+              >
+                Rejoindre notre waitlist
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

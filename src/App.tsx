@@ -8,6 +8,7 @@ import FeaturesPage from "./pages/Features";
 import BenchmarkPage from "./pages/Benchmark";
 import SovereigntyPage from "./pages/Sovereignty";
 import Demo from "./pages/Demo";
+import Waitlist from "./pages/Waitlist";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/benchmark" element={<BenchmarkPage />} />
           <Route path="/sovereignty" element={<SovereigntyPage />} />
           <Route path="/demo" element={<Demo />} />
+          <Route path="/waitlist" element={<Waitlist />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

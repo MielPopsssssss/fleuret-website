@@ -75,16 +75,6 @@ const Benchmark = () => {
             </div>
           </Card>
         </div>
-
-        <div className="mt-12 max-w-3xl mx-auto">
-          <Card className="p-6 border-primary/20 bg-white">
-            <p className="text-sm text-muted-foreground leading-relaxed text-center">
-              <span className="text-primary font-semibold">Éthique et reproductibilité :</span> Tous nos tests 
-              sont menés en environnement isolé sans impact production, avec disclosure responsable. 
-              Notre approche open-source garantit des résultats vérifiables et transparents.
-            </p>
-          </Card>
-        </div>
       </div>
     </section>
   );
