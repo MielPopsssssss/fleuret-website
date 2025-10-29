@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import logoFleuret from "@/assets/logo-fleuret.png";
+import logoFleuret from "@/assets/logo-fleuret-new.png";
 const Hero = () => {
   return <section className="relative min-h-screen flex flex-col items-center justify-center px-4 overflow-hidden">
       {/* Subtle gradient background */}
