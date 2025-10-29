@@ -3,7 +3,7 @@ import { Trophy, Target, Zap, CheckCircle, TrendingUp, Shield } from "lucide-rea
 
 const Benchmark = () => {
   return (
-    <section className="py-24 relative bg-gradient-to-b from-background/50 to-background">
+    <section className="py-24 relative">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-card/50 backdrop-blur-sm mb-4">
@@ -19,7 +19,7 @@ const Benchmark = () => {
         </div>
 
         <div className="max-w-5xl mx-auto mb-16">
-          <Card className="p-8 md:p-12 border-primary/30 bg-gradient-to-br from-card/80 to-card/50 backdrop-blur-sm card-glow">
+          <Card className="p-8 md:p-12 border-primary/30 bg-white card-glow">
             <div className="grid md:grid-cols-2 gap-12">
               <div className="space-y-6">
                 <div>
@@ -61,7 +61,7 @@ const Benchmark = () => {
                     value: "Coût tokens/calcul maîtrisé"
                   }
                 ].map((metric) => (
-                  <div key={metric.label} className="flex gap-4 items-start p-4 rounded-lg bg-background/50 border border-primary/10">
+                  <div key={metric.label} className="flex gap-4 items-start p-4 rounded-lg bg-secondary/30 border border-primary/10">
                     <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
                       <metric.icon className="w-5 h-5 text-primary" />
                     </div>
@@ -77,7 +77,7 @@ const Benchmark = () => {
         </div>
 
         <div className="mt-12 max-w-3xl mx-auto">
-          <Card className="p-6 border-primary/20 bg-card/30">
+          <Card className="p-6 border-primary/20 bg-white">
             <p className="text-sm text-muted-foreground leading-relaxed text-center">
               <span className="text-primary font-semibold">Éthique et reproductibilité :</span> Tous nos tests 
               sont menés en environnement isolé sans impact production, avec disclosure responsable. 

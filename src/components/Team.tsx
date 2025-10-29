@@ -48,7 +48,7 @@ const Team = () => {
           {team.map((member, index) => (
             <Card 
               key={member.name}
-              className="p-6 card-glow hover:scale-105 transition-all duration-300 border-primary/10 hover:border-primary/30"
+              className="p-6 card-glow hover:scale-105 transition-all duration-300 border-primary/10 hover:border-primary/30 bg-white"
               style={{
                 animationDelay: `${index * 100}ms`,
                 animation: 'fade-in 0.5s ease-out forwards'
