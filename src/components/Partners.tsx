@@ -3,6 +3,10 @@ import edfLogo from "@/assets/logo-edf.png";
 import thalesLogo from "@/assets/logo-thales.png";
 import hecLogo from "@/assets/logo-hec.png";
 import polytechniqueLogo from "@/assets/logo-polytechnique.png";
+import epitaLogo from "@/assets/logo-epita.png";
+import ensLogo from "@/assets/logo-ens.jpeg";
+import mvaLogo from "@/assets/logo-mva.jpeg";
+import telecomLogo from "@/assets/logo-telecom.svg";
 
 const partners = [
   { name: "EDF", logo: edfLogo, isText: false },
@@ -10,6 +14,10 @@ const partners = [
   { name: "CEA", logo: ceaLogo, isText: false },
   { name: "École Polytechnique", logo: polytechniqueLogo, isText: false },
   { name: "HEC Paris", logo: hecLogo, isText: false },
+  { name: "EPITA", logo: epitaLogo, isText: false },
+  { name: "ENS", logo: ensLogo, isText: false },
+  { name: "MVA", logo: mvaLogo, isText: false },
+  { name: "Télécom Paris", logo: telecomLogo, isText: false },
 ];
 
 const Partners = () => {
