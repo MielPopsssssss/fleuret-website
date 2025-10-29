@@ -1,3 +1,6 @@
+import { useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import ceaLogo from "@/assets/logo-cea.png";
 import edfLogo from "@/assets/logo-edf.png";
 import thalesLogo from "@/assets/logo-thales.png";
@@ -21,6 +24,22 @@ const partners = [
 ];
 
 const Partners = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const itemsPerPage = 5;
+  const totalPages = Math.ceil(partners.length / itemsPerPage);
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev + 1) % totalPages);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev - 1 + totalPages) % totalPages);
+  };
+
+  const visiblePartners = partners.slice(
+    currentIndex * itemsPerPage,
+    (currentIndex + 1) * itemsPerPage
+  );
 
   return (
     <section className="py-24 relative border-y border-primary/10">
@@ -34,27 +53,24 @@ const Partners = () => {
           </p>
         </div>
 
-        <div className="relative overflow-hidden">
-          <style>{`
-            @keyframes scroll-infinite {
-              0% {
-                transform: translateX(0);
-              }
-              100% {
-                transform: translateX(-50%);
-              }
-            }
-            .animate-scroll-infinite {
-              animation: scroll-infinite 30s linear infinite;
-            }
-          `}</style>
-          <div className="flex animate-scroll-infinite">
-            {/* Triple duplication pour un défilement fluide */}
-            {[...Array(3)].map((_, setIndex) => (
-              partners.map((partner, index) => (
+        <div className="relative max-w-6xl mx-auto">
+          {/* Navigation Button - Left */}
+          <Button
+            variant="outline"
+            size="icon"
+            onClick={prevSlide}
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 rounded-full"
+          >
+            <ChevronLeft className="h-6 w-6" />
+          </Button>
+
+          {/* Partners Grid */}
+          <div className="overflow-hidden px-12">
+            <div className="flex gap-8 justify-center items-center transition-all duration-500">
+              {visiblePartners.map((partner, index) => (
                 <div
-                  key={`${partner.name}-${setIndex}-${index}`}
-                  className="flex-shrink-0 w-48 h-32 mx-8 group flex items-center justify-center hover:scale-110 transition-transform"
+                  key={`${partner.name}-${index}`}
+                  className="flex-shrink-0 w-40 h-32 group flex items-center justify-center hover:scale-110 transition-transform"
                 >
                   <img
                     src={partner.logo}
@@ -65,7 +81,32 @@ const Partners = () => {
                     }}
                   />
                 </div>
-              ))
+              ))}
+            </div>
+          </div>
+
+          {/* Navigation Button - Right */}
+          <Button
+            variant="outline"
+            size="icon"
+            onClick={nextSlide}
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 rounded-full"
+          >
+            <ChevronRight className="h-6 w-6" />
+          </Button>
+
+          {/* Pagination Dots */}
+          <div className="flex justify-center gap-2 mt-8">
+            {Array.from({ length: totalPages }).map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentIndex(index)}
+                className={`w-2 h-2 rounded-full transition-all ${
+                  index === currentIndex
+                    ? "bg-primary w-8"
+                    : "bg-primary/30 hover:bg-primary/50"
+                }`}
+              />
             ))}
           </div>
         </div>
