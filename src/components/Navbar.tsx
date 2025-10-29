@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { Sword, ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import {
@@ -11,6 +11,7 @@ import {
 import logoEpita from "@/assets/logo-epita.png";
 import logoEns from "@/assets/logo-ens.png";
 import logoMva from "@/assets/logo-mva.png";
+import logoFleuretSword from "@/assets/logo-fleuret-sword.jpeg";
 
 const Navbar = () => {
   const location = useLocation();
@@ -27,7 +28,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-            <Sword className="w-6 h-6 text-primary" />
+            <img src={logoFleuretSword} alt="Fleuret AI" className="h-8 w-auto object-contain" />
             <span className="text-xl font-bold">Fleuret AI</span>
           </Link>
 
