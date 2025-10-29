@@ -25,8 +25,8 @@ const partners = [
 
 const Partners = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const itemsPerPage = 5;
-  const totalPages = Math.ceil(partners.length / itemsPerPage);
+  const itemsPerPage = 1;
+  const totalPages = partners.length;
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % totalPages);
@@ -36,10 +36,7 @@ const Partners = () => {
     setCurrentIndex((prev) => (prev - 1 + totalPages) % totalPages);
   };
 
-  const visiblePartners = partners.slice(
-    currentIndex * itemsPerPage,
-    (currentIndex + 1) * itemsPerPage
-  );
+  const currentPartner = partners[currentIndex];
 
   return (
     <section className="py-24 relative border-y border-primary/10">
@@ -53,58 +50,53 @@ const Partners = () => {
           </p>
         </div>
 
-        <div className="relative max-w-6xl mx-auto">
+        <div className="relative max-w-4xl mx-auto">
           {/* Navigation Button - Left */}
           <Button
-            variant="outline"
-            size="icon"
+            variant="default"
+            size="lg"
             onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 rounded-full"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 rounded-full w-14 h-14 shadow-lg"
           >
-            <ChevronLeft className="h-6 w-6" />
+            <ChevronLeft className="h-8 w-8" />
           </Button>
 
-          {/* Partners Grid */}
-          <div className="overflow-hidden px-12">
-            <div className="flex gap-8 justify-center items-center transition-all duration-500">
-              {visiblePartners.map((partner, index) => (
-                <div
-                  key={`${partner.name}-${index}`}
-                  className="flex-shrink-0 w-40 h-32 group flex items-center justify-center hover:scale-110 transition-transform"
-                >
-                  <img
-                    src={partner.logo}
-                    alt={partner.name}
-                    className="h-24 w-auto object-contain opacity-90 group-hover:opacity-100 transition-opacity"
-                    style={{
-                      filter: "drop-shadow(0 0 10px hsl(var(--primary) / 0.15))",
-                    }}
-                  />
-                </div>
-              ))}
+          {/* Partner Display */}
+          <div className="overflow-hidden px-20">
+            <div className="flex justify-center items-center min-h-[200px] transition-all duration-500">
+              <div className="flex items-center justify-center hover:scale-110 transition-transform">
+                <img
+                  src={currentPartner.logo}
+                  alt={currentPartner.name}
+                  className="h-32 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
+                  style={{
+                    filter: "drop-shadow(0 0 15px hsl(var(--primary) / 0.2))",
+                  }}
+                />
+              </div>
             </div>
           </div>
 
           {/* Navigation Button - Right */}
           <Button
-            variant="outline"
-            size="icon"
+            variant="default"
+            size="lg"
             onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 rounded-full"
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 rounded-full w-14 h-14 shadow-lg"
           >
-            <ChevronRight className="h-6 w-6" />
+            <ChevronRight className="h-8 w-8" />
           </Button>
 
           {/* Pagination Dots */}
-          <div className="flex justify-center gap-2 mt-8">
-            {Array.from({ length: totalPages }).map((_, index) => (
+          <div className="flex justify-center gap-2 mt-12">
+            {partners.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`w-2 h-2 rounded-full transition-all ${
+                className={`h-2 rounded-full transition-all ${
                   index === currentIndex
                     ? "bg-primary w-8"
-                    : "bg-primary/30 hover:bg-primary/50"
+                    : "bg-primary/30 hover:bg-primary/50 w-2"
                 }`}
               />
             ))}
