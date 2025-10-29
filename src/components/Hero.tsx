@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import logoFleuret from "@/assets/logo-fleuret.png";
 import { Link } from "react-router-dom";
+import { ChevronDown } from "lucide-react";
 
 const Hero = () => {
   return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -42,6 +43,11 @@ const Hero = () => {
             </Button>
           </div>
         </div>
+      </div>
+
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+        <ChevronDown className="w-8 h-8 text-primary opacity-70" />
       </div>
 
       {/* Bottom Gradient */}

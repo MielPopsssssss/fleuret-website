@@ -74,17 +74,19 @@ const Partners = () => {
               {getVisiblePartners().map(({ partner, offset, index }) => (
                 <div
                   key={`${partner.name}-${index}`}
-                  className={`flex-shrink-0 transition-all duration-500 ${
+                  className={`flex-shrink-0 transition-all duration-500 flex items-center justify-center ${
                     offset === 0 ? 'scale-110' : 'scale-75'
                   }`}
                   style={{
-                    opacity: offset === 0 ? 1 : 0.3
+                    opacity: offset === 0 ? 1 : 0.3,
+                    width: '200px',
+                    height: '120px'
                   }}
                 >
                   <img
                     src={partner.logo}
                     alt={partner.name}
-                    className="h-28 w-auto object-contain transition-opacity"
+                    className="max-h-28 max-w-full w-auto object-contain transition-opacity"
                     style={{
                       filter: offset === 0 
                         ? "drop-shadow(0 0 15px hsl(var(--primary) / 0.3))" 
