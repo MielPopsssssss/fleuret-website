@@ -18,9 +18,6 @@ const Navbar = () => {
   
   const navItems = [
     { path: "/", label: "Accueil" },
-    { path: "/features", label: "Fonctionnalités" },
-    { path: "/benchmark", label: "Benchmark" },
-    { path: "/sovereignty", label: "Souveraineté" },
   ];
 
   return (
