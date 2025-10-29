@@ -31,10 +31,17 @@ const Hero = () => {
                 size="lg" 
                 className="text-lg group relative overflow-hidden"
               >
-                <span className="relative z-10">Démarrer un Scan Gratuit</span>
+                <span className="relative z-10">Voir notre POC fonctionel</span>
                 <div className="absolute inset-0 bg-primary-glow opacity-0 group-hover:opacity-20 transition-opacity" />
               </Button>
             </Link>
+            <Button 
+              size="lg" 
+              variant="outline"
+              className="text-lg group relative overflow-hidden"
+            >
+              <span className="relative z-10">Rejoindre notre waitlist</span>
+            </Button>
           </div>
         </div>
       </div>
