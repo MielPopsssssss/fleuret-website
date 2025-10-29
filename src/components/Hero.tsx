@@ -1,18 +1,12 @@
 import { Button } from "@/components/ui/button";
-import heroCyber from "@/assets/hero-cyber.jpg";
 import logoFleuret from "@/assets/logo-fleuret.png";
 import { Link } from "react-router-dom";
 
 const Hero = () => {
   return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0 z-0" style={{
-      backgroundImage: `url(${heroCyber})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center'
-    }}>
-        <div className="absolute inset-0 bg-background/90" />
-      </div>
+      {/* Modern Gradient Background */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-br from-blue-950 via-purple-950 to-slate-950" />
+      <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_top_right,rgba(59,130,246,0.15),transparent_50%),radial-gradient(ellipse_at_bottom_left,rgba(168,85,247,0.15),transparent_50%)]" />
 
       {/* Animated Grid */}
       <div className="absolute inset-0 z-0 opacity-20">
