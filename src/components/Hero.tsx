@@ -40,23 +40,6 @@ const Hero = () => {
               </Button>
             </Link>
           </div>
-
-          {/* Stats */}
-          <div className="grid grid-cols-2 gap-8 pt-12 max-w-2xl mx-auto">
-            {[{
-            value: "72%",
-            label: "Taux de Réussite",
-            sublabel: "Benchmark XBOW"
-          }, {
-            value: "24/7",
-            label: "Tests Continus"
-          }].map(stat => <div key={stat.label} className="space-y-2">
-                <div className="text-3xl md:text-4xl font-bold text-primary glow-effect">
-                  {stat.value}
-                </div>
-                <div className="text-sm text-muted-foreground">{stat.label}</div>
-              </div>)}
-          </div>
         </div>
       </div>
 
