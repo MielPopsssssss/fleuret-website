@@ -70,7 +70,7 @@ const Navbar = () => {
           </nav>
 
           <Link to="/demo">
-            <Button>Demander une démo</Button>
+            <Button>Voir la démo</Button>
           </Link>
         </div>
       </div>

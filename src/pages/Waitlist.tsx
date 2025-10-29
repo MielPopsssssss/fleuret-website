@@ -13,6 +13,7 @@ const waitlistSchema = z.object({
   name: z.string().trim().min(1, { message: "Le nom est requis" }).max(100, { message: "Le nom doit faire moins de 100 caractères" }),
   email: z.string().trim().email({ message: "Email invalide" }).max(255, { message: "L'email doit faire moins de 255 caractères" }),
   company: z.string().trim().max(100, { message: "Le nom de l'entreprise doit faire moins de 100 caractères" }).optional(),
+  position: z.string().trim().max(100, { message: "Le poste doit faire moins de 100 caractères" }).optional(),
   message: z.string().trim().max(1000, { message: "Le message doit faire moins de 1000 caractères" }).optional()
 });
 
@@ -23,6 +24,7 @@ const Waitlist = () => {
     name: "",
     email: "",
     company: "",
+    position: "",
     message: ""
   });
 
@@ -119,6 +121,19 @@ const Waitlist = () => {
               type="text"
               placeholder="Nom de votre entreprise"
               value={formData.company}
+              onChange={handleChange}
+              maxLength={100}
+            />
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="position">Poste</Label>
+            <Input
+              id="position"
+              name="position"
+              type="text"
+              placeholder="Votre poste"
+              value={formData.position}
               onChange={handleChange}
               maxLength={100}
             />
