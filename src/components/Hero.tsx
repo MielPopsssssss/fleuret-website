@@ -1,21 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import logoFleuret from "@/assets/logo-fleuret.png";
-
 const Hero = () => {
-  return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center px-4 overflow-hidden">
+  return <section className="relative min-h-screen flex flex-col items-center justify-center px-4 overflow-hidden">
       {/* Subtle gradient background */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-muted/20" />
       
       <div className="relative z-10 max-w-5xl mx-auto text-center space-y-12">
         {/* Logo */}
         <div className="flex justify-center mb-8">
-          <img 
-            src={logoFleuret} 
-            alt="Fleuret AI" 
-            className="h-16 w-auto opacity-90"
-          />
+          <img src={logoFleuret} alt="Fleuret AI" className="h-160w-auto opacity-90" />
         </div>
 
         {/* Main headline */}
@@ -31,17 +25,11 @@ const Hero = () => {
 
         {/* CTA Button */}
         <div className="pt-4">
-          <Button 
-            asChild 
-            size="lg"
-            className="text-lg px-8 py-6 rounded-full bg-foreground text-background hover:bg-foreground/90 transition-all"
-          >
+          <Button asChild size="lg" className="text-lg px-8 py-6 rounded-full bg-foreground text-background hover:bg-foreground/90 transition-all">
             <Link to="/demo">Demander une Démo</Link>
           </Button>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
