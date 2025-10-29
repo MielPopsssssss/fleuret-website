@@ -12,7 +12,7 @@ const Hero = () => {
 
       {/* Content */}
       <div className="container mx-auto px-4 z-10">
-        <div className="max-w-5xl mx-auto text-center space-y-8 animate-in fade-in duration-1000">
+        <div className="max-w-5xl mx-auto text-center space-y-6 animate-in fade-in duration-1000">
           {/* Logo */}
           <div className="inline-flex items-center justify-center">
             <img src={logoFleuret} alt="Fleuret AI" className="h-48 md:h-56 lg:h-64" />
@@ -26,7 +26,7 @@ const Hero = () => {
             De l'IP au rapport audit‑ready, en continu, hébergé en Europe.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4 pb-16">
             <Link to="/demo">
               <Button 
                 size="lg" 
