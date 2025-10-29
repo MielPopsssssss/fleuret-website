@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { Zap } from "lucide-react";
 import heroCyber from "@/assets/hero-cyber.jpg";
 import logoFleuret from "@/assets/logo-fleuret.png";
 import { Link } from "react-router-dom";
@@ -43,7 +42,6 @@ const Hero = () => {
                 className="text-lg group relative overflow-hidden"
               >
                 <span className="relative z-10">Démarrer un Scan Gratuit</span>
-                <Zap className="ml-2 w-5 h-5 relative z-10 transition-transform group-hover:rotate-12" />
                 <div className="absolute inset-0 bg-primary-glow opacity-0 group-hover:opacity-20 transition-opacity" />
               </Button>
             </Link>
