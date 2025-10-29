@@ -29,7 +29,7 @@ const Hero = () => {
           </div>
 
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
-            <span className="text-gradient glow-effect">Pentest automatisé, rapports prêts NIS2</span>
+            <span className="text-gradient glow-effect">Pentests continus d'applications web, propulsés par une IA agentique.</span>
           </h1>
 
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
