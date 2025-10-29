@@ -6,10 +6,6 @@ const Benchmark = () => {
     <section className="py-24 relative">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-card/50 backdrop-blur-sm mb-4">
-            <Trophy className="w-4 h-4 text-primary" />
-            <span className="text-sm font-medium">Performance de Pointe</span>
-          </div>
           <h2 className="text-4xl md:text-5xl font-bold">
             <span className="text-gradient">72% sur le Benchmark XBOW</span>
           </h2>

@@ -26,7 +26,7 @@ const Hero = () => {
             De l'IP au rapport audit‑ready, en continu, hébergé en Europe.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4 pb-16">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
             <Link to="/demo">
               <Button 
                 size="lg" 
