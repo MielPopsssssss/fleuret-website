@@ -29,18 +29,16 @@ const Hero = () => {
             <Link to="/demo">
               <Button 
                 size="lg" 
-                className="text-lg group relative overflow-hidden"
+                className="text-lg hover:bg-white hover:text-foreground transition-colors"
               >
-                <span className="relative z-10">Voir notre POC fonctionel</span>
-                <div className="absolute inset-0 bg-primary-glow opacity-0 group-hover:opacity-20 transition-opacity" />
+                Voir notre POC fonctionel
               </Button>
             </Link>
             <Button 
               size="lg" 
-              variant="outline"
-              className="text-lg group relative overflow-hidden"
+              className="text-lg hover:bg-white hover:text-foreground transition-colors"
             >
-              <span className="relative z-10">Rejoindre notre waitlist</span>
+              Rejoindre notre waitlist
             </Button>
           </div>
         </div>
