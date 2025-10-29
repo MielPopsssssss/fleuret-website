@@ -11,7 +11,7 @@ const Footer = () => {
               <span className="text-xl font-bold">fleuret.ai</span>
             </div>
             <p className="text-muted-foreground leading-relaxed">
-              Pentesting automatisé par IA pour la conformité NIS2 et la souveraineté numérique française.
+              Pentesting automatisé par IA pour la souveraineté numérique française.
             </p>
           </div>
 
@@ -26,7 +26,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-primary" />
-                <span>Paris, France</span>
+                <span>14 rue ballu paris 9, france</span>
               </div>
             </div>
           </div>
@@ -35,8 +35,6 @@ const Footer = () => {
             <h3 className="font-semibold text-lg">Programme</h3>
             <div className="space-y-2 text-muted-foreground">
               <p>HEC Launchpad - Janvier 2025</p>
-              <p>Souveraineté numérique</p>
-              <p>Conformité NIS2</p>
             </div>
           </div>
         </div>
