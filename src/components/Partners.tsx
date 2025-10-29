@@ -25,18 +25,28 @@ const partners = [
 
 const Partners = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const itemsPerPage = 1;
-  const totalPages = partners.length;
 
   const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % totalPages);
+    setCurrentIndex((prev) => (prev + 1) % partners.length);
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + totalPages) % totalPages);
+    setCurrentIndex((prev) => (prev - 1 + partners.length) % partners.length);
   };
 
-  const currentPartner = partners[currentIndex];
+  // Fonction pour obtenir les 5 logos à afficher
+  const getVisiblePartners = () => {
+    const visible = [];
+    for (let i = -2; i <= 2; i++) {
+      const index = (currentIndex + i + partners.length) % partners.length;
+      visible.push({
+        partner: partners[index],
+        offset: i,
+        index: index
+      });
+    }
+    return visible;
+  };
 
   return (
     <section className="py-24 relative border-y border-primary/10">
@@ -45,12 +55,9 @@ const Partners = () => {
           <h2 className="text-4xl md:text-5xl font-bold">
             Nos <span className="text-gradient">Partenaires</span>
           </h2>
-          <p className="text-xl text-muted-foreground">
-            Ils nous font confiance pour sécuriser leurs infrastructures critiques.
-          </p>
         </div>
 
-        <div className="relative max-w-4xl mx-auto">
+        <div className="relative max-w-6xl mx-auto">
           {/* Navigation Button - Left */}
           <Button
             variant="default"
@@ -61,19 +68,31 @@ const Partners = () => {
             <ChevronLeft className="h-8 w-8" />
           </Button>
 
-          {/* Partner Display */}
-          <div className="overflow-hidden px-20">
-            <div className="flex justify-center items-center min-h-[200px] transition-all duration-500">
-              <div className="flex items-center justify-center hover:scale-110 transition-transform">
-                <img
-                  src={currentPartner.logo}
-                  alt={currentPartner.name}
-                  className="h-32 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
+          {/* Partners Display */}
+          <div className="overflow-hidden px-24">
+            <div className="flex justify-center items-center gap-8 min-h-[200px] transition-all duration-500">
+              {getVisiblePartners().map(({ partner, offset, index }) => (
+                <div
+                  key={`${partner.name}-${index}`}
+                  className={`flex-shrink-0 transition-all duration-500 ${
+                    offset === 0 ? 'scale-110' : 'scale-75'
+                  }`}
                   style={{
-                    filter: "drop-shadow(0 0 15px hsl(var(--primary) / 0.2))",
+                    opacity: offset === 0 ? 1 : 0.3
                   }}
-                />
-              </div>
+                >
+                  <img
+                    src={partner.logo}
+                    alt={partner.name}
+                    className="h-28 w-auto object-contain transition-opacity"
+                    style={{
+                      filter: offset === 0 
+                        ? "drop-shadow(0 0 15px hsl(var(--primary) / 0.3))" 
+                        : "none",
+                    }}
+                  />
+                </div>
+              ))}
             </div>
           </div>
 
