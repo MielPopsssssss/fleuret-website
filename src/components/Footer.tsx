@@ -1,5 +1,4 @@
 import { Mail, MapPin } from "lucide-react";
-import logoTampon from "@/assets/logo-tampon.jpeg";
 
 const Footer = () => {
   return (
@@ -8,7 +7,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <img src={logoTampon} alt="Fleuret.ai" className="w-8 h-8 object-contain" />
+              <img src="/favicon.png" alt="Fleuret.ai" className="w-8 h-8 object-contain" />
               <span className="text-xl font-bold">fleuret.ai</span>
             </div>
             <p className="text-muted-foreground leading-relaxed">
