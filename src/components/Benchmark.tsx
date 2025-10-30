@@ -28,26 +28,22 @@ const Benchmark = () => {
                   {
                     icon: iconExploitation,
                     label: "Exploitation réelle",
-                    description: "Validation concrète des vulnérabilités par exploitation effective",
-                    value: "Pas seulement détection théorique"
+                    description: "Validation concrète des vulnérabilités par exploitation effective"
                   },
                   {
                     icon: iconRapidite,
                     label: "Rapidité d'exécution",
-                    description: "Analyse complète et résultats en quelques heures",
-                    value: "Temps optimisé par challenge"
+                    description: "Analyse complète et résultats en quelques heures"
                   },
                   {
                     icon: iconValidation,
                     label: "Validation PoC",
-                    description: "Preuve de concept automatique pour chaque faille",
-                    value: "Faux positifs filtrés automatiquement"
+                    description: "Preuve de concept automatique pour chaque faille"
                   },
                   {
                     icon: iconEfficacite,
                     label: "Efficacité ressources",
-                    description: "Optimisation intelligente des ressources IA",
-                    value: "Coût tokens/calcul maîtrisé"
+                    description: "Optimisation intelligente des ressources IA"
                   }
                 ].map((metric) => (
                   <div key={metric.label} className="flex gap-4 items-start p-4 rounded-lg bg-secondary/30 border border-primary/10">
@@ -57,7 +53,6 @@ const Benchmark = () => {
                     <div>
                       <div className="font-semibold text-foreground">{metric.label}</div>
                       <div className="text-xs text-muted-foreground/80 mt-1">{metric.description}</div>
-                      <div className="text-sm text-muted-foreground mt-2">{metric.value}</div>
                     </div>
                   </div>
                 ))}
