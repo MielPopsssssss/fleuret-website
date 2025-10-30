@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import logoFleuret from "@/assets/logo-fleuret.png";
 import { Link } from "react-router-dom";
-import { ChevronDown } from "lucide-react";
 
 const Hero = () => {
   return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -18,7 +17,7 @@ const Hero = () => {
             <img src={logoFleuret} alt="Fleuret AI" className="h-48 md:h-56 lg:h-64" />
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
+          <h1 className="text-3xl md:text-7xl font-bold tracking-tight">
             <span className="text-gradient glow-effect">Pentests continus serveur et web , propulsés par une IA agentique.</span>
           </h1>
 
@@ -47,10 +46,6 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
-        <ChevronDown className="w-8 h-8 text-primary opacity-70" />
-      </div>
 
       {/* Bottom Gradient */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent z-0" />
