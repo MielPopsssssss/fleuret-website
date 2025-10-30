@@ -1,5 +1,8 @@
 import { Card } from "@/components/ui/card";
-import { Trophy, Target, Zap, CheckCircle, TrendingUp, Shield } from "lucide-react";
+import iconExploitation from "@/assets/icon-exploitation.png";
+import iconValidation from "@/assets/icon-validation.png";
+import iconRapidite from "@/assets/icon-rapidite.png";
+import iconEfficacite from "@/assets/icon-efficacite.png";
 
 const Benchmark = () => {
   return (
@@ -23,29 +26,29 @@ const Benchmark = () => {
               <div className="space-y-4">
                 {[
                   {
-                    icon: Target,
+                    icon: iconExploitation,
                     label: "Exploitation réelle",
                     value: "Pas seulement détection théorique"
                   },
                   {
-                    icon: Zap,
+                    icon: iconRapidite,
                     label: "Rapidité",
                     value: "Temps optimisé par challenge"
                   },
                   {
-                    icon: CheckCircle,
+                    icon: iconValidation,
                     label: "Validation PoC",
                     value: "Faux positifs filtrés automatiquement"
                   },
                   {
-                    icon: TrendingUp,
+                    icon: iconEfficacite,
                     label: "Efficacité ressources",
                     value: "Coût tokens/calcul maîtrisé"
                   }
                 ].map((metric) => (
                   <div key={metric.label} className="flex gap-4 items-start p-4 rounded-lg bg-secondary/30 border border-primary/10">
                     <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <metric.icon className="w-5 h-5 text-primary" />
+                      <img src={metric.icon} alt="" className="w-5 h-5" />
                     </div>
                     <div>
                       <div className="font-semibold text-foreground">{metric.label}</div>
