@@ -12,7 +12,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-            <img src={logoFleuret} alt="Fleuret AI" className="h-16 w-auto object-contain" />
+            <img src={logoFleuret} alt="Fleuret AI" className="h-32 w-auto object-contain" />
             
           </Link>
 
