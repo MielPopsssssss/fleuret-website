@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card";
-import iconExploitation from "@/assets/icon-exploitation.png";
+import iconExploitation from "@/assets/icon-exploitation-new.png";
 import iconValidation from "@/assets/icon-validation-new.png";
 import iconRapidite from "@/assets/icon-rapidite-new.png";
 import iconEfficacite from "@/assets/icon-efficacite-new.png";
