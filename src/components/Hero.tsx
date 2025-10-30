@@ -4,11 +4,6 @@ import { Link } from "react-router-dom";
 
 const Hero = () => {
   return <section className="relative min-h-screen flex items-start justify-center overflow-hidden pt-20 md:pt-24">
-      {/* Animated Grid */}
-      <div className="absolute inset-0 z-0 opacity-20">
-        <div className="h-full w-full bg-[linear-gradient(to_right,hsl(var(--primary))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--primary))_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
-      </div>
-
       {/* Content */}
       <div className="container mx-auto px-4 z-10">
         <div className="max-w-5xl mx-auto text-center space-y-6 animate-in fade-in duration-1000">
@@ -47,8 +42,6 @@ const Hero = () => {
       </div>
 
 
-      {/* Bottom Gradient */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent z-0" />
     </section>;
 };
 export default Hero;
