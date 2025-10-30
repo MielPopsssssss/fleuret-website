@@ -18,10 +18,6 @@ const Benchmark = () => {
                   Au-delà de la simple détection, notre IA génère des <span className="text-primary font-semibold">recommandations précises et actionnables</span> pour corriger chaque vulnérabilité identifiée. 
                   Chaque rapport inclut des étapes de remédiation détaillées, des exemples de code sécurisé et une priorisation basée sur le niveau de risque réel.
                 </p>
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary/10 border border-primary/20 mt-4">
-                  <Shield className="w-4 h-4 text-primary" />
-                  <span className="text-sm font-medium">Rapports <span className="text-primary font-semibold">complets et exploitables</span></span>
-                </div>
               </div>
 
               <div className="space-y-4">
