@@ -11,7 +11,7 @@ const Benchmark = () => {
             <div className="grid md:grid-cols-2 gap-12">
               <div className="space-y-6">
                 <div>
-                  <div className="text-5xl md:text-6xl font-bold text-gradient mb-2">Recommandations Actionnables</div>
+                  <div className="text-5xl md:text-6xl font-bold text-gradient mb-2">Rapports Actionnables</div>
                   <div className="text-xl text-muted-foreground">Pour chaque vulnérabilité détectée</div>
                 </div>
                 <p className="text-muted-foreground leading-relaxed">
