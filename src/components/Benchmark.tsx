@@ -47,7 +47,7 @@ const Benchmark = () => {
                   }
                 ].map((metric) => (
                   <div key={metric.label} className="flex gap-4 items-start p-4 rounded-lg bg-secondary/30 border border-primary/10">
-                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <div className="w-20 h-20 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
                       <img src={metric.icon} alt="" className="w-30 h-30" />
                     </div>
                     <div>
