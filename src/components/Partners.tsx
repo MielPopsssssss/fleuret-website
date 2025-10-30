@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useIsMobile } from "@/hooks/use-mobile";
 import ceaLogo from "@/assets/logo-cea.png";
 import edfLogo from "@/assets/logo-edf.png";
 import thalesLogo from "@/assets/logo-thales.png";
@@ -25,6 +26,7 @@ const partners = [
 
 const Partners = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const isMobile = useIsMobile();
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % partners.length);
@@ -69,8 +71,8 @@ const Partners = () => {
           </Button>
 
           {/* Partners Display */}
-          <div className="overflow-hidden px-24">
-            <div className="flex justify-center items-center gap-8 min-h-[200px] transition-all duration-500">
+          <div className="overflow-hidden px-12 md:px-24">
+            <div className="flex justify-center items-center gap-4 md:gap-8 min-h-[120px] md:min-h-[200px] transition-all duration-500">
               {getVisiblePartners().map(({ partner, offset, index }) => (
                 <div
                   key={`${partner.name}-${index}`}
@@ -79,14 +81,14 @@ const Partners = () => {
                   }`}
                   style={{
                     opacity: offset === 0 ? 1 : 0.3,
-                    width: '200px',
-                    height: '120px'
+                    width: isMobile ? '80px' : '200px',
+                    height: isMobile ? '60px' : '120px'
                   }}
                 >
                   <img
                     src={partner.logo}
                     alt={partner.name}
-                    className="max-h-28 max-w-full w-auto object-contain transition-opacity"
+                    className="max-h-12 md:max-h-28 max-w-full w-auto object-contain transition-opacity"
                     style={{
                       filter: offset === 0 
                         ? "drop-shadow(0 0 15px hsl(var(--primary) / 0.3))" 
