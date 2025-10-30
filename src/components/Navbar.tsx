@@ -1,7 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import logoFleuretSword from "@/assets/logo-fleuret-sword.jpeg";
 
 const Navbar = () => {
   const location = useLocation();
@@ -15,7 +14,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-            <img src={logoFleuretSword} alt="Fleuret AI" className="h-8 w-auto object-contain" />
+            <img src="/favicon.png" alt="Fleuret AI" className="h-8 w-auto object-contain" />
             <span className="text-xl font-bold">Fleuret AI</span>
           </Link>
 
