@@ -164,25 +164,14 @@ const Waitlist = () => {
             />
           </div>
 
-          <div className="flex gap-4">
-            <Button
-              type="submit"
-              size="lg"
-              className="flex-1"
-              disabled={isSubmitting}
-            >
-              {isSubmitting ? "Envoi en cours..." : "S'inscrire"}
-            </Button>
-            <Button
-              type="button"
-              size="lg"
-              variant="outline"
-              onClick={() => navigate("/")}
-              disabled={isSubmitting}
-            >
-              Retour
-            </Button>
-          </div>
+          <Button
+            type="submit"
+            size="lg"
+            className="w-full"
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? "Envoi en cours..." : "S'inscrire"}
+          </Button>
         </form>
       </Card>
     </div>
