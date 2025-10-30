@@ -28,21 +28,25 @@ const Benchmark = () => {
                   {
                     icon: iconExploitation,
                     label: "Exploitation réelle",
+                    description: "Validation concrète des vulnérabilités par exploitation effective",
                     value: "Pas seulement détection théorique"
                   },
                   {
                     icon: iconRapidite,
-                    label: "Rapidité",
+                    label: "Rapidité d'exécution",
+                    description: "Analyse complète et résultats en quelques heures",
                     value: "Temps optimisé par challenge"
                   },
                   {
                     icon: iconValidation,
                     label: "Validation PoC",
+                    description: "Preuve de concept automatique pour chaque faille",
                     value: "Faux positifs filtrés automatiquement"
                   },
                   {
                     icon: iconEfficacite,
                     label: "Efficacité ressources",
+                    description: "Optimisation intelligente des ressources IA",
                     value: "Coût tokens/calcul maîtrisé"
                   }
                 ].map((metric) => (
@@ -52,7 +56,8 @@ const Benchmark = () => {
                     </div>
                     <div>
                       <div className="font-semibold text-foreground">{metric.label}</div>
-                      <div className="text-sm text-muted-foreground">{metric.value}</div>
+                      <div className="text-xs text-muted-foreground/80 mt-1">{metric.description}</div>
+                      <div className="text-sm text-muted-foreground mt-2">{metric.value}</div>
                     </div>
                   </div>
                 ))}
