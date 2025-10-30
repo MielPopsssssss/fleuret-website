@@ -18,7 +18,7 @@ const Hero = () => {
           </div>
 
           <h1 className="text-3xl md:text-7xl font-bold tracking-tight">
-            <span className="text-gradient glow-effect">Pentests continus serveur et web , propulsés par une IA agentique.</span>
+            <span className="text-gradient glow-effect">Pentests continus serveur et web, propulsés par une IA agentique.</span>
           </h1>
 
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
