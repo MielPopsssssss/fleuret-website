@@ -55,7 +55,7 @@ const Partners = () => {
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <h2 className="text-4xl md:text-5xl font-bold">
-            Nos <span className="text-gradient">Partenaires</span>
+            <span className="text-gradient">Ils nous font confiance</span>
           </h2>
         </div>
 
