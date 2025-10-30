@@ -11,18 +11,16 @@ const Benchmark = () => {
             <div className="grid md:grid-cols-2 gap-12">
               <div className="space-y-6">
                 <div>
-                  <div className="text-6xl md:text-7xl font-bold text-gradient mb-2">72%</div>
-                  <div className="text-xl text-muted-foreground">Benchmark XBOW</div>
-                  <div className="text-sm text-muted-foreground mt-1">vs ~30% GPT-4o | ~40% Gemini 2.5 Flash</div>
+                  <div className="text-5xl md:text-6xl font-bold text-gradient mb-2">Recommandations Actionnables</div>
+                  <div className="text-xl text-muted-foreground">Pour chaque vulnérabilité détectée</div>
                 </div>
                 <p className="text-muted-foreground leading-relaxed">
-                  Le benchmark XBOW représente le standard le plus exigeant en pentest automatisé avec plus de 500 scénarios CTF et challenges pratiques. 
-                  Notre architecture multi-agents atteint <span className="text-primary font-semibold">72% de réussite</span>, 
-                  triplant les performances des LLMs utilisés directement.
+                  Au-delà de la simple détection, notre IA génère des <span className="text-primary font-semibold">recommandations précises et actionnables</span> pour corriger chaque vulnérabilité identifiée. 
+                  Chaque rapport inclut des étapes de remédiation détaillées, des exemples de code sécurisé et une priorisation basée sur le niveau de risque réel.
                 </p>
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary/10 border border-primary/20 mt-4">
-                  <Trophy className="w-4 h-4 text-primary" />
-                  <span className="text-sm font-medium">Entraîné sur <span className="text-primary font-semibold">500+ challenges réels</span></span>
+                  <Shield className="w-4 h-4 text-primary" />
+                  <span className="text-sm font-medium">Rapports <span className="text-primary font-semibold">complets et exploitables</span></span>
                 </div>
               </div>
 
