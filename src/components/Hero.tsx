@@ -3,7 +3,7 @@ import logoFleuret from "@/assets/logo-fleuret.png";
 import { Link } from "react-router-dom";
 
 const Hero = () => {
-  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  return <section className="relative min-h-screen flex items-start justify-center overflow-hidden pt-20 md:pt-24">
       {/* Animated Grid */}
       <div className="absolute inset-0 z-0 opacity-20">
         <div className="h-full w-full bg-[linear-gradient(to_right,hsl(var(--primary))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--primary))_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
