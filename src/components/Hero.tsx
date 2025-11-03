@@ -3,7 +3,7 @@ import logoFleuret from "@/assets/logo-fleuret.svg";
 import { Link } from "react-router-dom";
 
 const Hero = () => {
-  return <section className="relative min-h-screen flex items-start justify-center overflow-hidden pt-20 md:pt-24">
+  return <section className="relative min-h-screen flex items-start justify-center overflow-hidden pt-8 md:pt-12">
       {/* Content */}
       <div className="container mx-auto px-4 z-10">
         <div className="max-w-5xl mx-auto text-center space-y-6 animate-in fade-in duration-1000">
