@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import logoFleuret from "@/assets/logo-fleuret.png";
+import logoFleuret from "@/assets/logo-fleuret.svg";
 import { Link } from "react-router-dom";
 
 const Hero = () => {
