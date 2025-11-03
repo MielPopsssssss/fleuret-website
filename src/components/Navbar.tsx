@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import logoFleuret from "@/assets/logo-fleuret.png";
+import logoFleuret from "@/assets/logo-fleuret.svg";
 const Navbar = () => {
   const location = useLocation();
   const navItems = [{
