@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -26,7 +26,9 @@ const partners = [
 
 const Partners = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [autoPlayEnabled, setAutoPlayEnabled] = useState(true);
   const isMobile = useIsMobile();
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % partners.length);
@@ -35,6 +37,25 @@ const Partners = () => {
   const prevSlide = () => {
     setCurrentIndex((prev) => (prev - 1 + partners.length) % partners.length);
   };
+
+  const handleManualNavigation = (action: () => void) => {
+    setAutoPlayEnabled(false);
+    action();
+  };
+
+  useEffect(() => {
+    if (autoPlayEnabled) {
+      intervalRef.current = setInterval(() => {
+        nextSlide();
+      }, 3000);
+    }
+
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+    };
+  }, [autoPlayEnabled, currentIndex]);
 
   // Fonction pour obtenir les 5 logos à afficher
   const getVisiblePartners = () => {
@@ -64,7 +85,7 @@ const Partners = () => {
           <Button
             variant="default"
             size="lg"
-            onClick={prevSlide}
+            onClick={() => handleManualNavigation(prevSlide)}
             className="absolute left-0 top-1/2 -translate-y-1/2 z-10 rounded-full w-14 h-14 shadow-lg"
           >
             <ChevronLeft className="h-8 w-8" />
@@ -104,7 +125,7 @@ const Partners = () => {
           <Button
             variant="default"
             size="lg"
-            onClick={nextSlide}
+            onClick={() => handleManualNavigation(nextSlide)}
             className="absolute right-0 top-1/2 -translate-y-1/2 z-10 rounded-full w-14 h-14 shadow-lg"
           >
             <ChevronRight className="h-8 w-8" />
@@ -115,7 +136,7 @@ const Partners = () => {
             {partners.map((_, index) => (
               <button
                 key={index}
-                onClick={() => setCurrentIndex(index)}
+                onClick={() => handleManualNavigation(() => setCurrentIndex(index))}
                 className={`h-2 rounded-full transition-all ${
                   index === currentIndex
                     ? "bg-primary w-8"
