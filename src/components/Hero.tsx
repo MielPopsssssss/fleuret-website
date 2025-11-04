@@ -26,7 +26,7 @@ const Hero = () => {
                 size="lg" 
                 className="text-lg hover:bg-white hover:text-foreground transition-colors"
               >
-                Voir notre POC fonctionel
+                Voir notre POC fonctionnel
               </Button>
             </Link>
             <Link to="/waitlist">
