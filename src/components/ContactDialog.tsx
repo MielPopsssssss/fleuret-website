@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import ReCAPTCHA from "react-google-recaptcha";
 
 interface ContactDialogProps {
   open: boolean;
@@ -19,6 +20,8 @@ export const ContactDialog = ({ open, onOpenChange }: ContactDialogProps) => {
     message: ""
   });
   const { toast } = useToast();
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -33,6 +36,16 @@ export const ContactDialog = ({ open, onOpenChange }: ContactDialogProps) => {
       return;
     }
 
+    // Captcha validation
+    if (!captchaToken) {
+      toast({
+        title: "Erreur",
+        description: "Veuillez compléter le captcha.",
+        variant: "destructive"
+      });
+      return;
+    }
+
     // For now, just show success message
     toast({
       title: "Demande envoyée !",
@@ -41,7 +54,13 @@ export const ContactDialog = ({ open, onOpenChange }: ContactDialogProps) => {
 
     // Reset form and close dialog
     setFormData({ name: "", email: "", company: "", message: "" });
+    setCaptchaToken(null);
+    recaptchaRef.current?.reset();
     onOpenChange(false);
+  };
+
+  const onCaptchaChange = (token: string | null) => {
+    setCaptchaToken(token);
   };
 
   return (
@@ -97,6 +116,14 @@ export const ContactDialog = ({ open, onOpenChange }: ContactDialogProps) => {
               onChange={(e) => setFormData({ ...formData, message: e.target.value })}
               placeholder="Parlez-nous de vos besoins en sécurité..."
               rows={4}
+            />
+          </div>
+
+          <div className="flex justify-center py-2">
+            <ReCAPTCHA
+              ref={recaptchaRef}
+              sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY || "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"}
+              onChange={onCaptchaChange}
             />
           </div>
 

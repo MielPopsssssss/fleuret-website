@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -11,6 +11,7 @@ import logoFleuret from "@/assets/logo-fleuret.png";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const Waitlist = () => {
   const navigate = useNavigate();
@@ -23,6 +24,8 @@ const Waitlist = () => {
     position: "",
     message: ""
   });
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
 
   const waitlistSchema = z.object({
     name: z.string().trim().min(1, { message: language === 'fr' ? "Le nom est requis" : "Name is required" }).max(100, { message: language === 'fr' ? "Le nom doit faire moins de 100 caractères" : "Name must be less than 100 characters" }),
@@ -34,6 +37,12 @@ const Waitlist = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!captchaToken) {
+      toast.error(language === 'fr' ? "Veuillez compléter le captcha" : "Please complete the captcha");
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
@@ -57,6 +66,10 @@ const Waitlist = () => {
     } finally {
       setIsSubmitting(false);
     }
+  };
+
+  const onCaptchaChange = (token: string | null) => {
+    setCaptchaToken(token);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -158,6 +171,14 @@ const Waitlist = () => {
               onChange={handleChange}
               rows={4}
               maxLength={1000}
+            />
+          </div>
+
+          <div className="flex justify-center py-2">
+            <ReCAPTCHA
+              ref={recaptchaRef}
+              sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY || "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"}
+              onChange={onCaptchaChange}
             />
           </div>
 
