@@ -2,11 +2,14 @@ import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import logoFleuret from "@/assets/logo-fleuret.svg";
+import { useLanguage } from "@/contexts/LanguageContext";
+import LanguageSwitcher from "./LanguageSwitcher";
 const Navbar = () => {
   const location = useLocation();
+  const { t } = useLanguage();
   const navItems = [{
     path: "/",
-    label: "Accueil"
+    label: t('nav.home')
   }];
   return <header className="border-b border-primary/10 py-4 sticky top-0 bg-background/95 backdrop-blur-sm z-50">
       <div className="container mx-auto px-4">
@@ -22,13 +25,16 @@ const Navbar = () => {
               </Link>)}
             
             <Link to="/#partners" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
-              Partenaires
+              {t('nav.partners')}
             </Link>
           </nav>
 
-          <Link to="/waitlist">
-            <Button>Rejoindre notre waitlist</Button>
-          </Link>
+          <div className="flex items-center gap-4">
+            <LanguageSwitcher />
+            <Link to="/waitlist">
+              <Button>{t('nav.waitlist')}</Button>
+            </Link>
+          </div>
         </div>
       </div>
     </header>;

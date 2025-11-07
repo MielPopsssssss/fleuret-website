@@ -4,8 +4,10 @@ import PentestTerminal from "@/components/PentestTerminal";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Demo = () => {
+  const { t } = useLanguage();
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -18,7 +20,7 @@ const Demo = () => {
               <Link to="/">
                 <Button variant="outline" size="sm">
                   <ArrowLeft className="w-4 h-4 mr-2" />
-                  Retour
+                  {t('demo.back')}
                 </Button>
               </Link>
             </div>
@@ -26,10 +28,10 @@ const Demo = () => {
             <div className="space-y-8">
               <div className="text-center space-y-4 max-w-3xl mx-auto">
                 <h1 className="text-4xl md:text-5xl font-bold leading-tight">
-                  <span className="text-gradient">Démo Interactive</span>
+                  <span className="text-gradient">{t('demo.title')}</span>
                 </h1>
                 <p className="text-xl text-muted-foreground leading-relaxed">
-                  Découvrez comment notre IA autonome réalise un pentest complet sur un environnement Active Directory.
+                  {t('demo.subtitle')}
                 </p>
               </div>
 
@@ -38,17 +40,13 @@ const Demo = () => {
               <div className="text-center pt-8 space-y-6">
                 <div className="max-w-2xl mx-auto space-y-4">
                   <p className="text-muted-foreground">
-                    Cette démo montre un scénario réel d'exploitation d'un environnement Active Directory, 
-                    avec détection de credentials, escalade de privilèges et obtention d'un accès SYSTEM complet.
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    Basé sur des techniques réelles de pentesting automatisé par notre IA multi-agents.
+                    {t('demo.description')}
                   </p>
                 </div>
 
                 <Link to="/waitlist">
                   <Button size="lg" className="mt-4">
-                    Rejoindre la waitlist
+                    {t('demo.cta')}
                   </Button>
                 </Link>
               </div>

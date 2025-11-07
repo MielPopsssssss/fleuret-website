@@ -1,6 +1,8 @@
 import { Mail, MapPin } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Footer = () => {
+  const { t } = useLanguage();
   return (
     <footer className="border-t border-primary/10 py-12">
       <div className="container mx-auto px-4">
@@ -11,12 +13,12 @@ const Footer = () => {
               <span className="text-xl font-bold">fleuret.ai</span>
             </div>
             <p className="text-muted-foreground leading-relaxed">
-              Pentesting automatisé par IA pour la souveraineté numérique française.
+              {t('footer.tagline')}
             </p>
           </div>
 
           <div className="space-y-4">
-            <h3 className="font-semibold text-lg">Contact</h3>
+            <h3 className="font-semibold text-lg">{t('footer.contact')}</h3>
             <div className="space-y-2 text-muted-foreground">
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-primary" />
@@ -32,15 +34,15 @@ const Footer = () => {
           </div>
 
           <div className="space-y-4">
-            <h3 className="font-semibold text-lg">Programme</h3>
+            <h3 className="font-semibold text-lg">{t('footer.program')}</h3>
             <div className="space-y-2 text-muted-foreground">
-              <p>HEC Launchpad - Janvier 2025</p>
+              <p>{t('footer.program.hec')}</p>
             </div>
           </div>
         </div>
 
         <div className="pt-8 border-t border-primary/10 text-center text-muted-foreground text-sm">
-          <p>&copy; 2025 fleuret.ai. Tous droits réservés.</p>
+          <p>{t('footer.rights')}</p>
         </div>
       </div>
     </footer>

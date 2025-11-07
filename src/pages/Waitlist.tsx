@@ -10,17 +10,11 @@ import { z } from "zod";
 import logoFleuret from "@/assets/logo-fleuret.png";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
-
-const waitlistSchema = z.object({
-  name: z.string().trim().min(1, { message: "Le nom est requis" }).max(100, { message: "Le nom doit faire moins de 100 caractères" }),
-  email: z.string().trim().email({ message: "Email invalide" }).max(255, { message: "L'email doit faire moins de 255 caractères" }),
-  company: z.string().trim().max(100, { message: "Le nom de l'entreprise doit faire moins de 100 caractères" }).optional(),
-  position: z.string().trim().max(100, { message: "Le poste doit faire moins de 100 caractères" }).optional(),
-  message: z.string().trim().max(1000, { message: "Le message doit faire moins de 1000 caractères" }).optional()
-});
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Waitlist = () => {
   const navigate = useNavigate();
+  const { t, language } = useLanguage();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -30,21 +24,24 @@ const Waitlist = () => {
     message: ""
   });
 
+  const waitlistSchema = z.object({
+    name: z.string().trim().min(1, { message: language === 'fr' ? "Le nom est requis" : "Name is required" }).max(100, { message: language === 'fr' ? "Le nom doit faire moins de 100 caractères" : "Name must be less than 100 characters" }),
+    email: z.string().trim().email({ message: language === 'fr' ? "Email invalide" : "Invalid email" }).max(255, { message: language === 'fr' ? "L'email doit faire moins de 255 caractères" : "Email must be less than 255 characters" }),
+    company: z.string().trim().max(100, { message: language === 'fr' ? "Le nom de l'entreprise doit faire moins de 100 caractères" : "Company name must be less than 100 characters" }).optional(),
+    position: z.string().trim().max(100, { message: language === 'fr' ? "Le poste doit faire moins de 100 caractères" : "Position must be less than 100 characters" }).optional(),
+    message: z.string().trim().max(1000, { message: language === 'fr' ? "Le message doit faire moins de 1000 caractères" : "Message must be less than 1000 characters" }).optional()
+  });
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     try {
-      // Validate input
       const validatedData = waitlistSchema.parse(formData);
 
-      // TODO: Add backend integration to save waitlist data
-      // For now, just show success message
       console.log("Waitlist submission:", validatedData);
 
-      toast.success("Inscription réussie !", {
-        description: "Nous vous recontacterons très bientôt."
-      });
+      toast.success(t('waitlist.success'));
 
       setTimeout(() => {
         navigate("/");
@@ -55,7 +52,7 @@ const Waitlist = () => {
           toast.error(err.message);
         });
       } else {
-        toast.error("Une erreur est survenue. Veuillez réessayer.");
+        toast.error(t('waitlist.error'));
       }
     } finally {
       setIsSubmitting(false);
@@ -78,7 +75,7 @@ const Waitlist = () => {
           <Link to="/">
             <Button variant="outline" size="sm">
               <ArrowLeft className="w-4 h-4 mr-2" />
-              Retour
+              {t('waitlist.back')}
             </Button>
           </Link>
         </div>
@@ -89,21 +86,21 @@ const Waitlist = () => {
               <img src={logoFleuret} alt="Fleuret AI" className="h-24" />
             </div>
             <h1 className="text-4xl font-bold mb-4">
-              Rejoindre notre <span className="text-gradient">Waitlist</span>
+              {t('waitlist.title')}
             </h1>
             <p className="text-muted-foreground">
-              Soyez parmi les premiers à découvrir nos pentests continus propulsés par l'IA
+              {t('waitlist.subtitle')}
             </p>
           </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="space-y-2">
-            <Label htmlFor="name">Nom complet *</Label>
+            <Label htmlFor="name">{t('waitlist.name')} *</Label>
             <Input
               id="name"
               name="name"
               type="text"
-              placeholder="Votre nom"
+              placeholder={t('waitlist.name')}
               value={formData.name}
               onChange={handleChange}
               required
@@ -112,12 +109,12 @@ const Waitlist = () => {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="email">Email *</Label>
+            <Label htmlFor="email">{t('waitlist.email')} *</Label>
             <Input
               id="email"
               name="email"
               type="email"
-              placeholder="votre.email@example.com"
+              placeholder={t('waitlist.email')}
               value={formData.email}
               onChange={handleChange}
               required
@@ -126,12 +123,12 @@ const Waitlist = () => {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="company">Entreprise</Label>
+            <Label htmlFor="company">{t('waitlist.company')}</Label>
             <Input
               id="company"
               name="company"
               type="text"
-              placeholder="Nom de votre entreprise"
+              placeholder={t('waitlist.company')}
               value={formData.company}
               onChange={handleChange}
               maxLength={100}
@@ -139,12 +136,12 @@ const Waitlist = () => {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="position">Poste</Label>
+            <Label htmlFor="position">{t('waitlist.position')}</Label>
             <Input
               id="position"
               name="position"
               type="text"
-              placeholder="Votre poste"
+              placeholder={t('waitlist.position')}
               value={formData.position}
               onChange={handleChange}
               maxLength={100}
@@ -152,11 +149,11 @@ const Waitlist = () => {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="message">Message</Label>
+            <Label htmlFor="message">{t('waitlist.message')}</Label>
             <Textarea
               id="message"
               name="message"
-              placeholder="Parlez-nous de vos besoins en cybersécurité..."
+              placeholder={t('waitlist.message.placeholder')}
               value={formData.message}
               onChange={handleChange}
               rows={4}
@@ -170,7 +167,7 @@ const Waitlist = () => {
             className="w-full"
             disabled={isSubmitting}
           >
-            {isSubmitting ? "Envoi en cours..." : "S'inscrire"}
+            {isSubmitting ? t('waitlist.submitting') : t('waitlist.submit')}
           </Button>
         </form>
       </Card>

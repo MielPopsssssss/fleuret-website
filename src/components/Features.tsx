@@ -1,4 +1,5 @@
 import { Card } from "@/components/ui/card";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { Target, Brain, Shield, FileCheck, Repeat, Gauge } from "lucide-react";
 
 const features = [

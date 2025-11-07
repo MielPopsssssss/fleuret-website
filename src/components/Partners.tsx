@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { useLanguage } from "@/contexts/LanguageContext";
 import ceaLogo from "@/assets/logo-cea.png";
 import edfLogo from "@/assets/logo-edf.png";
 import thalesLogo from "@/assets/logo-thales.png";
@@ -28,6 +29,7 @@ const Partners = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [autoPlayEnabled, setAutoPlayEnabled] = useState(true);
   const isMobile = useIsMobile();
+  const { t } = useLanguage();
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   const nextSlide = () => {
@@ -57,7 +59,6 @@ const Partners = () => {
     };
   }, [autoPlayEnabled, currentIndex]);
 
-  // Fonction pour obtenir les 5 logos à afficher
   const getVisiblePartners = () => {
     const visible = [];
     for (let i = -2; i <= 2; i++) {
@@ -76,12 +77,11 @@ const Partners = () => {
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <h2 className="text-4xl md:text-5xl font-bold">
-            <span className="text-gradient">Ils nous font confiance</span>
+            <span className="text-gradient">{t('partners.title')}</span>
           </h2>
         </div>
 
         <div className="relative max-w-6xl mx-auto">
-          {/* Navigation Button - Left */}
           <Button
             variant="default"
             size="lg"
@@ -91,7 +91,6 @@ const Partners = () => {
             <ChevronLeft className="h-8 w-8" />
           </Button>
 
-          {/* Partners Display */}
           <div className="overflow-hidden px-12 md:px-24">
             <div className="flex justify-center items-center gap-4 md:gap-8 min-h-[120px] md:min-h-[200px] transition-all duration-500">
               {getVisiblePartners().map(({ partner, offset, index }) => (
@@ -121,7 +120,6 @@ const Partners = () => {
             </div>
           </div>
 
-          {/* Navigation Button - Right */}
           <Button
             variant="default"
             size="lg"
@@ -131,7 +129,6 @@ const Partners = () => {
             <ChevronRight className="h-8 w-8" />
           </Button>
 
-          {/* Pagination Dots */}
           <div className="flex justify-center gap-2 mt-12">
             {partners.map((_, index) => (
               <button
