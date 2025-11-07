@@ -236,8 +236,7 @@ const translations = {
     'sovereignty.ranking.advantage': 'L\'avantage compétitif : Posséder, entraîner et améliorer des LLM "made in EU" avec gouvernance ouverte et sécurisée pour attirer grands comptes et institutionnels.',
     
     // Team Details
-    'team.main.title': 'L\'',
-    'team.main.team': 'Équipe',
+    'team.main.title': 'L\'Équipe',
     'team.main.subtitle': 'Une combinaison unique d\'expertise en IA, cybersécurité et entrepreneuriat.',
     'team.yanis.name': 'Yanis Grigy',
     'team.yanis.role.main': 'CEO & Co-fondateur',
@@ -500,8 +499,7 @@ const translations = {
     'sovereignty.ranking.advantage': 'The competitive advantage: Own, train and improve "made in EU" LLMs with open and secure governance to attract large accounts and institutions.',
     
     // Team Details
-    'team.main.title': '',
-    'team.main.team': 'The Team',
+    'team.main.title': 'The Team',
     'team.main.subtitle': 'A unique combination of expertise in AI, cybersecurity and entrepreneurship.',
     'team.yanis.name': 'Yanis Grigy',
     'team.yanis.role.main': 'CEO & Co-founder',
