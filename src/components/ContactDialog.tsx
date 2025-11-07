@@ -122,7 +122,7 @@ export const ContactDialog = ({ open, onOpenChange }: ContactDialogProps) => {
           <div className="flex justify-center py-2">
             <ReCAPTCHA
               ref={recaptchaRef}
-              sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY || "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"}
+              sitekey="6LcbvgUsAAAAAKYtrU66E9oWip1lpQesL4HIwOe2"
               onChange={onCaptchaChange}
             />
           </div>
