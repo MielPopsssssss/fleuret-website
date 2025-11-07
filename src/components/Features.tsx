@@ -2,50 +2,51 @@ import { Card } from "@/components/ui/card";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Target, Brain, Shield, FileCheck, Repeat, Gauge } from "lucide-react";
 
-const features = [
-  {
-    icon: Target,
-    title: "Pipeline Autonome",
-    description: "De l'IP d'entrée au rapport livrable, sans intervention humaine."
-  },
-  {
-    icon: Brain,
-    title: "IA Mistral Souveraine",
-    description: "LLM fine-tuné sur infrastructure française certifiée, conformité RGPD garantie et auditable."
-  },
-  {
-    icon: Shield,
-    title: "Conformité NIS2 & DORA",
-    description: "Ciblage prioritaire des exigences réglementaires européennes, anticipation des standards à venir."
-  },
-  {
-    icon: FileCheck,
-    title: "Rapports Standards",
-    description: "Format professionnel avec synthèse exécutive et preuves techniques exploitables."
-  },
-  {
-    icon: Repeat,
-    title: "Audit Continu",
-    description: "Scans récurrents pour surveillance permanente et amélioration continue du modèle."
-  },
-  {
-    icon: Gauge,
-    title: "Performance Record",
-    description: "82% au benchmark XBOW (vs 77% secteur), meilleur ratio vitesse/précision/coût du marché."
-  }
-];
-
 const Features = () => {
+  const { t } = useLanguage();
+  
+  const features = [
+    {
+      icon: Target,
+      title: t('features.autonomous.title'),
+      description: t('features.autonomous.desc')
+    },
+    {
+      icon: Brain,
+      title: t('features.mistral.title'),
+      description: t('features.mistral.desc')
+    },
+    {
+      icon: Shield,
+      title: t('features.compliance.title'),
+      description: t('features.compliance.desc')
+    },
+    {
+      icon: FileCheck,
+      title: t('features.reports.title'),
+      description: t('features.reports.desc')
+    },
+    {
+      icon: Repeat,
+      title: t('features.audit.title'),
+      description: t('features.audit.desc')
+    },
+    {
+      icon: Gauge,
+      title: t('features.performance.title'),
+      description: t('features.performance.desc')
+    }
+  ];
+
   return (
     <section className="py-24 relative">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <h2 className="text-4xl md:text-5xl font-bold">
-            Une Solution <span className="text-gradient">Complète</span>
+            {t('features.main.title')} <span className="text-gradient">{t('features.main.complete')}</span>
           </h2>
           <p className="text-xl text-muted-foreground">
-            Reconnaissance, scanning, énumération, exploitation, post-exploitation et reporting, 
-            entièrement orchestrés par notre IA souveraine. Maîtrise totale des données, conformité européenne, leadership technologique.
+            {t('features.main.subtitle')}
           </p>
         </div>
 

@@ -1,45 +1,48 @@
 import { Card } from "@/components/ui/card";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { CheckCircle2, Circle } from "lucide-react";
 
-const milestones = [
-  {
-    date: "Sept - Oct 2025",
-    title: "Phase de Validation",
-    items: [
-      "Étude de marché approfondie",
-      "Interviews avec 100+ acteurs du secteur : DSI, RSSI, CEO, CTO, pentesters",
-      "Réalisation d'un POC qui benchmark à 50%"
-    ],
-    completed: false
-  },
-  {
-    date: "Nov - Déc 2025",
-    title: "Phase de Croissance",
-    items: [
-      "Finalisation du MVP",
-      "Recherche de LOI (Letters of Intent)",
-      "Préparation de la levée de fonds"
-    ],
-    completed: false
-  },
-  {
-    date: "Q1 2026",
-    title: "Model Alloy",
-    description: "Combinaison dynamique de plusieurs LLMs pour optimiser les performances selon le type de vulnérabilité.",
-    completed: false
-  }
-];
-
 const Roadmap = () => {
+  const { t } = useLanguage();
+  
+  const milestones = [
+    {
+      date: t('roadmap.phase1.date'),
+      title: t('roadmap.phase1.title'),
+      items: [
+        t('roadmap.phase1.item1'),
+        t('roadmap.phase1.item2'),
+        t('roadmap.phase1.item3')
+      ],
+      completed: false
+    },
+    {
+      date: t('roadmap.phase2.date'),
+      title: t('roadmap.phase2.title'),
+      items: [
+        t('roadmap.phase2.item1'),
+        t('roadmap.phase2.item2'),
+        t('roadmap.phase2.item3')
+      ],
+      completed: false
+    },
+    {
+      date: t('roadmap.phase3.date'),
+      title: t('roadmap.phase3.title'),
+      description: t('roadmap.phase3.desc'),
+      completed: false
+    }
+  ];
+
   return (
     <section className="py-24 relative">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <h2 className="text-4xl md:text-5xl font-bold">
-            Notre <span className="text-gradient">Roadmap</span>
+            {t('roadmap.main.title')} <span className="text-gradient">{t('roadmap.main.roadmap')}</span>
           </h2>
           <p className="text-xl text-muted-foreground">
-            Innovation continue et amélioration constante de nos capacités de détection.
+            {t('roadmap.main.subtitle')}
           </p>
         </div>
 
@@ -73,7 +76,7 @@ const Roadmap = () => {
                         <span className="text-sm font-mono text-primary">{milestone.date}</span>
                         {milestone.completed && (
                           <span className="text-xs px-2 py-1 rounded-full bg-primary/20 text-primary font-medium">
-                            Terminé
+                            {t('roadmap.completed')}
                           </span>
                         )}
                       </div>

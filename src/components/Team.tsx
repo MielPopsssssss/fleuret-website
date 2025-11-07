@@ -1,46 +1,49 @@
 import { Card } from "@/components/ui/card";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { Linkedin } from "lucide-react";
 import yanisPhoto from "@/assets/yanis.png";
 import augustinPhoto from "@/assets/augustin.png";
 import pierreGabrielPhoto from "@/assets/pierre-gabriel.png";
 
-const team = [
-  {
-    name: "Yanis Grigy",
-    role: "CEO & Co-fondateur",
-    education: "Télécom Paris, X-HEC Entrepreneur",
-    description: "Vision stratégique et développement business.",
-    photo: yanisPhoto,
-    linkedin: "https://www.linkedin.com/in/yanis-grigy-793635237/"
-  },
-  {
-    name: "Pierre-Gabriel Berlureau",
-    role: "CTO & Co-fondateur",
-    education: "ENS Ulm, MVA",
-    description: "Architecture IA et développement technique.",
-    photo: pierreGabrielPhoto,
-    linkedin: "https://www.linkedin.com/in/pierre-gabriel-berlureau-427320313/"
-  },
-  {
-    name: "Augustin Ponsin",
-    role: "CPO & Co-fondateur",
-    education: "Ex-Pentester, EPITA, EFREI, X-HEC",
-    description: "Expertise pentesting et méthodologie.",
-    photo: augustinPhoto,
-    linkedin: "https://www.linkedin.com/in/augustinponsin/"
-  }
-];
-
 const Team = () => {
+  const { t } = useLanguage();
+  
+  const team = [
+    {
+      name: t('team.yanis.name'),
+      role: t('team.yanis.role.main'),
+      education: t('team.yanis.education'),
+      description: t('team.yanis.description'),
+      photo: yanisPhoto,
+      linkedin: "https://www.linkedin.com/in/yanis-grigy-793635237/"
+    },
+    {
+      name: t('team.pierregabriel.name'),
+      role: t('team.pierregabriel.role.main'),
+      education: t('team.pierregabriel.education'),
+      description: t('team.pierregabriel.description'),
+      photo: pierreGabrielPhoto,
+      linkedin: "https://www.linkedin.com/in/pierre-gabriel-berlureau-427320313/"
+    },
+    {
+      name: t('team.augustin.name'),
+      role: t('team.augustin.role.main'),
+      education: t('team.augustin.education'),
+      description: t('team.augustin.description'),
+      photo: augustinPhoto,
+      linkedin: "https://www.linkedin.com/in/augustinponsin/"
+    }
+  ];
+
   return (
     <section className="py-24 relative">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <h2 className="text-4xl md:text-5xl font-bold">
-            L'<span className="text-gradient">Équipe</span>
+            {t('team.main.title')}<span className="text-gradient">{t('team.main.team')}</span>
           </h2>
           <p className="text-xl text-muted-foreground">
-            Une combinaison unique d'expertise en IA, cybersécurité et entrepreneuriat.
+            {t('team.main.subtitle')}
           </p>
         </div>
 
@@ -77,7 +80,7 @@ const Team = () => {
                   className="flex items-center gap-2 text-sm text-primary hover:text-primary-glow transition-colors"
                 >
                   <Linkedin className="w-4 h-4" />
-                  LinkedIn
+                  {t('team.linkedin')}
                 </a>
               </div>
             </Card>

@@ -1,34 +1,37 @@
 import { Card } from "@/components/ui/card";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { ArrowRight } from "lucide-react";
 
-const steps = [
-  {
-    number: "01",
-    title: "Déploiement en 1 Clic",
-    description: "Connectez vos applications, zéro configuration complexe. Mise en place instantanée."
-  },
-  {
-    number: "02",
-    title: "Attaque Automatisée",
-    description: "Des agents IA reproduisent les techniques des meilleurs pentesters et collaborent pour découvrir toutes les failles."
-  },
-  {
-    number: "03",
-    title: "Exploits Validés",
-    description: "Pas de faux positifs, seulement des preuves exploitables et des recommandations prioritaires avec rapports détaillés."
-  }
-];
-
 const Process = () => {
+  const { t } = useLanguage();
+  
+  const steps = [
+    {
+      number: "01",
+      title: t('process.deploy.title'),
+      description: t('process.deploy.desc')
+    },
+    {
+      number: "02",
+      title: t('process.attack.title'),
+      description: t('process.attack.desc')
+    },
+    {
+      number: "03",
+      title: t('process.exploits.title'),
+      description: t('process.exploits.desc')
+    }
+  ];
+
   return (
     <section className="py-24 relative">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <h2 className="text-4xl md:text-5xl font-bold">
-            Comment ça <span className="text-gradient">Fonctionne</span>
+            {t('process.main.title')} <span className="text-gradient">{t('process.main.works')}</span>
           </h2>
           <p className="text-xl text-muted-foreground">
-            Un processus simple, entièrement automatisé du début à la fin.
+            {t('process.main.subtitle')}
           </p>
         </div>
 
