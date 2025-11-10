@@ -69,7 +69,7 @@ const ComparisonTable = () => {
         </div>
 
         {/* Desktop Table */}
-        <div className="hidden md:block overflow-x-auto">
+        <div className="hidden md:block overflow-x-auto px-8 py-4">
           <div className="max-w-5xl mx-auto">
             <div className="grid grid-cols-4 gap-4">
               {/* Column 1 - Labels */}
@@ -85,7 +85,7 @@ const ComparisonTable = () => {
               </div>
               
               {/* Column 2 - Traditional */}
-              <div className="space-y-3">
+              <div className="border border-primary/30 rounded-lg p-3 space-y-3">
                 <div className="p-4 bg-muted/30 rounded-lg">
                   <h3 className="font-semibold text-center text-sm">
                     {t("comparison.header.traditional") || "Services Traditionnels"}
@@ -129,7 +129,7 @@ const ComparisonTable = () => {
               </div>
               
               {/* Column 4 - Automated */}
-              <div className="space-y-3">
+              <div className="border border-primary/30 rounded-lg p-3 space-y-3">
                 <div className="p-4 bg-muted/30 rounded-lg">
                   <h3 className="font-semibold text-center text-sm">
                     {t("comparison.header.automated") || "Solutions Automatisées"}
