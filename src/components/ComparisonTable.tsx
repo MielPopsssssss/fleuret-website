@@ -1,5 +1,6 @@
 import { Check, X } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import logoFleuret from "@/assets/logo-fleuret.svg";
 
 const ComparisonTable = () => {
   const { t } = useLanguage();
@@ -63,8 +64,9 @@ const ComparisonTable = () => {
     <section className="py-16 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            {t("comparison.title") || "Fleuret vs Services Traditionnels vs Solutions Automatisées"}
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 flex items-center justify-center gap-3 flex-wrap">
+            <img src={logoFleuret} alt="Fleuret" className="h-8 md:h-10 w-auto" />
+            <span>vs Services Traditionnels vs Solutions Automatisées</span>
           </h2>
         </div>
 
