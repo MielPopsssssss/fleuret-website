@@ -82,6 +82,41 @@ const handler = async (req: Request): Promise<Response> => {
 
     console.log("Email sent successfully:", resendData);
 
+    // Send confirmation email to the user
+    const confirmationResponse = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${Deno.env.get("RESEND_API_KEY")}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        from: "Fleuret <onboarding@resend.dev>",
+        to: [email],
+        subject: "Bienvenue sur la liste d'attente Fleuret",
+        html: `
+          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+            <h2 style="color: #333;">Merci de votre intérêt pour Fleuret !</h2>
+            <p>Bonjour ${name},</p>
+            <p>Nous avons bien reçu votre inscription à notre liste d'attente.</p>
+            <p>Nous vous tiendrons informé(e) dès que Fleuret sera disponible.</p>
+            <p>À très bientôt,</p>
+            <p><strong>L'équipe Fleuret</strong></p>
+            <hr style="border: none; border-top: 1px solid #eee; margin: 20px 0;">
+            <p style="color: #666; font-size: 12px;">Si vous n'êtes pas à l'origine de cette inscription, vous pouvez ignorer cet email.</p>
+          </div>
+        `,
+      }),
+    });
+
+    const confirmationData = await confirmationResponse.json();
+
+    if (!confirmationResponse.ok) {
+      console.error("Failed to send confirmation email:", confirmationData);
+      // Continue even if confirmation email fails
+    } else {
+      console.log("Confirmation email sent successfully:", confirmationData);
+    }
+
     return new Response(JSON.stringify({ success: true, id: resendData.id }), {
       status: 200,
       headers: {
