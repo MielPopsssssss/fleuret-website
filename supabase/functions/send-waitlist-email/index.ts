@@ -67,7 +67,7 @@ const handler = async (req: Request): Promise<Response> => {
       },
       body: JSON.stringify({
         from: "Fleuret Waitlist <onboarding@resend.dev>",
-        to: ["yanis.grigy@fleuret-ai.com"],
+        to: ["grigyyanis753@gmail.com"], // Temporaire - changera vers yanis.grigy@fleuret-ai.com une fois le domaine vérifié
         subject: `Nouvelle inscription waitlist - ${name}`,
         html: emailContent,
       }),
