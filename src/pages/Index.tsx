@@ -1,6 +1,7 @@
 import Hero from "@/components/Hero";
 import Partners from "@/components/Partners";
 import Benchmark from "@/components/Benchmark";
+import ComparisonTable from "@/components/ComparisonTable";
 import Urgency from "@/components/Urgency";
 import Team from "@/components/Team";
 import Footer from "@/components/Footer";
@@ -13,6 +14,7 @@ const Index = () => {
         <Partners />
         <Team />
         <Benchmark />
+        <ComparisonTable />
         <Urgency />
         <Footer />
       </div>
