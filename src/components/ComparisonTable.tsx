@@ -60,7 +60,7 @@ const ComparisonTable = () => {
   );
 
   return (
-    <section className="py-24 bg-background">
+    <section className="py-16 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -70,70 +70,33 @@ const ComparisonTable = () => {
 
         {/* Desktop Table */}
         <div className="hidden md:block overflow-x-auto">
-          <div className="min-w-[800px] relative">
-            <div className="grid grid-cols-4 gap-0">
-              {/* Column 1 */}
-              <div className="border border-border rounded-l-lg overflow-hidden bg-muted/30">
-                <div className="p-6">
-                  <h3 className="font-bold text-lg">{t("comparison.header.capability") || "Capacité"}</h3>
-                </div>
-              </div>
-              
-              {/* Column 2 */}
-              <div className="border-y border-border overflow-hidden bg-muted/30">
-                <div className="p-6">
-                  <h3 className="font-semibold text-center">
-                    {t("comparison.header.traditional") || "Services de Pentest Traditionnels"}
-                  </h3>
-                </div>
-              </div>
-              
-              {/* Column 3 - Fleuret (highlighted) */}
-              <div className="relative z-10 -my-2 scale-105">
-                <div className="border-2 border-primary rounded-lg overflow-hidden bg-primary shadow-lg">
-                  <div className="p-6">
-                    <h3 className="font-bold text-center text-primary-foreground">
-                      {t("comparison.header.fleuret") || "Pentest IA Agentique Fleuret"}
-                    </h3>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Column 4 */}
-              <div className="border-y border-border rounded-r-lg overflow-hidden bg-muted/30">
-                <div className="p-6">
-                  <h3 className="font-semibold text-center">
-                    {t("comparison.header.automated") || "Pentest Automatisé"}
-                  </h3>
-                </div>
-              </div>
-            </div>
-
-            {/* Rows */}
-            <div className="grid grid-cols-4 gap-0 mt-2">
+          <div className="max-w-5xl mx-auto">
+            <div className="grid grid-cols-4 gap-4">
               {/* Column 1 - Labels */}
-              <div className="border-x border-b border-border rounded-bl-lg overflow-hidden">
+              <div className="space-y-3">
+                <div className="p-4 bg-muted/30 rounded-lg">
+                  <h3 className="font-bold text-base">{t("comparison.header.capability") || "Capacité"}</h3>
+                </div>
                 {capabilities.map((capability, index) => (
-                  <div 
-                    key={index}
-                    className={`p-6 font-medium bg-muted/10 ${index !== capabilities.length - 1 ? 'border-b border-border' : ''}`}
-                  >
+                  <div key={index} className="p-4 font-medium bg-muted/10 rounded-lg min-h-[60px] flex items-center">
                     {capability.label}
                   </div>
                 ))}
               </div>
               
               {/* Column 2 - Traditional */}
-              <div className="border-y border-border overflow-hidden">
+              <div className="space-y-3">
+                <div className="p-4 bg-muted/30 rounded-lg">
+                  <h3 className="font-semibold text-center text-sm">
+                    {t("comparison.header.traditional") || "Services Traditionnels"}
+                  </h3>
+                </div>
                 {capabilities.map((capability, index) => (
-                  <div 
-                    key={index}
-                    className={`p-6 text-center ${index !== capabilities.length - 1 ? 'border-b border-border' : ''}`}
-                  >
+                  <div key={index} className="p-4 text-center rounded-lg min-h-[60px] flex items-center justify-center">
                     {typeof capability.traditional === 'object' ? (
                       capability.traditional.check ? <CheckIcon /> : <XIcon />
                     ) : (
-                      <span className="text-muted-foreground">{capability.traditional}</span>
+                      <span className="text-muted-foreground text-sm">{capability.traditional}</span>
                     )}
                   </div>
                 ))}
@@ -141,12 +104,14 @@ const ComparisonTable = () => {
               
               {/* Column 3 - Fleuret (highlighted) */}
               <div className="relative z-10 scale-105">
-                <div className="border-2 border-primary rounded-b-lg overflow-hidden bg-primary">
+                <div className="border-2 border-primary rounded-lg bg-primary shadow-xl space-y-3 p-3">
+                  <div className="p-3">
+                    <h3 className="font-bold text-center text-primary-foreground text-sm">
+                      {t("comparison.header.fleuret") || "Fleuret IA"}
+                    </h3>
+                  </div>
                   {capabilities.map((capability, index) => (
-                    <div 
-                      key={index}
-                      className={`p-6 text-center ${index !== capabilities.length - 1 ? 'border-b border-primary-foreground/20' : ''}`}
-                    >
+                    <div key={index} className="p-3 text-center min-h-[60px] flex items-center justify-center">
                       {typeof capability.fleuret === 'object' ? (
                         capability.fleuret.check ? (
                           <div className="flex items-center justify-center">
@@ -156,7 +121,7 @@ const ComparisonTable = () => {
                           </div>
                         ) : <XIcon />
                       ) : (
-                        <span className="font-bold text-primary-foreground">{capability.fleuret}</span>
+                        <span className="font-bold text-primary-foreground text-sm">{capability.fleuret}</span>
                       )}
                     </div>
                   ))}
@@ -164,16 +129,18 @@ const ComparisonTable = () => {
               </div>
               
               {/* Column 4 - Automated */}
-              <div className="border-y border-r border-border rounded-br-lg overflow-hidden">
+              <div className="space-y-3">
+                <div className="p-4 bg-muted/30 rounded-lg">
+                  <h3 className="font-semibold text-center text-sm">
+                    {t("comparison.header.automated") || "Solutions Automatisées"}
+                  </h3>
+                </div>
                 {capabilities.map((capability, index) => (
-                  <div 
-                    key={index}
-                    className={`p-6 text-center ${index !== capabilities.length - 1 ? 'border-b border-border' : ''}`}
-                  >
+                  <div key={index} className="p-4 text-center rounded-lg min-h-[60px] flex items-center justify-center">
                     {typeof capability.automated === 'object' ? (
                       capability.automated.check ? <CheckIcon /> : <XIcon />
                     ) : (
-                      <span className="text-muted-foreground">{capability.automated}</span>
+                      <span className="text-muted-foreground text-sm">{capability.automated}</span>
                     )}
                   </div>
                 ))}
@@ -184,19 +151,19 @@ const ComparisonTable = () => {
 
         {/* Mobile Cards */}
         <div className="md:hidden space-y-6">
-          <div className="border-2 border-primary bg-primary rounded-lg p-6 shadow-lg scale-105">
-            <h3 className="font-bold text-lg text-primary-foreground mb-4 text-center">
-              {t("comparison.header.fleuret") || "Pentest IA Agentique Fleuret"}
+          <div className="border-2 border-primary bg-primary rounded-lg p-5 shadow-lg">
+            <h3 className="font-bold text-base text-primary-foreground mb-4 text-center">
+              {t("comparison.header.fleuret") || "Fleuret IA"}
             </h3>
-            <div className="space-y-3">
+            <div className="space-y-2">
               {capabilities.map((capability, index) => (
-                <div key={index} className="flex justify-between items-center py-2 border-b border-primary-foreground/20 last:border-0">
+                <div key={index} className="flex justify-between items-center py-2">
                   <span className="font-medium text-sm text-primary-foreground">{capability.label}</span>
                   <span className="text-sm font-bold text-primary-foreground">
                     {typeof capability.fleuret === 'object' ? (
                       capability.fleuret.check ? (
                         <div className="flex items-center justify-center">
-                          <div className="w-7 h-7 rounded-full bg-primary-foreground flex items-center justify-center">
+                          <div className="w-6 h-6 rounded-full bg-primary-foreground flex items-center justify-center">
                             <Check className="w-4 h-4 text-primary" strokeWidth={2.5} />
                           </div>
                         </div>
@@ -210,13 +177,13 @@ const ComparisonTable = () => {
             </div>
           </div>
 
-          <div className="border border-border rounded-lg p-6">
-            <h3 className="font-semibold text-center mb-4">
+          <div className="border border-border rounded-lg p-5">
+            <h3 className="font-semibold text-center mb-4 text-sm">
               {t("comparison.header.traditional") || "Services Traditionnels"}
             </h3>
-            <div className="space-y-3">
+            <div className="space-y-2">
               {capabilities.map((capability, index) => (
-                <div key={index} className="flex justify-between items-center py-2 border-b border-border last:border-0">
+                <div key={index} className="flex justify-between items-center py-2">
                   <span className="text-sm text-muted-foreground">{capability.label}</span>
                   <span className="text-sm">
                     {typeof capability.traditional === 'object' ? (
@@ -230,13 +197,13 @@ const ComparisonTable = () => {
             </div>
           </div>
 
-          <div className="border border-border rounded-lg p-6">
-            <h3 className="font-semibold text-center mb-4">
+          <div className="border border-border rounded-lg p-5">
+            <h3 className="font-semibold text-center mb-4 text-sm">
               {t("comparison.header.automated") || "Solutions Automatisées"}
             </h3>
-            <div className="space-y-3">
+            <div className="space-y-2">
               {capabilities.map((capability, index) => (
-                <div key={index} className="flex justify-between items-center py-2 border-b border-border last:border-0">
+                <div key={index} className="flex justify-between items-center py-2">
                   <span className="text-sm text-muted-foreground">{capability.label}</span>
                   <span className="text-sm">
                     {typeof capability.automated === 'object' ? (
