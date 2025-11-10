@@ -12,6 +12,7 @@ import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import ReCAPTCHA from "react-google-recaptcha";
+import { supabase } from "@/integrations/supabase/client";
 
 const Waitlist = () => {
   const navigate = useNavigate();
@@ -48,8 +49,22 @@ const Waitlist = () => {
     try {
       const validatedData = waitlistSchema.parse(formData);
 
-      console.log("Waitlist submission:", validatedData);
+      console.log("Sending waitlist submission to backend...");
 
+      // Call the edge function to send email
+      const { data, error } = await supabase.functions.invoke('send-waitlist-email', {
+        body: {
+          ...validatedData,
+          captchaToken
+        }
+      });
+
+      if (error) {
+        console.error("Error sending email:", error);
+        throw new Error("Failed to send email");
+      }
+
+      console.log("Email sent successfully:", data);
       toast.success(t('waitlist.success'));
 
       setTimeout(() => {
@@ -61,6 +76,7 @@ const Waitlist = () => {
           toast.error(err.message);
         });
       } else {
+        console.error("Submission error:", error);
         toast.error(t('waitlist.error'));
       }
     } finally {
