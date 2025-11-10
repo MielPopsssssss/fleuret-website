@@ -104,7 +104,7 @@ const ComparisonTable = () => {
               
               {/* Column 3 - Fleuret (highlighted) */}
               <div className="relative z-10 scale-105">
-                <div className="border-2 border-primary rounded-lg bg-primary shadow-xl space-y-3 p-3">
+                <div className="border-2 border-primary rounded-lg bg-primary space-y-3 p-3">
                   <div className="p-3">
                     <h3 className="font-bold text-center text-primary-foreground text-sm">
                       {t("comparison.header.fleuret") || "Fleuret IA"}
