@@ -83,6 +83,7 @@ const handler = async (req: Request): Promise<Response> => {
     console.log("Email sent successfully:", resendData);
 
     // Send confirmation email to the user
+    // Temporairement envoyé à grigyyanis753@gmail.com jusqu'à vérification du domaine fleuret-ai.com
     const confirmationResponse = await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: {
@@ -91,8 +92,8 @@ const handler = async (req: Request): Promise<Response> => {
       },
       body: JSON.stringify({
         from: "Fleuret <onboarding@resend.dev>",
-        to: [email],
-        subject: "Bienvenue sur la liste d'attente Fleuret",
+        to: ["grigyyanis753@gmail.com"], // Temporaire - changera vers ${email} une fois le domaine vérifié
+        subject: `Email de confirmation pour ${name} (${email})`,
         html: `
           <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
             <h2 style="color: #333;">Merci de votre intérêt pour Fleuret !</h2>
