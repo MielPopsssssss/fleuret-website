@@ -65,7 +65,7 @@ const ComparisonTable = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 flex items-center justify-center gap-3 flex-wrap">
-            <img src={logoFleuret} alt="Fleuret" className="h-8 md:h-10 w-auto" />
+            <img src={logoFleuret} alt="Fleuret" className="h-12 md:h-14 w-auto" />
             <span>vs Services Traditionnels vs Solutions Automatisées</span>
           </h2>
         </div>
