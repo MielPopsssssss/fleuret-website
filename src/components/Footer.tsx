@@ -1,5 +1,6 @@
 import { Mail, MapPin } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import logoFleuret from "@/assets/logo-fleuret.svg";
 
 const Footer = () => {
   const { t } = useLanguage();
@@ -9,8 +10,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <img src="/favicon.png" alt="Fleuret.ai" className="w-8 h-8 object-contain" />
-              <span className="text-xl font-bold">fleuret.ai</span>
+              <img src={logoFleuret} alt="Fleuret.ai" className="h-10 w-auto" />
             </div>
             <p className="text-muted-foreground leading-relaxed">
               {t('footer.tagline')}
