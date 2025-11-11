@@ -64,8 +64,8 @@ const ComparisonTable = () => {
     <section className="py-16 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-8 md:mb-12">
-          <h2 className="text-xl md:text-3xl lg:text-4xl font-bold mb-4 flex items-center justify-center gap-2 md:gap-3 flex-wrap">
-            <img src={logoFleuret} alt="Fleuret" className="h-10 md:h-16 lg:h-20 w-auto" />
+          <h2 className="text-xl md:text-3xl lg:text-4xl font-bold mb-4 flex items-center justify-center gap-2 md:gap-3">
+            <img src={logoFleuret} alt="Fleuret" className="h-10 md:h-16 lg:h-20 w-auto flex-shrink-0" />
             <span className="text-base md:text-3xl lg:text-4xl">vs Services Traditionnels vs Solutions Automatisées</span>
           </h2>
         </div>
