@@ -87,6 +87,7 @@ const Partners = () => {
             size="lg"
             onClick={() => handleManualNavigation(prevSlide)}
             className="absolute left-0 top-1/2 -translate-y-1/2 z-10 rounded-full w-14 h-14 shadow-lg"
+            aria-label="Partenaire précédent"
           >
             <ChevronLeft className="h-8 w-8" />
           </Button>
@@ -107,8 +108,11 @@ const Partners = () => {
                 >
                   <img
                     src={partner.logo}
-                    alt={partner.name}
+                    alt={`Logo ${partner.name} - Partenaire académique et professionnel de Fleuret AI`}
                     className="max-h-12 md:max-h-28 max-w-full w-auto object-contain transition-opacity"
+                    loading="lazy"
+                    width="200"
+                    height="120"
                     style={{
                       filter: offset === 0 
                         ? "drop-shadow(0 0 15px hsl(var(--primary) / 0.3))" 
@@ -125,12 +129,13 @@ const Partners = () => {
             size="lg"
             onClick={() => handleManualNavigation(nextSlide)}
             className="absolute right-0 top-1/2 -translate-y-1/2 z-10 rounded-full w-14 h-14 shadow-lg"
+            aria-label="Partenaire suivant"
           >
             <ChevronRight className="h-8 w-8" />
           </Button>
 
-          <div className="flex justify-center gap-2 mt-12">
-            {partners.map((_, index) => (
+          <div className="flex justify-center gap-2 mt-12" role="tablist" aria-label="Navigation partenaires">
+            {partners.map((partner, index) => (
               <button
                 key={index}
                 onClick={() => handleManualNavigation(() => setCurrentIndex(index))}
@@ -139,6 +144,9 @@ const Partners = () => {
                     ? "bg-primary w-8"
                     : "bg-primary/30 hover:bg-primary/50 w-2"
                 }`}
+                role="tab"
+                aria-selected={index === currentIndex}
+                aria-label={`Afficher ${partner.name}`}
               />
             ))}
           </div>

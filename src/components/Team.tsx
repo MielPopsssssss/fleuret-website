@@ -36,7 +36,7 @@ const Team = () => {
   ];
 
   return (
-    <section className="py-24 relative">
+    <section className="py-24 relative" itemScope itemType="https://schema.org/Organization">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <h2 className="text-4xl md:text-5xl font-bold">
@@ -56,21 +56,27 @@ const Team = () => {
                 animationDelay: `${index * 100}ms`,
                 animation: 'fade-in 0.5s ease-out forwards'
               }}
+              itemScope 
+              itemType="https://schema.org/Person"
             >
-              <div className="space-y-4">
+              <article className="space-y-4">
                 <img 
                   src={member.photo} 
-                  alt={member.name}
+                  alt={`${member.name} - ${member.role} chez Fleuret AI`}
                   className="w-20 h-20 rounded-full object-cover"
+                  itemProp="image"
+                  loading="lazy"
+                  width="80"
+                  height="80"
                 />
                 <div>
-                  <h3 className="text-xl font-semibold">{member.name}</h3>
-                  <p className="text-primary font-medium text-sm">{member.role}</p>
+                  <h3 className="text-xl font-semibold" itemProp="name">{member.name}</h3>
+                  <p className="text-primary font-medium text-sm" itemProp="jobTitle">{member.role}</p>
                 </div>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-sm text-muted-foreground" itemProp="alumniOf">
                   {member.education}
                 </p>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed" itemProp="description">
                   {member.description}
                 </p>
                 <a 
@@ -78,11 +84,13 @@ const Team = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-sm text-primary hover:text-primary-glow transition-colors"
+                  aria-label={`Voir le profil LinkedIn de ${member.name}`}
+                  itemProp="url"
                 >
                   <Linkedin className="w-4 h-4" />
                   {t('team.linkedin')}
                 </a>
-              </div>
+              </article>
             </Card>
           ))}
         </div>
