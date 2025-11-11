@@ -107,7 +107,7 @@ const translations = {
     'partners.title': 'Ils nous font confiance',
     
     // Footer
-    'footer.tagline': 'Pentesting automatisé par IA pour la souveraineté numérique française.',
+    'footer.tagline': 'Pentesting automatisé par IA pour la souveraineté numérique européenne.',
     'footer.contact': 'Contact',
     'footer.program': 'Programme',
     'footer.program.hec': 'HEC Launchpad - Janvier 2025',
@@ -398,7 +398,7 @@ const translations = {
     'partners.title': 'They trust us',
     
     // Footer
-    'footer.tagline': 'AI-powered automated pentesting for French digital sovereignty.',
+    'footer.tagline': 'AI-powered automated pentesting for European digital sovereignty.',
     'footer.contact': 'Contact',
     'footer.program': 'Program',
     'footer.program.hec': 'HEC Launchpad - January 2025',
