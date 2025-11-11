@@ -63,67 +63,67 @@ const ComparisonTable = () => {
   return (
     <section className="py-16 bg-background">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 flex items-center justify-center gap-3 flex-wrap">
-            <img src={logoFleuret} alt="Fleuret" className="h-16 md:h-20 w-auto" />
-            <span>vs Services Traditionnels vs Solutions Automatisées</span>
+        <div className="text-center mb-8 md:mb-12">
+          <h2 className="text-xl md:text-3xl lg:text-4xl font-bold mb-4 flex items-center justify-center gap-2 md:gap-3 flex-wrap">
+            <img src={logoFleuret} alt="Fleuret" className="h-10 md:h-16 lg:h-20 w-auto" />
+            <span className="text-base md:text-3xl lg:text-4xl">vs Services Traditionnels vs Solutions Automatisées</span>
           </h2>
         </div>
 
-        {/* Desktop Table */}
-        <div className="hidden md:block overflow-x-auto px-8 py-4">
-          <div className="max-w-5xl mx-auto">
-            <div className="grid grid-cols-4 gap-4">
+        {/* Responsive Table */}
+        <div className="overflow-x-auto px-2 md:px-8 py-4">
+          <div className="max-w-5xl mx-auto min-w-[600px]">
+            <div className="grid grid-cols-4 gap-2 md:gap-4">
               {/* Column 1 - Labels */}
-              <div className="space-y-3">
-                <div className="p-4 bg-muted/30 rounded-lg">
-                  <h3 className="font-bold text-base">{t("comparison.header.capability") || "Capacité"}</h3>
+              <div className="space-y-2 md:space-y-3">
+                <div className="p-2 md:p-4 bg-muted/30 rounded-lg">
+                  <h3 className="font-bold text-xs md:text-base">{t("comparison.header.capability") || "Capacité"}</h3>
                 </div>
                 {capabilities.map((capability, index) => (
-                  <div key={index} className="p-4 font-medium bg-muted/10 rounded-lg min-h-[60px] flex items-center">
+                  <div key={index} className="p-2 md:p-4 font-medium bg-muted/10 rounded-lg min-h-[50px] md:min-h-[60px] flex items-center text-xs md:text-base">
                     {capability.label}
                   </div>
                 ))}
               </div>
               
               {/* Column 2 - Traditional */}
-              <div className="border border-primary/30 rounded-lg p-3 space-y-3">
-                <div className="p-4 bg-muted/30 rounded-lg">
-                  <h3 className="font-semibold text-center text-sm">
+              <div className="border border-primary/30 rounded-lg p-1.5 md:p-3 space-y-2 md:space-y-3">
+                <div className="p-2 md:p-4 bg-muted/30 rounded-lg">
+                  <h3 className="font-semibold text-center text-[10px] md:text-sm leading-tight">
                     {t("comparison.header.traditional") || "Services Traditionnels"}
                   </h3>
                 </div>
                 {capabilities.map((capability, index) => (
-                  <div key={index} className="p-4 text-center rounded-lg min-h-[60px] flex items-center justify-center">
+                  <div key={index} className="p-2 md:p-4 text-center rounded-lg min-h-[50px] md:min-h-[60px] flex items-center justify-center">
                     {typeof capability.traditional === 'object' ? (
                       capability.traditional.check ? <CheckIcon /> : <XIcon />
                     ) : (
-                      <span className="text-muted-foreground text-sm">{capability.traditional}</span>
+                      <span className="text-muted-foreground text-[10px] md:text-sm">{capability.traditional}</span>
                     )}
                   </div>
                 ))}
               </div>
               
               {/* Column 3 - Fleuret (highlighted) */}
-              <div className="relative z-10 scale-105">
-                <div className="border-2 border-primary rounded-lg bg-primary space-y-3 p-3">
-                  <div className="p-3">
-                    <h3 className="font-bold text-center text-primary-foreground text-sm">
+              <div className="relative z-10 md:scale-105">
+                <div className="border-2 border-primary rounded-lg bg-primary space-y-2 md:space-y-3 p-1.5 md:p-3">
+                  <div className="p-1.5 md:p-3">
+                    <h3 className="font-bold text-center text-primary-foreground text-[10px] md:text-sm">
                       {t("comparison.header.fleuret") || "Fleuret IA"}
                     </h3>
                   </div>
                   {capabilities.map((capability, index) => (
-                    <div key={index} className="p-3 text-center min-h-[60px] flex items-center justify-center">
+                    <div key={index} className="p-2 md:p-3 text-center min-h-[50px] md:min-h-[60px] flex items-center justify-center">
                       {typeof capability.fleuret === 'object' ? (
                         capability.fleuret.check ? (
                           <div className="flex items-center justify-center">
-                            <div className="w-7 h-7 rounded-full bg-primary-foreground flex items-center justify-center">
-                              <Check className="w-4 h-4 text-primary" strokeWidth={2.5} />
+                            <div className="w-5 h-5 md:w-7 md:h-7 rounded-full bg-primary-foreground flex items-center justify-center">
+                              <Check className="w-3 h-3 md:w-4 md:h-4 text-primary" strokeWidth={2.5} />
                             </div>
                           </div>
                         ) : <XIcon />
                       ) : (
-                        <span className="font-bold text-primary-foreground text-sm">{capability.fleuret}</span>
+                        <span className="font-bold text-primary-foreground text-[10px] md:text-sm">{capability.fleuret}</span>
                       )}
                     </div>
                   ))}
@@ -131,18 +131,18 @@ const ComparisonTable = () => {
               </div>
               
               {/* Column 4 - Automated */}
-              <div className="border border-primary/30 rounded-lg p-3 space-y-3">
-                <div className="p-4 bg-muted/30 rounded-lg">
-                  <h3 className="font-semibold text-center text-sm">
+              <div className="border border-primary/30 rounded-lg p-1.5 md:p-3 space-y-2 md:space-y-3">
+                <div className="p-2 md:p-4 bg-muted/30 rounded-lg">
+                  <h3 className="font-semibold text-center text-[10px] md:text-sm leading-tight">
                     {t("comparison.header.automated") || "Solutions Automatisées"}
                   </h3>
                 </div>
                 {capabilities.map((capability, index) => (
-                  <div key={index} className="p-4 text-center rounded-lg min-h-[60px] flex items-center justify-center">
+                  <div key={index} className="p-2 md:p-4 text-center rounded-lg min-h-[50px] md:min-h-[60px] flex items-center justify-center">
                     {typeof capability.automated === 'object' ? (
                       capability.automated.check ? <CheckIcon /> : <XIcon />
                     ) : (
-                      <span className="text-muted-foreground text-sm">{capability.automated}</span>
+                      <span className="text-muted-foreground text-[10px] md:text-sm">{capability.automated}</span>
                     )}
                   </div>
                 ))}
@@ -151,74 +151,6 @@ const ComparisonTable = () => {
           </div>
         </div>
 
-        {/* Mobile Cards */}
-        <div className="md:hidden space-y-6">
-          <div className="border-2 border-primary bg-primary rounded-lg p-5 shadow-lg">
-            <h3 className="font-bold text-base text-primary-foreground mb-4 text-center">
-              {t("comparison.header.fleuret") || "Fleuret IA"}
-            </h3>
-            <div className="space-y-2">
-              {capabilities.map((capability, index) => (
-                <div key={index} className="flex justify-between items-center py-2">
-                  <span className="font-medium text-sm text-primary-foreground">{capability.label}</span>
-                  <span className="text-sm font-bold text-primary-foreground">
-                    {typeof capability.fleuret === 'object' ? (
-                      capability.fleuret.check ? (
-                        <div className="flex items-center justify-center">
-                          <div className="w-6 h-6 rounded-full bg-primary-foreground flex items-center justify-center">
-                            <Check className="w-4 h-4 text-primary" strokeWidth={2.5} />
-                          </div>
-                        </div>
-                      ) : <XIcon />
-                    ) : (
-                      capability.fleuret
-                    )}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="border border-border rounded-lg p-5">
-            <h3 className="font-semibold text-center mb-4 text-sm">
-              {t("comparison.header.traditional") || "Services Traditionnels"}
-            </h3>
-            <div className="space-y-2">
-              {capabilities.map((capability, index) => (
-                <div key={index} className="flex justify-between items-center py-2">
-                  <span className="text-sm text-muted-foreground">{capability.label}</span>
-                  <span className="text-sm">
-                    {typeof capability.traditional === 'object' ? (
-                      capability.traditional.check ? <CheckIcon /> : <XIcon />
-                    ) : (
-                      capability.traditional
-                    )}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="border border-border rounded-lg p-5">
-            <h3 className="font-semibold text-center mb-4 text-sm">
-              {t("comparison.header.automated") || "Solutions Automatisées"}
-            </h3>
-            <div className="space-y-2">
-              {capabilities.map((capability, index) => (
-                <div key={index} className="flex justify-between items-center py-2">
-                  <span className="text-sm text-muted-foreground">{capability.label}</span>
-                  <span className="text-sm">
-                    {typeof capability.automated === 'object' ? (
-                      capability.automated.check ? <CheckIcon /> : <XIcon />
-                    ) : (
-                      capability.automated
-                    )}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
