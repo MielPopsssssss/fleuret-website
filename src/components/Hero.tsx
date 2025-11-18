@@ -1,11 +1,22 @@
 import { Button } from "@/components/ui/button";
 import logoFleuret from "@/assets/logo-fleuret.svg";
+import heroBackground from "@/assets/hero-fencing-cyber.png";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Hero = () => {
   const { t } = useLanguage();
   return <section className="relative min-h-screen flex items-start justify-center overflow-hidden pt-8 md:pt-12" itemScope itemType="https://schema.org/WebPageElement">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src={heroBackground} 
+          alt="" 
+          className="w-full h-full object-cover opacity-90"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/30 to-background"></div>
+      </div>
+      
       {/* Content */}
       <div className="container mx-auto px-4 z-10">
         <div className="max-w-5xl mx-auto text-center space-y-6 animate-in fade-in duration-1000">
