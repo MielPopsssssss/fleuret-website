@@ -12,9 +12,8 @@ const Hero = () => {
         <img 
           src={heroBackground} 
           alt="" 
-          className="w-full h-full object-cover opacity-90"
+          className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/30 to-background"></div>
       </div>
       
       {/* Content */}
@@ -31,11 +30,11 @@ const Hero = () => {
             />
           </div>
 
-          <h1 className="text-3xl md:text-7xl font-bold tracking-tight" itemProp="headline">
+          <h1 className="text-3xl md:text-7xl font-bold tracking-tight drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]" itemProp="headline">
             <span className="text-gradient glow-effect">{t('hero.title')}</span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed" itemProp="description">
+          <p className="text-xl md:text-2xl text-white max-w-3xl mx-auto leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]" itemProp="description">
             {t('hero.subtitle')}
           </p>
 
@@ -43,7 +42,7 @@ const Hero = () => {
             <Link to="/demo" aria-label="Voir la démonstration de notre POC fonctionnel">
               <Button 
                 size="lg" 
-                className="text-lg hover:bg-white hover:text-foreground transition-colors"
+                className="text-lg bg-primary/90 backdrop-blur-sm hover:bg-primary hover:scale-105 transition-all shadow-lg"
               >
                 {t('hero.cta.demo')}
               </Button>
@@ -51,7 +50,7 @@ const Hero = () => {
             <Link to="/waitlist" aria-label="Rejoindre la liste d'attente Fleuret AI">
               <Button 
                 size="lg" 
-                className="text-lg hover:bg-white hover:text-foreground transition-colors"
+                className="text-lg bg-primary/90 backdrop-blur-sm hover:bg-primary hover:scale-105 transition-all shadow-lg"
               >
                 {t('hero.cta.waitlist')}
               </Button>
