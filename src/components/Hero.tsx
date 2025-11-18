@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import logoFleuret from "@/assets/logo-fleuret.svg";
-import heroBackground from "@/assets/hero-fencing-cyber.png";
+import heroBackground from "@/assets/hero-background-fencing.png";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 
