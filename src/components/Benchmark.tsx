@@ -35,7 +35,7 @@ const Benchmark = () => {
     <section className="pt-24 pb-0 relative">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto mb-16">
-          <Card className="p-8 md:p-12 border-primary/30 bg-card/50 backdrop-blur-sm card-glow">
+          <Card className="p-8 md:p-12 border-primary/30 bg-white card-glow">
             <div className="grid md:grid-cols-2 gap-12">
               <div className="space-y-6">
                 <div>

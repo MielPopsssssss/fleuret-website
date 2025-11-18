@@ -106,27 +106,19 @@ const Partners = () => {
                     height: isMobile ? '60px' : '120px'
                   }}
                 >
-                  <div 
-                    className="relative p-4 rounded-lg"
+                  <img
+                    src={partner.logo}
+                    alt={`Logo ${partner.name} - Partenaire académique et professionnel de Fleuret AI`}
+                    className="max-h-12 md:max-h-28 max-w-full w-auto object-contain transition-opacity"
+                    loading="lazy"
+                    width="200"
+                    height="120"
                     style={{
-                      background: 'radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%)',
-                      boxShadow: '0 0 40px rgba(255,255,255,0.3), 0 0 20px rgba(255,255,255,0.2)',
+                      filter: offset === 0 
+                        ? "drop-shadow(0 0 15px hsl(var(--primary) / 0.3))" 
+                        : "none",
                     }}
-                  >
-                    <img
-                      src={partner.logo}
-                      alt={`Logo ${partner.name} - Partenaire académique et professionnel de Fleuret AI`}
-                      className="max-h-12 md:max-h-28 max-w-full w-auto object-contain transition-opacity"
-                      loading="lazy"
-                      width="200"
-                      height="120"
-                      style={{
-                        filter: offset === 0 
-                          ? "drop-shadow(0 0 15px hsl(var(--primary) / 0.3))" 
-                          : "none",
-                      }}
-                    />
-                  </div>
+                  />
                 </div>
               ))}
             </div>
