@@ -6,7 +6,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 const Hero = () => {
   const { t } = useLanguage();
-  return <section className="relative min-h-screen flex items-start justify-center overflow-hidden pt-20 md:pt-32" itemScope itemType="https://schema.org/WebPageElement">
+  return <section className="relative min-h-screen flex items-start justify-center overflow-hidden pt-4 md:pt-8" itemScope itemType="https://schema.org/WebPageElement">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img 
