@@ -88,6 +88,27 @@
     }
     </script>
     
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      
+      // Désactiver GA par défaut jusqu'au consentement
+      gtag('consent', 'default', {
+        'analytics_storage': 'denied',
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied'
+      });
+      
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX', {
+        'anonymize_ip': true,
+        'cookie_flags': 'SameSite=None;Secure'
+      });
+    </script>
+    
     <!-- Axeptio Cookie Consent -->
     <style>
       /* Personnalisation Axeptio pour correspondre au design Fleuret.ai */
@@ -156,6 +177,19 @@
       e.async = true; e.src = "//static.axept.io/sdk.js";
       t.parentNode.insertBefore(e, t);
     })(document, "script");
+    
+    // Gestion du consentement Axeptio pour Google Analytics
+    void 0 === window._axcb && (window._axcb = []);
+    window._axcb.push(function(axeptio) {
+      axeptio.on("cookies:complete", function(choices) {
+        if (choices.google_analytics) {
+          // L'utilisateur a accepté Google Analytics
+          gtag('consent', 'update', {
+            'analytics_storage': 'granted'
+          });
+        }
+      });
+    });
     </script>
   </head>
 
