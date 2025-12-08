@@ -1,9 +1,10 @@
 import { Card } from "@/components/ui/card";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Linkedin } from "lucide-react";
+import { Linkedin, User } from "lucide-react";
 import yanisPhoto from "@/assets/yanis.png";
 import augustinPhoto from "@/assets/augustin.png";
 import pierreGabrielPhoto from "@/assets/pierre-gabriel.png";
+import mackyPhoto from "@/assets/macky.jpeg";
 
 const Team = () => {
   const { t } = useLanguage();
@@ -32,6 +33,22 @@ const Team = () => {
       description: t('team.augustin.description'),
       photo: augustinPhoto,
       linkedin: "https://www.linkedin.com/in/augustinponsin/"
+    },
+    {
+      name: t('team.macky.name'),
+      role: t('team.macky.role.main'),
+      education: t('team.macky.education'),
+      description: t('team.macky.description'),
+      photo: mackyPhoto,
+      linkedin: "https://www.linkedin.com/in/macky-d/"
+    },
+    {
+      name: t('team.anonymous.name'),
+      role: t('team.anonymous.role.main'),
+      education: t('team.anonymous.education'),
+      description: t('team.anonymous.description'),
+      photo: null,
+      linkedin: null
     }
   ];
 
@@ -60,15 +77,21 @@ const Team = () => {
               itemType="https://schema.org/Person"
             >
               <article className="space-y-4">
-                <img 
-                  src={member.photo} 
-                  alt={`${member.name} - ${member.role} chez Fleuret AI`}
-                  className="w-20 h-20 rounded-full object-cover"
-                  itemProp="image"
-                  loading="lazy"
-                  width="80"
-                  height="80"
-                />
+                {member.photo ? (
+                  <img 
+                    src={member.photo} 
+                    alt={`${member.name} - ${member.role} chez Fleuret AI`}
+                    className="w-20 h-20 rounded-full object-cover"
+                    itemProp="image"
+                    loading="lazy"
+                    width="80"
+                    height="80"
+                  />
+                ) : (
+                  <div className="w-20 h-20 rounded-full bg-muted flex items-center justify-center">
+                    <User className="w-10 h-10 text-muted-foreground" />
+                  </div>
+                )}
                 <div>
                   <h3 className="text-xl font-semibold" itemProp="name">{member.name}</h3>
                   <p className="text-primary font-medium text-sm" itemProp="jobTitle">{member.role}</p>
@@ -79,17 +102,19 @@ const Team = () => {
                 <p className="text-muted-foreground leading-relaxed" itemProp="description">
                   {member.description}
                 </p>
-                <a 
-                  href={member.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-sm text-primary hover:text-primary-glow transition-colors"
-                  aria-label={`Voir le profil LinkedIn de ${member.name}`}
-                  itemProp="url"
-                >
-                  <Linkedin className="w-4 h-4" />
-                  {t('team.linkedin')}
-                </a>
+                {member.linkedin && (
+                  <a 
+                    href={member.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-sm text-primary hover:text-primary-glow transition-colors"
+                    aria-label={`Voir le profil LinkedIn de ${member.name}`}
+                    itemProp="url"
+                  >
+                    <Linkedin className="w-4 h-4" />
+                    {t('team.linkedin')}
+                  </a>
+                )}
               </article>
             </Card>
           ))}

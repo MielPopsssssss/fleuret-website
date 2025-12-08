@@ -250,6 +250,14 @@ const translations = {
     'team.augustin.role.main': 'CPO & Co-fondateur',
     'team.augustin.education': 'Ex-Pentester, EPITA, EFREI, X-HEC',
     'team.augustin.description': 'Expertise pentesting et méthodologie.',
+    'team.macky.name': 'Macky Dabo',
+    'team.macky.role.main': 'CMO',
+    'team.macky.education': 'Arts et Métiers, X-HEC Entrepreneurs',
+    'team.macky.description': 'Cabinet en stratégie Marketing.',
+    'team.anonymous.name': '—',
+    'team.anonymous.role.main': 'CFO',
+    'team.anonymous.education': 'HEC Paris, Wharton',
+    'team.anonymous.description': 'Bras droit CEO startups tech.',
     'team.linkedin': 'LinkedIn',
     
     // Waitlist Page
@@ -541,6 +549,14 @@ const translations = {
     'team.augustin.role.main': 'CPO & Co-founder',
     'team.augustin.education': 'Ex-Pentester, EPITA, EFREI, X-HEC',
     'team.augustin.description': 'Pentesting expertise and methodology.',
+    'team.macky.name': 'Macky Dabo',
+    'team.macky.role.main': 'CMO',
+    'team.macky.education': 'Arts et Métiers, X-HEC Entrepreneurs',
+    'team.macky.description': 'Marketing strategy consulting.',
+    'team.anonymous.name': '—',
+    'team.anonymous.role.main': 'CFO',
+    'team.anonymous.education': 'HEC Paris, Wharton',
+    'team.anonymous.description': 'Right-hand to tech startup CEOs.',
     'team.linkedin': 'LinkedIn',
     
     // Waitlist Page
