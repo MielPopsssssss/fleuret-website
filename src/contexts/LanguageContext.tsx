@@ -13,13 +13,13 @@ const translations = {
     // Navbar
     'nav.home': 'Accueil',
     'nav.partners': 'Partenaires',
-    'nav.waitlist': 'Rejoindre notre waitlist',
+    'nav.waitlist': 'Devenir early adopter',
     
     // Hero
     'hero.title': 'Pentests en continu sur serveur et web, propulsés par une IA agentique.',
     'hero.subtitle': 'De votre IP au rapport audit‑ready, en continu, hébergé en Europe.',
     'hero.cta.demo': 'Voir notre POC fonctionnel',
-    'hero.cta.waitlist': 'Rejoindre notre waitlist',
+    'hero.cta.waitlist': 'Devenir early adopter',
     
     // Features
     'features.title': 'Une Solution Révolutionnaire',
@@ -260,9 +260,9 @@ const translations = {
     'team.anonymous.description': 'Bras droit CEO startups tech.',
     'team.linkedin': 'LinkedIn',
     
-    // Waitlist Page
+    // Early Adopter Page
     'waitlist.back': 'Retour',
-    'waitlist.title': 'Rejoignez notre Waitlist',
+    'waitlist.title': 'Devenez Early Adopter',
     'waitlist.subtitle': 'Soyez parmi les premiers à découvrir Fleuret AI',
     'waitlist.name': 'Nom complet',
     'waitlist.email': 'Email professionnel',
@@ -270,7 +270,7 @@ const translations = {
     'waitlist.position': 'Poste',
     'waitlist.message': 'Message (optionnel)',
     'waitlist.message.placeholder': 'Parlez-nous de vos besoins en cybersécurité...',
-    'waitlist.submit': 'Rejoindre la Waitlist',
+    'waitlist.submit': 'Devenir Early Adopter',
     'waitlist.submitting': 'Envoi en cours...',
     'waitlist.success': 'Merci ! Nous vous contacterons bientôt.',
     'waitlist.error': 'Une erreur est survenue. Veuillez réessayer.',
@@ -312,13 +312,13 @@ const translations = {
     // Navbar
     'nav.home': 'Home',
     'nav.partners': 'Partners',
-    'nav.waitlist': 'Join our waitlist',
+    'nav.waitlist': 'Become an Early Adopter',
     
     // Hero
     'hero.title': 'Continuous pentesting on server and web, powered by agentic AI.',
     'hero.subtitle': 'From your IP to audit-ready report, continuously, hosted in Europe.',
     'hero.cta.demo': 'See our functional POC',
-    'hero.cta.waitlist': 'Join our waitlist',
+    'hero.cta.waitlist': 'Become an Early Adopter',
     
     // Features
     'features.title': 'A Revolutionary Solution',
@@ -559,9 +559,9 @@ const translations = {
     'team.anonymous.description': 'Right-hand to tech startup CEOs.',
     'team.linkedin': 'LinkedIn',
     
-    // Waitlist Page
+    // Early Adopter Page
     'waitlist.back': 'Back',
-    'waitlist.title': 'Join our Waitlist',
+    'waitlist.title': 'Become an Early Adopter',
     'waitlist.subtitle': 'Be among the first to discover Fleuret AI',
     'waitlist.name': 'Full name',
     'waitlist.email': 'Professional email',
@@ -569,7 +569,7 @@ const translations = {
     'waitlist.position': 'Position',
     'waitlist.message': 'Message (optional)',
     'waitlist.message.placeholder': 'Tell us about your cybersecurity needs...',
-    'waitlist.submit': 'Join the Waitlist',
+    'waitlist.submit': 'Become an Early Adopter',
     'waitlist.submitting': 'Submitting...',
     'waitlist.success': 'Thank you! We will contact you soon.',
     'waitlist.error': 'An error occurred. Please try again.',

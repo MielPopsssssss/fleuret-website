@@ -37,7 +37,7 @@ const Hero = () => {
                 {t('hero.cta.demo')}
               </Button>
             </Link>
-            <Link to="/waitlist" aria-label="Rejoindre la liste d'attente Fleuret AI">
+            <Link to="/waitlist" aria-label="Devenir early adopter Fleuret AI">
               <Button 
                 size="lg" 
                 className="text-lg hover:bg-white hover:text-foreground transition-colors"
