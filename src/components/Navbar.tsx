@@ -37,7 +37,7 @@ const Navbar = () => {
 
           <div className="flex items-center gap-4">
             <LanguageSwitcher />
-            <Link to="/waitlist" aria-label="Rejoindre la waitlist">
+            <Link to="/waitlist" aria-label="Devenir early adopter Fleuret AI">
               <Button>{t('nav.waitlist')}</Button>
             </Link>
           </div>
