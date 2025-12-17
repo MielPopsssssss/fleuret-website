@@ -38,8 +38,8 @@ const handler = async (req: Request): Promise<Response> => {
 
     // Get environment variables
     const brevoApiKey = Deno.env.get("BREVO_API_KEY");
-    // Force list ID to 2 (early adopter list)
-    const brevoListId = 2;
+    // Force list ID to 6 (early_adopt2 list)
+    const brevoListId = 6;
 
     if (!brevoApiKey) {
       console.error("BREVO_API_KEY is not configured");
