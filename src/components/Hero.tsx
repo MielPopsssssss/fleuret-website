@@ -103,7 +103,7 @@ const Hero = () => {
                 <Button 
                   type="submit"
                   disabled={isSubmitting}
-                  className="rounded-full bg-white text-black hover:bg-white/90 px-6 py-2 h-auto font-medium whitespace-nowrap"
+                  className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-2 h-auto font-medium whitespace-nowrap"
                 >
                   {isSubmitting ? (
                     <Loader2 className="h-4 w-4 animate-spin" />
@@ -115,11 +115,11 @@ const Hero = () => {
                   )}
                 </Button>
               </div>
+              <p className="text-sm text-muted-foreground mt-2 text-center">
+                {t('waitlist.subtext')}
+              </p>
             </form>
           </div>
-          <p className="text-sm text-muted-foreground">
-            {t('waitlist.subtext')}
-          </p>
         </div>
       </div>
     </section>
