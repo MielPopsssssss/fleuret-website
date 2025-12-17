@@ -12,6 +12,10 @@ const Navbar = () => {
       path: "/",
       label: t("nav.home"),
     },
+    {
+      path: "/#partners",
+      label: t("nav.partners"),
+    },
   ];
   return (
     <header
@@ -47,13 +51,6 @@ const Navbar = () => {
                 {item.label}
               </Link>
             ))}
-
-            <Link
-              to="/#partners"
-              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
-            >
-              {t("nav.partners")}
-            </Link>
           </nav>
 
           <div className="flex items-center gap-4">
