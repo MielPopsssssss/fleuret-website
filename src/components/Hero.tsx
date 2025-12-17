@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import logoFleuret from "@/assets/logo-fleuret.svg";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { supabase } from "@/integrations/supabase/client";
@@ -54,19 +53,9 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-start justify-center overflow-hidden pt-8 md:pt-12" itemScope itemType="https://schema.org/WebPageElement">
+    <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden pt-8 md:pt-12" itemScope itemType="https://schema.org/WebPageElement">
       <div className="container mx-auto px-4 z-10">
         <div className="max-w-5xl mx-auto text-center space-y-6 animate-in fade-in duration-1000">
-          {/* Logo */}
-          <div className="inline-flex items-center justify-center">
-            <img 
-              src={logoFleuret} 
-              alt="Fleuret AI - Plateforme de pentesting automatisé par intelligence artificielle" 
-              className="h-48 md:h-56 lg:h-64"
-              width="256"
-              height="256"
-            />
-          </div>
 
           <h1 className="text-3xl md:text-7xl font-bold tracking-tight" itemProp="headline">
             <span className="text-gradient glow-effect">{t('hero.title')}</span>
