@@ -1,3 +1,4 @@
+import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Partners from "@/components/Partners";
 import Benchmark from "@/components/Benchmark";
@@ -9,6 +10,7 @@ import Footer from "@/components/Footer";
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
+      <Navbar />
       <main className="relative z-10">
         <Hero />
         <Partners />
