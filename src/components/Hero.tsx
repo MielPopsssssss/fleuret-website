@@ -76,50 +76,50 @@ const Hero = () => {
             {t('hero.subtitle')}
           </p>
 
-          {/* Email signup form */}
-          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-0 justify-center items-center pt-6 max-w-xl mx-auto">
-            <div className="relative w-full flex items-center bg-secondary/50 rounded-full border border-border/50 p-1.5 backdrop-blur-sm">
-              <Input
-                type="email"
-                placeholder={t('waitlist.placeholder')}
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="flex-1 bg-transparent border-0 text-foreground placeholder:text-muted-foreground focus-visible:ring-0 focus-visible:ring-offset-0 px-4 text-base"
-                disabled={isSubmitting}
-                required
-              />
-              <Button 
-                type="submit"
-                disabled={isSubmitting}
-                className="rounded-full bg-white text-black hover:bg-white/90 px-6 py-2 h-auto font-medium whitespace-nowrap"
-              >
-                {isSubmitting ? (
-                  <Loader2 className="h-4 w-4 animate-spin" />
-                ) : (
-                  <>
-                    {t('hero.cta.waitlist')}
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </>
-                )}
-              </Button>
-            </div>
-          </form>
-          <p className="text-sm text-muted-foreground">
-            {t('waitlist.subtext')}
-          </p>
-
-          {/* Demo button */}
-          <div className="pt-2">
+          {/* Email signup form with demo button */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6 max-w-3xl mx-auto">
+            {/* Demo button */}
             <Link to="/demo" aria-label="Voir la démonstration de notre POC fonctionnel">
               <Button 
-                variant="outline"
                 size="lg" 
-                className="text-lg"
+                className="text-lg rounded-full bg-primary text-primary-foreground hover:bg-primary/90 px-6 whitespace-nowrap"
               >
                 {t('hero.cta.demo')}
               </Button>
             </Link>
+
+            {/* Email form */}
+            <form onSubmit={handleSubmit} className="flex-1 w-full sm:w-auto">
+              <div className="relative flex items-center bg-secondary/50 rounded-full border border-border/50 p-1.5 backdrop-blur-sm">
+                <Input
+                  type="email"
+                  placeholder={t('waitlist.placeholder')}
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="flex-1 bg-transparent border-0 text-foreground placeholder:text-muted-foreground focus-visible:ring-0 focus-visible:ring-offset-0 px-4 text-base min-w-[180px]"
+                  disabled={isSubmitting}
+                  required
+                />
+                <Button 
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="rounded-full bg-white text-black hover:bg-white/90 px-6 py-2 h-auto font-medium whitespace-nowrap"
+                >
+                  {isSubmitting ? (
+                    <Loader2 className="h-4 w-4 animate-spin" />
+                  ) : (
+                    <>
+                      {t('hero.cta.waitlist')}
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </>
+                  )}
+                </Button>
+              </div>
+            </form>
           </div>
+          <p className="text-sm text-muted-foreground">
+            {t('waitlist.subtext')}
+          </p>
         </div>
       </div>
     </section>
