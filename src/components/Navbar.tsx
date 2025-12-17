@@ -4,48 +4,52 @@ import { cn } from "@/lib/utils";
 import logoFleuret from "@/assets/logo-fleuret.svg";
 import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageSwitcher from "./LanguageSwitcher";
+
 const Navbar = () => {
   const location = useLocation();
   const { t } = useLanguage();
+  
   const navItems = [
-    {
-      path: "/",
-      label: t("nav.home"),
-    },
-    {
-      path: "/#partners",
-      label: t("nav.partners"),
-    },
+    { path: "/", label: t("nav.home") },
+    { path: "/#partners", label: t("nav.partners") },
   ];
+
   return (
     <header
-      className="border-b border-primary/10 py-4 sticky top-0 bg-background/95 backdrop-blur-sm z-50"
+      className="py-4 sticky top-0 bg-background/95 backdrop-blur-sm z-50"
       role="banner"
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
+          {/* Logo à gauche */}
           <Link
             to="/"
-            className="flex items-center gap-2 hover:opacity-80 transition-opacity"
+            className="flex items-center gap-2 hover:opacity-80 transition-opacity flex-shrink-0"
             aria-label="Retour à l'accueil Fleuret AI"
           >
             <img
               src={logoFleuret}
-              alt="Logo Fleuret AI - Solution de pentesting automatisé"
-              className="h-32 w-auto object-contain"
-              width="128"
-              height="128"
+              alt="Logo Fleuret AI"
+              className="h-12 w-auto object-contain"
+              width="48"
+              height="48"
             />
           </Link>
 
-          <nav className="hidden md:flex items-center gap-8" aria-label="Navigation principale">
+          {/* Navigation centrée dans une barre */}
+          <nav 
+            className="hidden md:flex items-center gap-1 bg-secondary/50 backdrop-blur-sm border border-primary/10 rounded-full px-2 py-1"
+            aria-label="Navigation principale"
+          >
             {navItems.map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
                 className={cn(
-                  "text-sm font-medium transition-colors hover:text-primary",
-                  location.pathname === item.path ? "text-primary" : "text-muted-foreground",
+                  "text-sm font-medium transition-colors hover:text-primary px-4 py-2 rounded-full",
+                  location.pathname === item.path 
+                    ? "text-primary bg-primary/10" 
+                    : "text-muted-foreground hover:bg-secondary/80",
                 )}
               >
                 {item.label}
@@ -53,10 +57,16 @@ const Navbar = () => {
             ))}
           </nav>
 
-          <div className="flex items-center gap-4">
+          {/* Actions à droite */}
+          <div className="flex items-center gap-3">
             <LanguageSwitcher />
+            <span className="hidden sm:inline text-sm text-muted-foreground hover:text-foreground cursor-pointer transition-colors">
+              Login
+            </span>
             <Link to="/" aria-label="Devenir early adopter Fleuret AI">
-              <Button>{t("nav.waitlist")}</Button>
+              <Button size="sm" className="rounded-full">
+                {t("nav.waitlist")}
+              </Button>
             </Link>
           </div>
         </div>
@@ -64,4 +74,5 @@ const Navbar = () => {
     </header>
   );
 };
+
 export default Navbar;
