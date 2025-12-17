@@ -1,5 +1,4 @@
 import { Link, useLocation } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import logoFleuret from "@/assets/logo-fleuret.svg";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -64,11 +63,6 @@ const Navbar = () => {
             <span className="hidden sm:inline text-sm text-muted-foreground hover:text-foreground cursor-pointer transition-colors">
               Login
             </span>
-            <Link to="/" aria-label="Devenir early adopter Fleuret AI">
-              <Button size="sm" className="rounded-full">
-                {t("nav.waitlist")}
-              </Button>
-            </Link>
           </div>
         </div>
       </div>
