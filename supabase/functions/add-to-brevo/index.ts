@@ -28,19 +28,19 @@ const handler = async (req: Request): Promise<Response> => {
       throw new Error("Email is required");
     }
 
-    console.log("Adding contact to Brevo:", email);
+    console.log("Adding contact to Brevo list #2:", email);
 
-    // Add contact to Brevo
     const response = await fetch("https://api.brevo.com/v3/contacts", {
       method: "POST",
       headers: {
-        "Accept": "application/json",
+        Accept: "application/json",
         "Content-Type": "application/json",
         "api-key": brevoApiKey,
       },
       body: JSON.stringify({
-        email: email,
+        email,
         updateEnabled: true,
+        listIds: [2], // ✅ ajout à la liste Brevo #2
         attributes: {
           EARLY_ADOPTER: true,
           SIGNUP_DATE: new Date().toISOString(),
@@ -50,51 +50,51 @@ const handler = async (req: Request): Promise<Response> => {
 
     console.log("Brevo response status:", response.status);
 
-    // Handle successful responses (201 created, 204 no content/updated)
+    // Success cases
     if (response.status === 201 || response.status === 204) {
-      console.log("Contact added/updated successfully");
       return new Response(
-        JSON.stringify({ success: true, message: "Contact added successfully" }),
+        JSON.stringify({
+          success: true,
+          message: "Contact added to list #2 successfully",
+        }),
         {
           status: 200,
           headers: { "Content-Type": "application/json", ...corsHeaders },
-        }
+        },
       );
     }
 
-    // Try to parse error response
     const responseText = await response.text();
     console.log("Brevo response body:", responseText);
 
-    let errorData;
+    let errorData: any = {};
     try {
       errorData = responseText ? JSON.parse(responseText) : {};
     } catch {
       errorData = { message: responseText || "Unknown error" };
     }
 
-    // Handle duplicate contact (this is actually a success case)
+    // Duplicate contact = OK
     if (errorData.code === "duplicate_parameter") {
-      console.log("Contact already exists, that's fine");
       return new Response(
-        JSON.stringify({ success: true, message: "Contact already registered" }),
+        JSON.stringify({
+          success: true,
+          message: "Contact already exists and is in list #2",
+        }),
         {
           status: 200,
           headers: { "Content-Type": "application/json", ...corsHeaders },
-        }
+        },
       );
     }
 
     throw new Error(errorData.message || "Failed to add contact to Brevo");
   } catch (error: any) {
     console.error("Error in add-to-brevo function:", error);
-    return new Response(
-      JSON.stringify({ error: error.message }),
-      {
-        status: 500,
-        headers: { "Content-Type": "application/json", ...corsHeaders },
-      }
-    );
+    return new Response(JSON.stringify({ success: false, error: error.message }), {
+      status: 500,
+      headers: { "Content-Type": "application/json", ...corsHeaders },
+    });
   }
 };
 
