@@ -48,25 +48,44 @@ const handler = async (req: Request): Promise<Response> => {
       }),
     });
 
-    const responseData = await response.json();
-    console.log("Brevo response:", responseData);
+    console.log("Brevo response status:", response.status);
 
-    if (!response.ok && response.status !== 204) {
-      // 204 means contact already exists but was updated
-      if (responseData.code === "duplicate_parameter") {
-        console.log("Contact already exists, that's fine");
-      } else {
-        throw new Error(responseData.message || "Failed to add contact to Brevo");
-      }
+    // Handle successful responses (201 created, 204 no content/updated)
+    if (response.status === 201 || response.status === 204) {
+      console.log("Contact added/updated successfully");
+      return new Response(
+        JSON.stringify({ success: true, message: "Contact added successfully" }),
+        {
+          status: 200,
+          headers: { "Content-Type": "application/json", ...corsHeaders },
+        }
+      );
     }
 
-    return new Response(
-      JSON.stringify({ success: true, message: "Contact added successfully" }),
-      {
-        status: 200,
-        headers: { "Content-Type": "application/json", ...corsHeaders },
-      }
-    );
+    // Try to parse error response
+    const responseText = await response.text();
+    console.log("Brevo response body:", responseText);
+
+    let errorData;
+    try {
+      errorData = responseText ? JSON.parse(responseText) : {};
+    } catch {
+      errorData = { message: responseText || "Unknown error" };
+    }
+
+    // Handle duplicate contact (this is actually a success case)
+    if (errorData.code === "duplicate_parameter") {
+      console.log("Contact already exists, that's fine");
+      return new Response(
+        JSON.stringify({ success: true, message: "Contact already registered" }),
+        {
+          status: 200,
+          headers: { "Content-Type": "application/json", ...corsHeaders },
+        }
+      );
+    }
+
+    throw new Error(errorData.message || "Failed to add contact to Brevo");
   } catch (error: any) {
     console.error("Error in add-to-brevo function:", error);
     return new Response(
