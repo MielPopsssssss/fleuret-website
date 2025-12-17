@@ -44,7 +44,8 @@ import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 
       // Get environment variables
       const brevoApiKey = Deno.env.get("BREVO_API_KEY");
-      const brevoListId = Deno.env.get("BREVO_LIST_ID") || "2"; // Default to list #2
+      // Force list ID to 2 (early adopter list)
+      const brevoListId = 2;
 
       if (!brevoApiKey) {
         console.error("BREVO_API_KEY is not configured");
@@ -57,10 +58,10 @@ import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
         );
       }
 
-      console.log(⁠ Adding contact to Brevo list #${brevoListId}: ⁠, email);
+      console.log(`Adding contact to Brevo list #${brevoListId} (early adopter):`, email);
 
-      // Add contact to Brevo
-      const brevoResponse = await fetch("https://api.brevo.com/v3/contacts", {
+      // First, try to create/update the contact
+      const createResponse = await fetch("https://api.brevo.com/v3/contacts", {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -69,7 +70,7 @@ import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
         },
         body: JSON.stringify({
           email: email,
-          listIds: [parseInt(brevoListId)],
+          listIds: [brevoListId],
           updateEnabled: true, // Update if contact already exists
           attributes: {
             EARLY_ADOPTER: true,
@@ -78,24 +79,65 @@ import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
         }),
       });
 
-      if (!brevoResponse.ok) {
-        const errorData = await brevoResponse.json();
+      // If contact already exists, add them to the list explicitly
+      if (!createResponse.ok) {
+        const errorData = await createResponse.json();
         console.error("Brevo API error:", errorData);
 
-        // Handle duplicate contact - this is actually a success case
+        // Handle duplicate contact - add to list #2 explicitly
         if (
-          brevoResponse.status === 400 &&
+          createResponse.status === 400 &&
           errorData.code === "duplicate_parameter"
         ) {
-          return new Response(
-            JSON.stringify({
-              message: "You are already subscribed to our newsletter!",
-            }),
+          console.log(`Contact ${email} already exists, adding to list #${brevoListId}`);
+          
+          // Add existing contact to the early adopter list
+          const addToListResponse = await fetch(
+            `https://api.brevo.com/v3/contacts/lists/${brevoListId}/contacts/add`,
             {
-              status: 200,
-              headers: { "Content-Type": "application/json", ...corsHeaders },
-            },
+              method: "POST",
+              headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json",
+                "api-key": brevoApiKey,
+              },
+              body: JSON.stringify({
+                emails: [email],
+              }),
+            }
           );
+
+          // Also update the contact attributes
+          const updateResponse = await fetch(
+            `https://api.brevo.com/v3/contacts/${encodeURIComponent(email)}`,
+            {
+              method: "PUT",
+              headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json",
+                "api-key": brevoApiKey,
+              },
+              body: JSON.stringify({
+                listIds: [brevoListId],
+                attributes: {
+                  EARLY_ADOPTER: true,
+                  SIGNUP_DATE: new Date().toISOString(),
+                },
+              }),
+            }
+          );
+
+          if (addToListResponse.ok || updateResponse.ok) {
+            return new Response(
+              JSON.stringify({
+                message: "You are already subscribed to our newsletter!",
+              }),
+              {
+                status: 200,
+                headers: { "Content-Type": "application/json", ...corsHeaders },
+              },
+            );
+          }
         }
 
         return new Response(
@@ -127,3 +169,5 @@ import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
       );
     }
   };
+
+serve(handler);
