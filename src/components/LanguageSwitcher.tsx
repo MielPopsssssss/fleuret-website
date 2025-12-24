@@ -14,7 +14,7 @@ const LanguageSwitcher = () => {
         onClick={() => setLanguage(language === 'fr' ? 'en' : 'fr')}
         className="text-sm font-medium"
       >
-        {language === 'fr' ? 'EN' : 'FR'}
+        {language === 'fr' ? 'FR' : 'EN'}
       </Button>
     </div>
   );
