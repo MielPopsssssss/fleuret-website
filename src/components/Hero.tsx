@@ -18,7 +18,7 @@ const Hero = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     const validation = emailSchema.safeParse(email);
     if (!validation.success) {
       toast({
@@ -69,8 +69,8 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-start pt-6 max-w-3xl mx-auto">
             {/* Demo button */}
             <Link to="/demo" aria-label="Voir la démonstration de notre POC fonctionnel">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="text-lg rounded-full bg-primary text-primary-foreground hover:bg-primary/90 px-6 whitespace-nowrap h-[52px]"
               >
                 {t('hero.cta.demo')}
@@ -89,7 +89,7 @@ const Hero = () => {
                   disabled={isSubmitting}
                   required
                 />
-                <Button 
+                <Button
                   type="submit"
                   disabled={isSubmitting}
                   className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-2 h-auto font-medium whitespace-nowrap"

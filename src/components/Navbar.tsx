@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { HashLink, NavHashLink } from 'react-router-hash-link';
 import { cn } from "@/lib/utils";
 import logoFleuret from "@/assets/logo-fleuret.svg";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -10,9 +11,9 @@ const Navbar = () => {
   const location = useLocation();
   const { t } = useLanguage();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  
+
   const navItems = [
-    { path: "/", label: t("nav.home") },
+    { path: "/#", label: t("nav.home") },
     { path: "/#partners", label: t("nav.partners") },
     { path: "/#team", label: t("nav.about") },
   ];
@@ -40,23 +41,24 @@ const Navbar = () => {
           </Link>
 
           {/* Navigation centrée - Desktop */}
-          <nav 
+          <nav
             className="hidden md:flex items-center gap-1 bg-secondary/50 backdrop-blur-sm border border-primary/10 rounded-full px-2 py-1"
             aria-label="Navigation principale"
           >
             {navItems.map((item) => (
-              <Link
+              <HashLink
                 key={item.path}
                 to={item.path}
                 className={cn(
                   "text-sm font-medium transition-colors hover:text-primary px-4 py-2 rounded-full",
-                  location.pathname === item.path 
-                    ? "text-primary bg-primary/10" 
+                  location.pathname === item.path
+                    ? "text-primary bg-primary/10"
                     : "text-muted-foreground hover:bg-secondary/80",
                 )}
+                smooth
               >
                 {item.label}
-              </Link>
+              </HashLink>
             ))}
           </nav>
 
@@ -89,8 +91,8 @@ const Navbar = () => {
                   onClick={() => setMobileMenuOpen(false)}
                   className={cn(
                     "text-sm font-medium transition-colors hover:text-primary px-4 py-2 rounded-lg",
-                    location.pathname === item.path 
-                      ? "text-primary bg-primary/10" 
+                    location.pathname === item.path
+                      ? "text-primary bg-primary/10"
                       : "text-muted-foreground hover:bg-secondary/80",
                   )}
                 >
