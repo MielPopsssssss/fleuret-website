@@ -2,65 +2,88 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Design system - Nouvelle DA Fleuret
+ * Dégradé bleu foncé (#0f101c) → rouge foncé (#2a0404)
+ * Texte: #f2f2f8 | Lufga (texte) | CMU Serif (titres)
+ * Toutes les couleurs en HSL.
+ */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 220 25% 15%;
+    --font-sans: "Lufga", system-ui, sans-serif;
+    --font-serif: "CMU Serif", "Times New Roman", serif;
 
-    --card: 0 0% 100%;
-    --card-foreground: 220 25% 15%;
+    /* Dégradé principal du site */
+    --gradient-start: 234 30% 8%;   /* #0f101c bleu foncé */
+    --gradient-end: 0 82% 9%;       /* #2a0404 rouge foncé */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 25% 15%;
+    --background: 234 30% 8%;
+    --foreground: 240 33% 96%;     /* #f2f2f8 texte blanc */
 
-    --primary: 207 45% 43%;
-    --primary-foreground: 0 0% 100%;
-    --primary-glow: 207 55% 53%;
+    --card: 234 25% 12%;
+    --card-foreground: 240 33% 96%;
 
-    --secondary: 207 35% 95%;
-    --secondary-foreground: 220 25% 15%;
+    --popover: 234 25% 12%;
+    --popover-foreground: 240 33% 96%;
 
-    --muted: 207 25% 96%;
-    --muted-foreground: 220 10% 40%;
+    --primary: 240 33% 96%;
+    --primary-foreground: 234 30% 8%;
+    --primary-glow: 0 50% 65%;
 
-    --accent: 207 45% 43%;
-    --accent-foreground: 0 0% 100%;
+    --secondary: 240 15% 22%;
+    --secondary-foreground: 240 33% 96%;
+
+    --muted: 234 20% 18%;
+    --muted-foreground: 240 20% 75%;
+
+    --accent: 240 15% 22%;
+    --accent-foreground: 240 33% 96%;
 
     --destructive: 0 84% 55%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 207 20% 90%;
-    --input: 207 20% 90%;
-    --ring: 207 45% 43%;
+    --border: 240 15% 25%;
+    --input: 240 15% 25%;
+    --ring: 240 33% 96%;
 
     --radius: 0.75rem;
 
-    --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 220 25% 15%;
-    --sidebar-primary: 207 45% 43%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 207 35% 95%;
-    --sidebar-accent-foreground: 220 25% 15%;
-    --sidebar-border: 207 20% 90%;
-    --sidebar-ring: 207 45% 43%;
+    --sidebar-background: 234 25% 10%;
+    --sidebar-foreground: 240 33% 96%;
+    --sidebar-primary: 240 33% 96%;
+    --sidebar-primary-foreground: 234 30% 8%;
+    --sidebar-accent: 240 15% 22%;
+    --sidebar-accent-foreground: 240 33% 96%;
+    --sidebar-border: 240 15% 25%;
+    --sidebar-ring: 240 33% 96%;
   }
 }
 
 @layer utilities {
+  /* Titres / accents en blanc sur fond dégradé */
   .text-gradient {
-    @apply bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent;
+    @apply text-foreground;
   }
-  
+
+  /* Texte bleu marque sur fond clair (ex. cartes blanches) */
+  .text-brand-blue {
+    color: hsl(var(--gradient-start));
+  }
+  .text-on-light-muted {
+    color: hsl(234 12% 45%);
+  }
+
   .glow-effect {
-    text-shadow: 0 0 20px hsl(var(--primary) / 0.5);
+    text-shadow: 0 0 20px hsl(var(--foreground) / 0.2);
   }
-  
+
   .card-glow {
-    box-shadow: 0 0 30px hsl(var(--primary) / 0.15);
+    box-shadow: 0 0 30px hsl(var(--foreground) / 0.08);
+  }
+
+  .bg-site-gradient {
+    background: linear-gradient(to right, hsl(var(--gradient-start)) 0%, hsl(var(--gradient-end)) 100%);
+    background-attachment: fixed;
   }
 
   .hover\:pause:hover {
@@ -74,6 +97,10 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply text-foreground font-sans bg-site-gradient min-h-screen;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif), ui-serif, serif;
   }
 }

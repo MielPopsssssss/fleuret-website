@@ -68,7 +68,7 @@ const Team = () => {
           {team.slice(0, 3).map((member, index) => (
             <Card 
               key={member.name}
-              className="p-6 card-glow hover:scale-105 transition-all duration-300 border-primary/10 hover:border-primary/30 bg-white"
+              className="p-6 card-glow hover:scale-105 transition-all duration-300 border-primary/10 hover:border-primary/30 bg-white text-brand-blue"
               style={{
                 animationDelay: `${index * 100}ms`,
                 animation: 'fade-in 0.5s ease-out forwards'
@@ -89,17 +89,17 @@ const Team = () => {
                   />
                 ) : (
                   <div className="w-20 h-20 rounded-full bg-muted flex items-center justify-center">
-                    <User className="w-10 h-10 text-muted-foreground" />
+                    <User className="w-10 h-10 text-on-light-muted" />
                   </div>
                 )}
                 <div>
                   <h3 className="text-xl font-semibold" itemProp="name">{member.name}</h3>
-                  <p className="text-primary font-medium text-sm" itemProp="jobTitle">{member.role}</p>
+                  <p className="font-medium text-sm text-brand-blue" itemProp="jobTitle">{member.role}</p>
                 </div>
-                <p className="text-sm text-muted-foreground" itemProp="alumniOf">
+                <p className="text-sm text-on-light-muted" itemProp="alumniOf">
                   {member.education}
                 </p>
-                <p className="text-muted-foreground leading-relaxed" itemProp="description">
+                <p className="text-on-light-muted leading-relaxed" itemProp="description">
                   {member.description}
                 </p>
                 {member.linkedin && (
@@ -107,7 +107,7 @@ const Team = () => {
                     href={member.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-sm text-primary hover:text-primary-glow transition-colors"
+                    className="flex items-center gap-2 text-sm text-brand-blue hover:opacity-80 transition-opacity"
                     aria-label={`Voir le profil LinkedIn de ${member.name}`}
                     itemProp="url"
                   >
@@ -125,7 +125,7 @@ const Team = () => {
           {team.slice(3).map((member, index) => (
             <Card 
               key={member.name}
-              className="p-6 card-glow hover:scale-105 transition-all duration-300 border-primary/10 hover:border-primary/30 bg-white w-full md:w-[calc(33.333%-1.33rem)]"
+              className="p-6 card-glow hover:scale-105 transition-all duration-300 border-primary/10 hover:border-primary/30 bg-white text-brand-blue w-full md:w-[calc(33.333%-1.33rem)]"
               style={{
                 animationDelay: `${(index + 3) * 100}ms`,
                 animation: 'fade-in 0.5s ease-out forwards'
@@ -146,17 +146,17 @@ const Team = () => {
                   />
                 ) : (
                   <div className="w-20 h-20 rounded-full bg-muted flex items-center justify-center">
-                    <User className="w-10 h-10 text-muted-foreground" />
+                    <User className="w-10 h-10 text-on-light-muted" />
                   </div>
                 )}
                 <div>
                   <h3 className="text-xl font-semibold" itemProp="name">{member.name}</h3>
-                  <p className="text-primary font-medium text-sm" itemProp="jobTitle">{member.role}</p>
+                  <p className="font-medium text-sm text-brand-blue" itemProp="jobTitle">{member.role}</p>
                 </div>
-                <p className="text-sm text-muted-foreground" itemProp="alumniOf">
+                <p className="text-sm text-on-light-muted" itemProp="alumniOf">
                   {member.education}
                 </p>
-                <p className="text-muted-foreground leading-relaxed" itemProp="description">
+                <p className="text-on-light-muted leading-relaxed" itemProp="description">
                   {member.description}
                 </p>
                 {member.linkedin && (
@@ -164,7 +164,7 @@ const Team = () => {
                     href={member.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-sm text-primary hover:text-primary-glow transition-colors"
+                    className="flex items-center gap-2 text-sm text-brand-blue hover:opacity-80 transition-opacity"
                     aria-label={`Voir le profil LinkedIn de ${member.name}`}
                     itemProp="url"
                   >

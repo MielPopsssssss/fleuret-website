@@ -14,6 +14,7 @@ const translations = {
     'nav.home': 'Accueil',
     'nav.partners': 'Partenaires',
     'nav.about': 'À propos',
+    'nav.whyUs': 'Pourquoi nous ?',
     'nav.waitlist': 'Devenir early adopter',
     
     // Hero
@@ -312,6 +313,7 @@ const translations = {
     'nav.home': 'Home',
     'nav.partners': 'Partners',
     'nav.about': 'About Us',
+    'nav.whyUs': 'Why us?',
     'nav.waitlist': 'Become an Early Adopter',
     
     // Hero

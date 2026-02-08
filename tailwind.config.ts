@@ -14,7 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Roboto', 'sans-serif'],
+        sans: ['Lufga', 'system-ui', 'sans-serif'],
+        serif: ['"CMU Serif"', 'Georgia', 'serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -65,6 +66,7 @@ export default {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-cyber': 'linear-gradient(135deg, hsl(var(--background)), hsl(var(--card)))',
+        'site-gradient': 'linear-gradient(to right, hsl(var(--gradient-start)) 0%, hsl(var(--gradient-end)) 100%)',
       },
       borderRadius: {
         lg: "var(--radius)",
