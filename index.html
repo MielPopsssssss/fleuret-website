@@ -58,10 +58,10 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/favicon.png" />
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
+    <!-- Fonts: Lufga (texte), CMU Serif (titres) -->
+    <link rel="preconnect" href="https://fonts.cdnfonts.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/lufga" />
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/cmu-serif" />
 
     <!-- Structured Data - Organization -->
     <script type="application/ld+json">
@@ -135,33 +135,33 @@
       });
     </script>
 
-    <!-- Axeptio Cookie Consent -->
+    <!-- Axeptio Cookie Consent - couleurs DA Fleuret -->
     <style>
-      /* Personnalisation Axeptio pour correspondre au design Fleuret.ai */
       .axeptio_widget {
-        font-family: 'Roboto', sans-serif !important;
+        font-family: 'Lufga', system-ui, sans-serif !important;
       }
 
       .axeptio_widget__container {
-        background: hsl(0 0% 100%) !important;
-        border: 1px solid hsl(207 20% 90%) !important;
+        background: linear-gradient(135deg, hsl(234 30% 8%) 0%, hsl(0 82% 9%) 100%) !important;
+        border: 1px solid hsl(240 15% 25%) !important;
         border-radius: 0.75rem !important;
-        box-shadow: 0 0 30px hsl(207 45% 43% / 0.15) !important;
+        box-shadow: 0 0 30px hsl(240 33% 96% / 0.08) !important;
       }
 
       .axeptio_widget__title {
-        color: hsl(220 25% 15%) !important;
+        color: hsl(240 33% 96%) !important;
+        font-family: 'CMU Serif', Georgia, serif !important;
         font-weight: 700 !important;
       }
 
       .axeptio_widget__description {
-        color: hsl(220 10% 40%) !important;
+        color: hsl(240 20% 75%) !important;
       }
 
       .axeptio_widget__button--primary,
       .axeptio_btn--primary {
-        background: hsl(207 45% 43%) !important;
-        color: hsl(0 0% 100%) !important;
+        background: hsl(240 33% 96%) !important;
+        color: hsl(234 30% 8%) !important;
         border-radius: 0.5rem !important;
         font-weight: 500 !important;
         transition: all 0.3s ease !important;
@@ -169,14 +169,13 @@
 
       .axeptio_widget__button--primary:hover,
       .axeptio_btn--primary:hover {
-        background: hsl(207 55% 53%) !important;
-        box-shadow: 0 0 20px hsl(207 45% 43% / 0.5) !important;
+        box-shadow: 0 0 20px hsl(240 33% 96% / 0.3) !important;
       }
 
       .axeptio_widget__button--secondary,
       .axeptio_btn--secondary {
-        background: hsl(207 35% 95%) !important;
-        color: hsl(220 25% 15%) !important;
+        background: hsl(240 15% 22%) !important;
+        color: hsl(240 33% 96%) !important;
         border-radius: 0.5rem !important;
         font-weight: 500 !important;
         transition: all 0.3s ease !important;
@@ -184,11 +183,11 @@
 
       .axeptio_widget__button--secondary:hover,
       .axeptio_btn--secondary:hover {
-        background: hsl(207 25% 90%) !important;
+        background: hsl(240 15% 28%) !important;
       }
 
       .axeptio_switch__input:checked + .axeptio_switch__slider {
-        background-color: hsl(207 45% 43%) !important;
+        background-color: hsl(240 33% 96%) !important;
       }
     </style>
 

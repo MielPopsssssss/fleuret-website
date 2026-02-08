@@ -53,7 +53,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden pt-8 md:pt-12" itemScope itemType="https://schema.org/WebPageElement">
+    <section id="home" className="relative min-h-[70vh] flex items-center justify-center overflow-hidden pt-8 md:pt-12" itemScope itemType="https://schema.org/WebPageElement">
       <div className="container mx-auto px-4 z-10">
         <div className="max-w-5xl mx-auto text-center space-y-6 animate-in fade-in duration-1000">
 
@@ -66,45 +66,46 @@ const Hero = () => {
           </p>
 
           {/* Email signup form with demo button */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-start pt-6 max-w-3xl mx-auto">
+          <div id="waitlist" className="flex flex-col gap-4 justify-center items-stretch pt-6 max-w-3xl mx-auto scroll-mt-20 px-2">
             {/* Demo button */}
-            <Link to="/demo" aria-label="Voir la démonstration de notre POC fonctionnel">
+            <Link to="/demo" aria-label="Voir la démonstration de notre POC fonctionnel" className="w-full sm:w-auto sm:self-center">
               <Button
                 size="lg"
-                className="text-lg rounded-full bg-primary text-primary-foreground hover:bg-primary/90 px-6 whitespace-nowrap h-[52px]"
+                className="w-full sm:w-auto text-base sm:text-lg rounded-full bg-primary text-primary-foreground hover:bg-primary/90 px-4 sm:px-6 h-[48px] sm:h-[52px]"
               >
                 {t('hero.cta.demo')}
               </Button>
             </Link>
 
             {/* Email form */}
-            <form onSubmit={handleSubmit} className="flex-1 w-full sm:w-auto">
-              <div className="relative flex items-center bg-secondary/50 rounded-full border border-border/50 p-1.5 backdrop-blur-sm transition-all duration-300 focus-within:border-primary/50 focus-within:shadow-[0_0_20px_rgba(59,130,246,0.3)] focus-within:bg-secondary/70">
+            <form onSubmit={handleSubmit} className="w-full">
+              <div className="relative flex flex-col sm:flex-row items-stretch sm:items-center bg-secondary/50 rounded-full border border-border/50 p-1.5 sm:p-1.5 backdrop-blur-sm transition-all duration-300 focus-within:border-primary/50 focus-within:shadow-[0_0_20px_rgba(59,130,246,0.3)] focus-within:bg-secondary/70 gap-2 sm:gap-0">
                 <Input
                   type="email"
                   placeholder={t('waitlist.placeholder')}
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="flex-1 bg-transparent border-0 text-foreground placeholder:text-muted-foreground focus-visible:ring-0 focus-visible:ring-offset-0 px-4 text-base min-w-[180px]"
+                  className="flex-1 bg-transparent border-0 text-foreground placeholder:text-muted-foreground focus-visible:ring-0 focus-visible:ring-offset-0 px-3 sm:px-4 text-sm sm:text-base min-w-0"
                   disabled={isSubmitting}
                   required
                 />
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-2 h-auto font-medium whitespace-nowrap"
+                  className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 px-4 sm:px-6 py-2 h-[40px] sm:h-auto font-medium text-sm sm:text-base whitespace-nowrap shrink-0"
                 >
                   {isSubmitting ? (
                     <Loader2 className="h-4 w-4 animate-spin" />
                   ) : (
                     <>
-                      {t('hero.cta.waitlist')}
+                      <span className="hidden sm:inline">{t('hero.cta.waitlist')}</span>
+                      <span className="sm:hidden">{t('nav.waitlist')}</span>
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </>
                   )}
                 </Button>
               </div>
-              <p className="text-sm text-muted-foreground mt-2 text-center sm:text-left sm:pl-4">
+              <p className="text-xs sm:text-sm text-muted-foreground mt-2 text-center px-2">
                 {t('waitlist.subtext')}
               </p>
             </form>

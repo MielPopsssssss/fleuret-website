@@ -35,14 +35,14 @@ const Benchmark = () => {
     <section className="pt-24 pb-0 relative">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto mb-16">
-          <Card className="p-8 md:p-12 border-primary/30 bg-white card-glow">
+          <Card className="p-8 md:p-12 border-primary/30 bg-white card-glow text-brand-blue">
             <div className="grid md:grid-cols-2 gap-12">
               <div className="space-y-6">
                 <div>
-                  <div className="text-5xl md:text-6xl font-bold text-gradient mb-2">{t('benchmark.title.main')}</div>
-                  <div className="text-xl text-muted-foreground">{t('benchmark.subtitle.main')}</div>
+                  <div className="text-5xl md:text-6xl font-bold mb-2">{t('benchmark.title.main')}</div>
+                  <div className="text-xl text-on-light-muted">{t('benchmark.subtitle.main')}</div>
                 </div>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-on-light-muted leading-relaxed">
                   {t('benchmark.description')}
                 </p>
               </div>
@@ -54,8 +54,8 @@ const Benchmark = () => {
                       <img src={metric.icon} alt="" className="w-30 h-30" />
                     </div>
                     <div>
-                      <div className="font-semibold text-foreground">{metric.label}</div>
-                      <div className="text-xs text-muted-foreground/80 mt-1">{metric.description}</div>
+                      <div className="font-semibold">{metric.label}</div>
+                      <div className="text-xs text-on-light-muted mt-1">{metric.description}</div>
                     </div>
                   </div>
                 ))}
