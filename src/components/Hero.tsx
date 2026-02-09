@@ -62,7 +62,7 @@ const Hero = () => {
       <div className="container mx-auto px-4 z-10">
         <div className="max-w-5xl mx-auto text-center space-y-6 animate-in fade-in duration-1000">
 
-          <h1 className="text-4xl md:text-6xl lg:text-7xl tracking-tight font-urbanist" itemProp="headline">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl tracking-tight font-urbanist" itemProp="headline">
             <span className="text-gradient glow-effect">
               {firstPart}
               {secondPart && (
@@ -74,7 +74,7 @@ const Hero = () => {
             </span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed" itemProp="description">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed" itemProp="description">
             {t('hero.subtitle')}
           </p>
 
