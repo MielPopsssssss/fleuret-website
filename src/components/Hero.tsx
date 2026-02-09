@@ -64,7 +64,7 @@ const Hero = () => {
 
           <h1 className="text-3xl md:text-5xl lg:text-6xl tracking-tight font-urbanist" itemProp="headline">
             <span className="text-gradient glow-effect">
-              {firstPart}
+              <span className="whitespace-nowrap">{firstPart}</span>
               {secondPart && (
                 <>
                   <br className="hidden md:block" />

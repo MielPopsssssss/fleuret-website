@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import PentestTerminal from "@/components/PentestTerminal";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import { ArrowLeft } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -44,11 +45,11 @@ const Demo = () => {
                   </p>
                 </div>
 
-                <Link to="/waitlist">
+                <HashLink to="/#waitlist" smooth>
                   <Button size="lg" className="mt-4">
                     {t('demo.cta')}
                   </Button>
-                </Link>
+                </HashLink>
               </div>
             </div>
           </div>

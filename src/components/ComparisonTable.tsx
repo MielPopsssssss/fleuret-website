@@ -47,16 +47,16 @@ const ComparisonTable = () => {
 
   const CheckIcon = () => (
     <div className="flex items-center justify-center">
-      <div className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 rounded-full bg-primary flex items-center justify-center">
-        <Check className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 text-primary-foreground" strokeWidth={2.5} />
+      <div className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 rounded-full bg-primary flex items-center justify-center">
+        <Check className="w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-3.5 md:h-3.5 text-primary-foreground" strokeWidth={2.5} />
       </div>
     </div>
   );
 
   const XIcon = () => (
     <div className="flex items-center justify-center">
-      <div className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 rounded-full bg-muted flex items-center justify-center">
-        <X className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 text-muted-foreground" strokeWidth={2} />
+      <div className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 rounded-full bg-muted flex items-center justify-center">
+        <X className="w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-3.5 md:h-3.5 text-muted-foreground" strokeWidth={2} />
       </div>
     </div>
   );
@@ -65,22 +65,22 @@ const ComparisonTable = () => {
     <section id="comparison" className="py-16">
       <div className="container mx-auto px-4">
         {/* Responsive Table */}
-        <div className="overflow-x-auto px-2 md:px-4 lg:px-8 py-4 -mx-2 md:mx-0">
+        <div className="overflow-x-auto px-2 md:px-4 py-4 -mx-2 md:mx-0">
           <div className="max-w-5xl mx-auto min-w-0 w-full">
-            <div className="grid grid-cols-4 gap-1.5 sm:gap-2 md:gap-3 lg:gap-4" style={{ minWidth: 'max-content' }}>
+            <div className="grid grid-cols-4 gap-1 sm:gap-1.5 md:gap-2" style={{ minWidth: 'max-content' }}>
               {/* Column 1 - Labels */}
-              <div className="space-y-1.5 sm:space-y-2 md:space-y-3 min-w-[110px] sm:min-w-[130px] md:min-w-[150px]">
-                <div className="h-[60px] sm:h-[55px] md:h-[60px] p-2 sm:p-3 md:p-4 bg-muted/30 rounded-lg flex items-center">
-                  <h3 className="font-urbanist text-sm sm:text-base md:text-lg leading-tight">
+              <div className="space-y-1.5 sm:space-y-2 min-w-[90px] sm:min-w-[110px] md:min-w-[120px]">
+                <div className="h-[55px] sm:h-[50px] md:h-[55px] p-2 sm:p-2.5 md:p-3 bg-muted/30 rounded-lg flex items-center">
+                  <h3 className="font-urbanist text-xs sm:text-sm md:text-base leading-tight">
                     {t("comparison.header.capability") || "Capacité"}
                   </h3>
                 </div>
                 {capabilities.map((capability, index) => (
                   <div
                     key={index}
-                    className="h-[60px] sm:h-[55px] md:h-[60px] p-2 sm:p-3 md:p-4 bg-muted/10 rounded-lg flex items-center"
+                    className="h-[55px] sm:h-[50px] md:h-[55px] p-2 sm:p-2.5 md:p-3 bg-muted/10 rounded-lg flex items-center"
                   >
-                    <span className="font-urbanist text-sm sm:text-base md:text-lg leading-tight">
+                    <span className="font-urbanist text-xs sm:text-sm md:text-base leading-tight">
                       {capability.label}
                     </span>
                   </div>
@@ -88,43 +88,43 @@ const ComparisonTable = () => {
               </div>
               
               {/* Column 2 - Traditional */}
-              <div className="border border-primary/30 rounded-lg p-1 sm:p-1.5 md:p-2 lg:p-3 space-y-1.5 sm:space-y-2 md:space-y-3 min-w-[90px] sm:min-w-[110px] md:min-w-[130px]">
-                <div className="h-[60px] sm:h-[55px] md:h-[60px] p-1.5 sm:p-2 md:p-3 lg:p-4 bg-muted/30 rounded-lg flex items-center justify-center">
-                  <h3 className="font-urbanist text-center text-sm sm:text-base md:text-lg leading-tight px-1">
+              <div className="border border-primary/30 rounded-lg p-1 sm:p-1.5 md:p-2 space-y-1.5 sm:space-y-2 min-w-[75px] sm:min-w-[90px] md:min-w-[100px]">
+                <div className="h-[55px] sm:h-[50px] md:h-[55px] p-1.5 sm:p-2 md:p-2.5 bg-muted/30 rounded-lg flex items-center justify-center">
+                  <h3 className="font-urbanist text-center text-xs sm:text-sm md:text-base leading-tight px-0.5">
                     {t("comparison.header.traditional") || "Services Traditionnels"}
                   </h3>
                 </div>
                 {capabilities.map((capability, index) => (
-                  <div key={index} className="h-[60px] sm:h-[55px] md:h-[60px] p-1.5 sm:p-2 md:p-3 lg:p-4 text-center rounded-lg flex items-center justify-center">
+                  <div key={index} className="h-[55px] sm:h-[50px] md:h-[55px] p-1.5 sm:p-2 md:p-2.5 text-center rounded-lg flex items-center justify-center">
                     {typeof capability.traditional === 'object' ? (
                       capability.traditional.check ? <CheckIcon /> : <XIcon />
                     ) : (
-                      <span className="text-muted-foreground text-[10px] sm:text-[11px] md:text-xs lg:text-sm leading-tight px-1">{capability.traditional}</span>
+                      <span className="text-muted-foreground text-[10px] sm:text-[11px] md:text-xs leading-tight px-0.5">{capability.traditional}</span>
                     )}
                   </div>
                 ))}
               </div>
               
               {/* Column 3 - Fleuret (highlighted) */}
-              <div className="relative z-10 sm:scale-[1.02] md:scale-105 min-w-[90px] sm:min-w-[110px] md:min-w-[130px]">
-                <div className="border-2 border-primary rounded-lg bg-primary space-y-1.5 sm:space-y-2 md:space-y-3 p-1 sm:p-1.5 md:p-2 lg:p-3">
-                  <div className="h-[60px] sm:h-[55px] md:h-[60px] p-1.5 sm:p-2 md:p-3 lg:p-4 flex items-center justify-center">
-                    <h3 className="font-urbanist text-center text-primary-foreground text-sm sm:text-base md:text-lg leading-tight px-1">
+              <div className="relative z-10 sm:scale-[1.02] md:scale-[1.03] min-w-[75px] sm:min-w-[90px] md:min-w-[100px]">
+                <div className="border-2 border-primary rounded-lg bg-primary space-y-1.5 sm:space-y-2 p-1 sm:p-1.5 md:p-2">
+                  <div className="h-[55px] sm:h-[50px] md:h-[55px] p-1.5 sm:p-2 md:p-2.5 flex items-center justify-center">
+                    <h3 className="font-urbanist text-center text-primary-foreground text-xs sm:text-sm md:text-base leading-tight px-0.5">
                       {t("comparison.header.fleuret") || "Fleuret IA"}
                     </h3>
                   </div>
                   {capabilities.map((capability, index) => (
-                    <div key={index} className="h-[60px] sm:h-[55px] md:h-[60px] p-1.5 sm:p-2 md:p-3 lg:p-4 text-center flex items-center justify-center">
+                    <div key={index} className="h-[55px] sm:h-[50px] md:h-[55px] p-1.5 sm:p-2 md:p-2.5 text-center flex items-center justify-center">
                       {typeof capability.fleuret === 'object' ? (
                         capability.fleuret.check ? (
                           <div className="flex items-center justify-center">
-                            <div className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 rounded-full bg-primary-foreground flex items-center justify-center">
-                              <Check className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 text-primary" strokeWidth={2.5} />
+                            <div className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 rounded-full bg-primary-foreground flex items-center justify-center">
+                              <Check className="w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-3.5 md:h-3.5 text-primary" strokeWidth={2.5} />
                             </div>
                           </div>
                         ) : <XIcon />
                       ) : (
-                        <span className="font-bold text-primary-foreground text-[10px] sm:text-[11px] md:text-xs lg:text-sm leading-tight px-1">{capability.fleuret}</span>
+                        <span className="font-bold text-primary-foreground text-[10px] sm:text-[11px] md:text-xs leading-tight px-0.5">{capability.fleuret}</span>
                       )}
                     </div>
                   ))}
@@ -132,18 +132,18 @@ const ComparisonTable = () => {
               </div>
               
               {/* Column 4 - Automated */}
-              <div className="border border-primary/30 rounded-lg p-1 sm:p-1.5 md:p-2 lg:p-3 space-y-1.5 sm:space-y-2 md:space-y-3 min-w-[90px] sm:min-w-[110px] md:min-w-[130px]">
-                <div className="h-[60px] sm:h-[55px] md:h-[60px] p-1.5 sm:p-2 md:p-3 lg:p-4 bg-muted/30 rounded-lg flex items-center justify-center">
-                  <h3 className="font-urbanist text-center text-sm sm:text-base md:text-lg leading-tight px-1">
+              <div className="border border-primary/30 rounded-lg p-1 sm:p-1.5 md:p-2 space-y-1.5 sm:space-y-2 min-w-[75px] sm:min-w-[90px] md:min-w-[100px]">
+                <div className="h-[55px] sm:h-[50px] md:h-[55px] p-1.5 sm:p-2 md:p-2.5 bg-muted/30 rounded-lg flex items-center justify-center">
+                  <h3 className="font-urbanist text-center text-xs sm:text-sm md:text-base leading-tight px-0.5">
                     {t("comparison.header.automated") || "Solutions Automatisées"}
                   </h3>
                 </div>
                 {capabilities.map((capability, index) => (
-                  <div key={index} className="h-[60px] sm:h-[55px] md:h-[60px] p-1.5 sm:p-2 md:p-3 lg:p-4 text-center rounded-lg flex items-center justify-center">
+                  <div key={index} className="h-[55px] sm:h-[50px] md:h-[55px] p-1.5 sm:p-2 md:p-2.5 text-center rounded-lg flex items-center justify-center">
                     {typeof capability.automated === 'object' ? (
                       capability.automated.check ? <CheckIcon /> : <XIcon />
                     ) : (
-                      <span className="text-muted-foreground text-[10px] sm:text-[11px] md:text-xs lg:text-sm leading-tight px-1">{capability.automated}</span>
+                      <span className="text-muted-foreground text-[10px] sm:text-[11px] md:text-xs leading-tight px-0.5">{capability.automated}</span>
                     )}
                   </div>
                 ))}
