@@ -42,7 +42,7 @@ const Features = () => {
     <section className="py-24 relative">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <h2 className="text-4xl md:text-5xl font-bold">
+          <h2 className="text-5xl md:text-6xl font-urbanist">
             {t('features.main.title')} <span className="text-gradient">{t('features.main.complete')}</span>
           </h2>
           <p className="text-xl text-muted-foreground">

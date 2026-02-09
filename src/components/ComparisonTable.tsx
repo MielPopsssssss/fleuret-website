@@ -64,28 +64,25 @@ const ComparisonTable = () => {
   return (
     <section id="comparison" className="py-16">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-6 sm:mb-8 md:mb-12 px-2">
-          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-4 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-2 md:gap-3">
-            <span className="flex items-center gap-1 sm:gap-1.5 flex-shrink-0">
-              <img src={logoSymbol} alt="" className="h-5 sm:h-6 md:h-7 lg:h-8 xl:h-9 w-auto object-contain" width="34" height="59" />
-              <img src={logoWordmark} alt="Fleuret" className="h-5 sm:h-6 md:h-7 lg:h-8 xl:h-9 w-auto object-contain" width="49" height="12" />
-            </span>
-            <span className="text-sm sm:text-base md:text-xl lg:text-2xl xl:text-3xl leading-tight text-center px-2">{t("comparison.title")}</span>
-          </h2>
-        </div>
-
         {/* Responsive Table */}
         <div className="overflow-x-auto px-2 md:px-4 lg:px-8 py-4 -mx-2 md:mx-0">
           <div className="max-w-5xl mx-auto min-w-0 w-full">
             <div className="grid grid-cols-4 gap-1.5 sm:gap-2 md:gap-3 lg:gap-4" style={{ minWidth: 'max-content' }}>
               {/* Column 1 - Labels */}
-              <div className="space-y-1.5 sm:space-y-2 md:space-y-3 min-w-[100px] sm:min-w-[120px] md:min-w-[140px]">
+              <div className="space-y-1.5 sm:space-y-2 md:space-y-3 min-w-[110px] sm:min-w-[130px] md:min-w-[150px]">
                 <div className="h-[60px] sm:h-[55px] md:h-[60px] p-2 sm:p-3 md:p-4 bg-muted/30 rounded-lg flex items-center">
-                  <h3 className="font-bold text-[11px] sm:text-xs md:text-sm lg:text-base leading-tight">{t("comparison.header.capability") || "Capacité"}</h3>
+                  <h3 className="font-urbanist text-sm sm:text-base md:text-lg leading-tight">
+                    {t("comparison.header.capability") || "Capacité"}
+                  </h3>
                 </div>
                 {capabilities.map((capability, index) => (
-                  <div key={index} className="h-[60px] sm:h-[55px] md:h-[60px] p-2 sm:p-3 md:p-4 font-medium bg-muted/10 rounded-lg flex items-center">
-                    <span className="text-[11px] sm:text-xs md:text-sm lg:text-base leading-tight">{capability.label}</span>
+                  <div
+                    key={index}
+                    className="h-[60px] sm:h-[55px] md:h-[60px] p-2 sm:p-3 md:p-4 bg-muted/10 rounded-lg flex items-center"
+                  >
+                    <span className="font-urbanist text-sm sm:text-base md:text-lg leading-tight">
+                      {capability.label}
+                    </span>
                   </div>
                 ))}
               </div>
@@ -93,7 +90,7 @@ const ComparisonTable = () => {
               {/* Column 2 - Traditional */}
               <div className="border border-primary/30 rounded-lg p-1 sm:p-1.5 md:p-2 lg:p-3 space-y-1.5 sm:space-y-2 md:space-y-3 min-w-[90px] sm:min-w-[110px] md:min-w-[130px]">
                 <div className="h-[60px] sm:h-[55px] md:h-[60px] p-1.5 sm:p-2 md:p-3 lg:p-4 bg-muted/30 rounded-lg flex items-center justify-center">
-                  <h3 className="font-semibold text-center text-[10px] sm:text-[11px] md:text-xs lg:text-sm leading-tight px-1">
+                  <h3 className="font-urbanist text-center text-sm sm:text-base md:text-lg leading-tight px-1">
                     {t("comparison.header.traditional") || "Services Traditionnels"}
                   </h3>
                 </div>
@@ -112,7 +109,7 @@ const ComparisonTable = () => {
               <div className="relative z-10 sm:scale-[1.02] md:scale-105 min-w-[90px] sm:min-w-[110px] md:min-w-[130px]">
                 <div className="border-2 border-primary rounded-lg bg-primary space-y-1.5 sm:space-y-2 md:space-y-3 p-1 sm:p-1.5 md:p-2 lg:p-3">
                   <div className="h-[60px] sm:h-[55px] md:h-[60px] p-1.5 sm:p-2 md:p-3 lg:p-4 flex items-center justify-center">
-                    <h3 className="font-bold text-center text-primary-foreground text-[10px] sm:text-[11px] md:text-xs lg:text-sm leading-tight px-1">
+                    <h3 className="font-urbanist text-center text-primary-foreground text-sm sm:text-base md:text-lg leading-tight px-1">
                       {t("comparison.header.fleuret") || "Fleuret IA"}
                     </h3>
                   </div>
@@ -137,7 +134,7 @@ const ComparisonTable = () => {
               {/* Column 4 - Automated */}
               <div className="border border-primary/30 rounded-lg p-1 sm:p-1.5 md:p-2 lg:p-3 space-y-1.5 sm:space-y-2 md:space-y-3 min-w-[90px] sm:min-w-[110px] md:min-w-[130px]">
                 <div className="h-[60px] sm:h-[55px] md:h-[60px] p-1.5 sm:p-2 md:p-3 lg:p-4 bg-muted/30 rounded-lg flex items-center justify-center">
-                  <h3 className="font-semibold text-center text-[10px] sm:text-[11px] md:text-xs lg:text-sm leading-tight px-1">
+                  <h3 className="font-urbanist text-center text-sm sm:text-base md:text-lg leading-tight px-1">
                     {t("comparison.header.automated") || "Solutions Automatisées"}
                   </h3>
                 </div>

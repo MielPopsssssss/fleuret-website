@@ -16,6 +16,7 @@ export default {
       fontFamily: {
         sans: ['Lufga', 'system-ui', 'sans-serif'],
         serif: ['"CMU Serif"', 'Georgia', 'serif'],
+        urbanist: ['Urbanist', 'system-ui', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",

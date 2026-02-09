@@ -141,15 +141,15 @@ const translations = {
     // Benchmark Details
     'benchmark.title.main': 'Rapports Actionnables',
     'benchmark.subtitle.main': 'Pour chaque vulnérabilité détectée',
-    'benchmark.description': 'Au-delà de la simple détection, notre IA génère des recommandations précises et actionnables pour corriger chaque vulnérabilité identifiée. Chaque rapport inclut des étapes de remédiation détaillées, des exemples de code sécurisé et une priorisation basée sur le niveau de risque réel.',
+    'benchmark.description': 'Chaque vulnérabilité remontée est accompagnée d’une preuve d’exploitation, d’un impact métier clair et d’un plan de remédiation priorisé.',
     'benchmark.exploitation.label': 'Exploitation réelle',
-    'benchmark.exploitation.description': 'Validation concrète des vulnérabilités par exploitation effective',
+    'benchmark.exploitation.description': 'On exploite réellement les vulnérabilités clés pour éviter les faux positifs.',
     'benchmark.rapidite.label': 'Rapidité d\'exécution',
-    'benchmark.rapidite.description': 'Analyse complète et résultats en quelques heures',
+    'benchmark.rapidite.description': 'Rapports exploitables en quelques heures, pas en semaines.',
     'benchmark.validation.label': 'Validation PoC',
-    'benchmark.validation.description': 'Preuve de concept automatique pour chaque faille',
-    'benchmark.efficacite.label': 'Efficacité ressources',
-    'benchmark.efficacite.description': 'Optimisation intelligente des ressources IA',
+    'benchmark.validation.description': 'Preuve de concept générée automatiquement pour chaque faille critique.',
+    'benchmark.efficacite.label': 'Priorisation claire',
+    'benchmark.efficacite.description': 'On vous indique quoi corriger en premier pour maximiser l\'impact.',
     
     // Features Details
     'features.main.title': 'Une Solution',
@@ -440,15 +440,15 @@ const translations = {
     // Benchmark Details
     'benchmark.title.main': 'Actionable Reports',
     'benchmark.subtitle.main': 'For each detected vulnerability',
-    'benchmark.description': 'Beyond simple detection, our AI generates precise and actionable recommendations to fix each identified vulnerability. Each report includes detailed remediation steps, secure code examples and prioritization based on actual risk level.',
+    'benchmark.description': 'Every finding comes with proof of exploitation, clear business impact and a prioritized remediation plan.',
     'benchmark.exploitation.label': 'Real exploitation',
-    'benchmark.exploitation.description': 'Concrete validation of vulnerabilities through effective exploitation',
+    'benchmark.exploitation.description': 'We actually exploit key vulnerabilities to avoid false positives.',
     'benchmark.rapidite.label': 'Fast execution',
-    'benchmark.rapidite.description': 'Complete analysis and results in hours',
+    'benchmark.rapidite.description': 'Actionable reports delivered in hours, not weeks.',
     'benchmark.validation.label': 'PoC validation',
-    'benchmark.validation.description': 'Automatic proof of concept for each vulnerability',
-    'benchmark.efficacite.label': 'Resource efficiency',
-    'benchmark.efficacite.description': 'Intelligent optimization of AI resources',
+    'benchmark.validation.description': 'Automatic proof of concept for every critical issue.',
+    'benchmark.efficacite.label': 'Clear prioritization',
+    'benchmark.efficacite.description': 'We tell you what to fix first to maximize impact.',
     
     // Features Details
     'features.main.title': 'A',

@@ -52,13 +52,26 @@ const Hero = () => {
     }
   };
 
+  const title = t('hero.title');
+  const [firstPartRaw, secondPartRaw] = title.split(',');
+  const firstPart = firstPartRaw?.trim();
+  const secondPart = secondPartRaw?.trim();
+
   return (
     <section id="home" className="relative min-h-[70vh] flex items-center justify-center overflow-hidden pt-8 md:pt-12" itemScope itemType="https://schema.org/WebPageElement">
       <div className="container mx-auto px-4 z-10">
         <div className="max-w-5xl mx-auto text-center space-y-6 animate-in fade-in duration-1000">
 
-          <h1 className="text-3xl md:text-7xl font-bold tracking-tight" itemProp="headline">
-            <span className="text-gradient glow-effect">{t('hero.title')}</span>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl tracking-tight font-urbanist" itemProp="headline">
+            <span className="text-gradient glow-effect">
+              {firstPart}
+              {secondPart && (
+                <>
+                  <br className="hidden md:block" />
+                  <span className="block md:inline">{secondPart}</span>
+                </>
+              )}
+            </span>
           </h1>
 
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed" itemProp="description">
@@ -79,20 +92,20 @@ const Hero = () => {
 
             {/* Email form */}
             <form onSubmit={handleSubmit} className="w-full">
-              <div className="relative flex flex-col sm:flex-row items-stretch sm:items-center bg-secondary/50 rounded-full border border-border/50 p-1.5 sm:p-1.5 backdrop-blur-sm transition-all duration-300 focus-within:border-primary/50 focus-within:shadow-[0_0_20px_rgba(59,130,246,0.3)] focus-within:bg-secondary/70 gap-2 sm:gap-0">
+              <div className="relative flex flex-col sm:flex-row items-stretch sm:items-center bg-secondary/50 rounded-2xl sm:rounded-full border border-border/50 p-1.5 sm:p-1.5 backdrop-blur-sm transition-all duration-300 focus-within:border-primary/50 focus-within:shadow-[0_0_20px_rgba(59,130,246,0.3)] focus-within:bg-secondary/70 gap-2 sm:gap-0">
                 <Input
                   type="email"
                   placeholder={t('waitlist.placeholder')}
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="flex-1 bg-transparent border-0 text-foreground placeholder:text-muted-foreground focus-visible:ring-0 focus-visible:ring-offset-0 px-3 sm:px-4 text-sm sm:text-base min-w-0"
+                  className="w-full flex-1 bg-transparent border-0 text-foreground placeholder:text-muted-foreground focus-visible:ring-0 focus-visible:ring-offset-0 px-3 sm:px-4 text-sm sm:text-base min-w-0"
                   disabled={isSubmitting}
                   required
                 />
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 px-4 sm:px-6 py-2 h-[40px] sm:h-auto font-medium text-sm sm:text-base whitespace-nowrap shrink-0"
+                  className="w-full sm:w-auto rounded-full bg-primary text-primary-foreground hover:bg-primary/90 px-4 sm:px-6 py-2 h-[40px] sm:h-auto font-medium text-sm sm:text-base whitespace-nowrap shrink-0"
                 >
                   {isSubmitting ? (
                     <Loader2 className="h-4 w-4 animate-spin" />

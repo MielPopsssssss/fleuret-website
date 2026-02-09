@@ -70,7 +70,7 @@ const Partners = () => {
     <section id="partners" className="py-24 relative">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <h2 className="text-4xl md:text-5xl font-bold">
+          <h2 className="text-5xl md:text-6xl font-urbanist">
             <span className="text-gradient">{t('partners.title')}</span>
           </h2>
         </div>
@@ -100,19 +100,28 @@ const Partners = () => {
                     height: isMobile ? '60px' : '120px'
                   }}
                 >
-                  <img
-                    src={partner.logo}
-                    alt={`Logo ${partner.name} - Partenaire académique et professionnel de Fleuret AI`}
-                    className="max-h-12 md:max-h-28 max-w-full w-auto object-contain transition-opacity"
-                    loading="lazy"
-                    width="200"
-                    height="120"
+                  <div
+                    className="w-full h-full rounded-3xl flex items-center justify-center"
                     style={{
-                      filter: offset === 0 
-                        ? "drop-shadow(0 0 15px hsl(var(--primary) / 0.3))" 
-                        : "none",
+                      backgroundColor: offset === 0
+                        ? 'rgba(242,242,248,0.08)'
+                        : 'rgba(242,242,248,0.04)',
                     }}
-                  />
+                  >
+                    <img
+                      src={partner.logo}
+                      alt={`Logo ${partner.name} - Partenaire académique et professionnel de Fleuret AI`}
+                      className="max-h-12 md:max-h-28 max-w-full w-auto object-contain transition-opacity"
+                      loading="lazy"
+                      width="200"
+                      height="120"
+                      style={{
+                        filter: offset === 0 
+                          ? 'drop-shadow(0 0 15px rgba(0,0,0,0.35))'
+                          : 'none',
+                      }}
+                    />
+                  </div>
                 </div>
               ))}
             </div>
